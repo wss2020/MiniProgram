@@ -1,0 +1,91 @@
+<!--pages/index/productdetail/productdetail.wxml-->
+<wxs module="fmt" src="../../../fmt.wxs"></wxs>
+<import src="../../../wxParse/wxParse.wxml"/>
+
+<view class="toptips" wx:if="{{!hidetips}}" style="margin: 12rpx 0;">
+    <view  class="toptips1">
+        <image class="toptips_image1" src="/image/toptips1.png"></image>
+        <view>{{tips}}</view>
+    </view>
+<!--    <image bindtap="canceltoptips" class="toptips_image2" src="/image/toptips2.png"></image>-->
+</view>
+
+<view class='promain'>
+    <view class='detailimg'>
+        <image class="detail_img1" src='{{productinfo.pic}}'></image>
+        <button open-type="share" class="share_button">
+<!--            <image  src="/image/sharebutton.png"></image>-->
+        </button>
+    </view>
+
+    <view class='explain'>
+        <view class="numbers">编号：{{productinfo.id}}</view>
+        <view class='proname'>{{productinfo.name}}</view>
+        <view class='proprice' wx:if="{{key}}">
+            <text  class="line_centerg">{{fmt.formatCurrency(productinfo.price)}}</text>
+            <text  class="line_center">{{fmt.formatCurrency(productinfo.sprice)}}</text>
+        </view>
+<!--        <view class='unlogin' wx:else  bindtap="login">-->
+<!--            <view class="login_price">登录后查看价格</view>-->
+<!--        </view>-->
+        <view class="addinfo">
+            <image wx:if="{{productinfo.certification == 1}}" mode="widthFix"  src="/image/vlogo.png"></image>
+            <view class="addinfo1">{{productinfo.level}}级</view>
+            <view class="addinfo2" bindtap="product_info" data-id="{{productinfo.id}}">货源说明</view>
+            <view class="addinfo3_1" wx:if="{{productinfo.range == 1}}" >{{productinfo.province}}</view>
+            <view class="addinfo3_1" wx:elif="{{productinfo.range == 2}}" >{{productinfo.province}}</view>
+            <view class="addinfo3_2" wx:elif="{{productinfo.range == 3}}" >{{productinfo.province}}</view>
+            <view class="addinfo3_3" wx:elif="{{productinfo.range == 4}}" bindtap="product_info" data-id="{{productinfo.id}}">配送范围</view>
+        </view>
+    </view>
+
+
+    <view style="display: flex;flex-direction: column;">
+        <image  mode="widthFix"  src="/image/cs/cs2.jpg"  style="width:750rpx;margin: 20rpx 0 0rpx 0;"></image>
+
+        <view class="proIntro">
+            <view class="proIntroLeft">简介：</view>
+            <view class="proIntroRight">
+                <text>{{productinfo.intro}}</text>
+            </view>
+        </view>
+        <view  class='template'>
+            <template is="wxParse" data="{{wxParseData:dkcontent.nodes}}"/>
+        </view>
+
+        <view class="price_rule"><image src="https://files.dianlinet.com/images/price_rule.png"></image></view>
+    </view>
+
+    <!-- 未授权-->
+    <view class='prodetail_foot' wx:if="{{!authoried || !login}}" bindtap="login">
+        <view class='purchauser'>
+            <view class="indexss" ><image  src="/image/indexss.png"></image></view>
+            <button class="customerservice" ><image  src="/image/customerservice.png"></image></button>
+            <view class="addproduct" ><image  src="/image/index/optimal.jpg"></image></view>
+        </view>
+        <view class='addonpurchasex' >
+            <view class='addonpurchase_choosex' >一件代发</view>
+        </view>
+    </view>
+
+    <!-- 授权状态 -->
+    <view class='prodetail_foot' wx:elif="{{authoried}}">
+            <view class='purchauser'>
+                <view class="indexss" bindtap="jumpindex"><image  src="/image/indexss.png"></image></view>
+                <button class="customerservice" open-type="contact"><image  src="/image/customerservice.png"></image></button>
+                <view class="addproduct" bindtap="addproduct" ><image  src="/image/index/optimal.jpg"></image></view>
+            </view>
+            <view class='addonpurchasex' bindtap='addonshopbuy' >
+                <view class='addonpurchase_choosex' >一件代发</view>
+            </view>
+    </view>
+
+
+
+
+
+
+</view>
+
+
+

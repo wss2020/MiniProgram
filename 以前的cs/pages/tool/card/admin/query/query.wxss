@@ -1,0 +1,104 @@
+/* pages/tool/card/admin/query/query.wxss */
+@import "/pages/template/common/css.wxss";
+
+
+/*头部格式*/
+page{background: #f3f5f6;}
+indexmain{width: 100%;}
+.scroll-view{
+    display:flex;flex-direction: row;align-items: center;
+    width: 100%;
+    position:fixed;top:0;left:0;z-index: 999;
+    border-bottom:solid 2rpx #f2f2f2;background: #ffffff;border-top:solid 2rpx #999;
+}
+.padd{
+    display: flex;flex-direction: column;
+    color: #6d6c71;text-align: center;
+    margin:0 12rpx;padding: 10rpx 10rpx;position: relative;
+}
+.c_name{font-size: 30rpx;}
+.c_num{font-size: 22rpx;}
+.thisdh{color: #e33d3d;font-weight: bold;border-bottom: solid 2px #e33d3d;}
+
+.query_btn{
+    display: inline-block;
+    color: #ffffff;background: #e33d3d;border: solid 2rpx #e33d3d;font-size: 26rpx;text-align: center;
+    border-radius: 200rpx;padding: 0 20rpx;margin-left: 12rpx;line-height: 50rpx;
+}
+
+
+
+
+
+
+
+/* 弹框 */
+.info_check{
+    width: 680rpx;position:fixed;top:250rpx;left: 35rpx;
+    z-index: 2000;background:#fff;border-radius:38rpx; padding-bottom: 20rpx;}
+.inputtwo{
+    display: flex;flex-direction: row; align-items: center;
+    padding:0 0 0 20rpx;height: 80rpx;border-bottom: solid 2rpx #eeeeee;
+}
+.inputtwo view{font-size: 28rpx;display: flex;align-items: center;}
+.search-input{font-size: 28rpx;width: 368rpx;}
+.search-input1{font-size: 28rpx;width: 200rpx;text-align: center;}
+.info_title{text-align: center;font-size: 30rpx;margin: 20rpx 0 0rpx;color: #555555;}
+.ranges{
+    display: flex;flex-direction:column;justify-content:left;
+    font-size:30rpx;margin-left:10rpx;margin-right:10rpx;color: #555555;}
+.twobtn{
+    display: flex;flex-direction: row;justify-content: space-between;
+    height: 80rpx;margin: 30rpx 60rpx 0;
+}
+.twobtn .leftbtn{
+    display: flex;align-items: center;justify-content: center;
+    color: #555555;width: 240rpx;font-size: 30rpx;height: 70rpx;border:solid 1px #a6a6a6;border-radius:200rpx;
+}
+.twobtn .rightbtn{
+    display: flex;align-items: center;justify-content: center;
+    margin: 0;color: #ffffff;width: 240rpx;font-size: 30rpx;height: 70rpx;
+    border:solid 1px #cf1518;border-radius:200rpx;background: #cf1518;
+}
+
+.choosereason1{
+    display: flex;flex-direction: row;align-items: center;
+    height: 80rpx;border-bottom: solid 2rpx #eeeeee;
+}
+.choosereason_title{font-size: 28rpx;padding:0 20rpx 0 20rpx;}
+.radio-group1{display:flex;flex-direction:row;font-size:28rpx;}
+.reasonone1{display:flex;flex-direction:row;margin-right: 20rpx;}
+.reasonone image{width:140rpx;height:140rpx;}
+.choosereason1 .text2{font-size: 28rpx;}
+
+
+/*修改*/
+page{background: #f3f5f6;}
+
+.products{display:flex;flex-direction: column;margin-bottom: 60rpx;}
+
+.product{display: flex;flex-direction: row;padding:20rpx 0 20rpx 0;background: #ffffff; margin:20rpx 20rpx 0rpx 20rpx;border-radius:8rpx;}
+.product .img{width:180rpx;height:140rpx;margin:0 30rpx 0 20rpx;}
+.product .info{display:flex;flex-direction:column;width:466rpx;}
+.product .name{font-size:30rpx;}
+.product .info{disply:flex;flex-direction: column;}
+.product .addinfo{display:flex;flex-direction: row;justify-content: space-between;align-items: center;}
+.product .addinfo  .number{font-size: 28rpx;color:#777777;}
+.product .addinfo  .addinfo2{font-size: 24rpx;color:#777777;width:200rpx;display:flex;flex-direction: row;justify-content: flex-end;align-items: center;}
+.product .addinfo  .addinfo2 image{width: 30rpx;margin-right: 10rpx;height:24rpx;}
+.product .addinfo  .addinfo2 .addinfo2_1{background: #ffeedb;border-radius: 200rpx;width:60rpx;text-align: center;margin-right: 10rpx;}
+.product .addinfo  .addinfo2 .addinfo2_2{background: #ffeedb;border-radius: 200rpx;width:120rpx;text-align: center;}
+
+.product .addinfo1{display:flex;flex-direction: column;justify-content: space-between;align-items: baseline;margin-top: 0rpx;}
+
+
+.product  .price{font-size:34rpx;height:32rpx;color:#e33d3d;}
+.product  .oprice{color:#777777;font-size:26rpx;}
+.opennums{margin-left: 40rpx;}
+
+
+.product  .dprice{font-size:28rpx;height:32rpx;color:#e33d3d;margin-left: 40rpx;}
+.product  .buynums{display: flex;align-items: center;justify-content: space-between;width: 100%; margin-top: 10rpx;}
+.product  .range{color:#777777;font-size:26rpx;}
+.product  .range text{background: #ffeedb;border-radius: 200rpx;width: 60rpx;text-align: center;
+    margin-left: 10rpx; font-size: 22rpx;padding:2rpx 10rpx;}

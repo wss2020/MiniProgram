@@ -1,0 +1,86 @@
+<!--pages/about/orderlist/orderdetail/orderdetail.wxml-->
+<wxs module="fmt" src="../../../../fmt.wxs"></wxs>
+<view class='main' >
+    <view class='address'>
+        <view class="addressed">
+            <view class='addressicon'>
+                <image src='/image/addressicon1.jpg'></image>
+            </view>
+            <view class='addressdetail'>
+                <view class='detail_top'>
+                    <view class='detail_top1'>{{detail.name}}</view>
+                    <view class='detail_top2'>{{detail.mobile}}</view>
+                </view>
+                <view class='detail_bottom'>{{detail.province}}{{detail.city}}{{detail.county}}{{detail.address}}</view>
+            </view>
+        </view>
+    </view>
+
+    <view class='onerow'>
+        <view class='sendinfomation'>
+            <view class='geren'>
+                <view class='gerenname'>商品状态</view>
+            </view>
+            <view class='statushead' wx:if="{{detail.status == 1}}">待发货</view>
+            <view class='statushead' wx:if="{{detail.status == 2}}">已确认</view>
+            <view class='statushead' wx:if="{{detail.status == 3}}">已发货</view>
+        </view>
+            <view class='tab_titlecon' bindtap="productdetail" data-id="{{detail.skuid}}">
+                <view class='tab_titleconrow'  >
+                    <view class='tab_titlecon1'>
+                        <image src='{{detail.pic}}'></image>
+                    </view>
+                    <view class='tab_titlecon2'>
+                        <view>
+                            <view class='tab_title1'>
+                                <view class='course_name'>
+                                    <view class='mingzi'>{{detail.sku_name}}</view>
+                                    <view class='shuliang'>
+                                        <view class='shuliang_left'>数量:×{{detail.num}}</view>
+                                        <view class='shuliang_right'>{{fmt.formatCurrency(detail.price - detail.fare)}}</view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class='line'></view>
+        <view class='sange'  wx:if="{{detail.fare > 0}}">
+            <view class='coupon'>
+                <view class='mingzi'>运费</view>
+                <view class='xiangqing'>{{fmt.formatCurrency(detail.fare)}}</view>
+            </view>
+            <view class='coupon'>
+                <view class='mingzi'>总计</view>
+                <view class='xiangqing'>{{fmt.formatCurrency(detail.price)}}</view>
+            </view>
+        </view>
+    </view>
+
+
+    <view class='order'>
+        <view class='orderinformation'>其他信息</view>
+        <view class='ordernumber'>
+            <view class='ordernumberss'>订单号: {{detail.id}}</view>
+<!--            <button class="copy_btn" data-express="{{present.seqno}}" bindtap="copy">复制</button>-->
+        </view>
+        <view class='ordernumber'>创建时间：{{detail.time}}</view>
+        <view class='ordernumber' wx:if="{{detail.content}}">备注：{{detail.content}}</view>
+
+
+
+        <view class='customer'>
+            <button  open-type="contact" class="customer_servicess">联系客服</button>
+            <button class="customer_servicess" bindtap="logistics">查看物流</button>
+        </view>
+<!--        <view class='customer' wx:else>-->
+<!--            <button class='customer_servicez' open-type="contact">联系客服</button>-->
+<!--        </view>-->
+    </view>
+
+</view>
+
+
+
+

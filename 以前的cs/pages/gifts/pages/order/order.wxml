@@ -1,0 +1,115 @@
+<!--pages/gifts/pages/order/order.wxml-->
+<wxs module="fmt" src="../../../../fmt.wxs"></wxs>
+
+<!--<view >-->
+<!--    <official-account   bindload="successload"  binderror="failload"></official-account>-->
+<!--</view>-->
+
+<view class='mainaddress' >
+    <form bindsubmit="formsubmit" report-submit="true">
+        <view class='addresshead'>
+            <view class='addresssrow'>
+                <input name="name" type='text' placeholder="收货人姓名" value="{{name}}" />
+            </view>
+            <view class='addresssrow'>
+                <input name="telNumber" type='number' placeholder="手机号" value="{{telNumber}}" />
+            </view>
+            <view class="addresssrow">
+                <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+                    <view class="picker">
+                        <text>选择地区：</text>{{region[0]}}，{{region[1]}}，{{region[2]}}
+                    </view>
+                </picker>
+            </view>
+            <view class='addresssrow'>
+                <input name="address" type='text' placeholder="详细地址" value="{{address}}" />
+            </view>
+            <view class='addresssrow'>
+                <input name="content" type='text' placeholder="备注" value="" />
+            </view>
+        </view>
+
+
+        <!--支付-->
+        <view class='group-buying-main'>
+            <view class='group-buying-product'>
+                <view class='group-buying-product1'>
+                    <view class='group-buying-product2'  bindtap="productdetail"  data-id="{{productinfo.id}}">
+                        <image src='{{productinfo.pic}}'></image>
+                        <view class='product-details'>
+                            <view class='product-details-name'>{{productinfo.name}}</view>
+                        </view>
+                    </view>
+                    <view class="rightcontent">
+                        <view class='product-details-price'>{{fmt.formatCurrency(productinfo.price)}}</view>
+                        <view class='product-details-spec'>
+                            <view class="cart-count-down" bindtap="minusCount">-</view>
+                            <view class="cart-count-num">{{count}}</view>
+                            <view class="cart-count-add" bindtap="addCount">+</view>
+                        </view>
+                    </view>
+                </view>
+
+                <view class='zhangdan'  style="margin-top: 20rpx;">
+                    <view class='programme11' wx:if="{{precreate.wallet && precreate.wallet > 0}}">
+                        <view class='programme-lefts'>账户余额</view>
+                        <view class='programme-rights'>
+                            {{fmt.formatCurrency(precreate.wallet)}}
+                        </view>
+                    </view>
+                    <view class='programme11'  wx:if="{{precreate.fare && precreate.fare > 0}}">
+                        <view class='programme-lefts1'>邮费</view>
+                        <view class='programme-rights1'>
+                            +{{fmt.formatCurrency(precreate.fare)}}
+                        </view>
+                    </view>
+                    <view class='programme11' wx:if="{{precreate.amount}}">
+                        <view class='programme-lefts' >总计</view>
+                        <view class='programme-rights'>
+                            {{fmt.formatCurrency(precreate.amount)}}
+                        </view>
+                    </view>
+                </view>
+
+
+            <view class="agreement">
+                <checkbox-group bindchange="checkboxChange">
+                    <checkbox value="" checked="true" />
+                </checkbox-group>
+                <view class="agreement_content" bindtap="viewAgreement"><text>我同意</text>《点礼用户使用协议》</view>
+            </view>
+
+            <view class='group-buying-foot'>
+                <view class='payment-money'>还需支付:
+                    <text wx:if="{{precreate.paid <= 0}}">{{fmt.formatCurrency(0)}}</text>
+                    <text wx:else>{{fmt.formatCurrency(precreate.paid)}}</text>
+                </view>
+                <button form-type="submit" wx:if="{{agreement == 1}}" class='payment'>申请发货</button>
+                <button class='payment1'  wx:else>立即支付</button>
+            </view>
+            </view>
+        </view>
+    </form>
+
+    <view class="message">{{message}}</view>
+
+
+    <view  class="info_check"  wx:if="{{showchoose}}">
+        <view class='info_title'>提示</view>
+        <view class='ranges'>
+            <view class="limitfont1">体验账号只能下3单,如需继续下单，请完成企业信息认证。</view>
+        </view>
+        <view class='twobtn'>
+            <button class="leftbtn"  bindtap='jumpindex'>暂不认证</button>
+            <button class="rightbtn" bindtap='attestation' >立即认证</button>
+        </view>
+    </view>
+    <!-- 背景变暗 -->
+    <view class="one_reward_bg" wx:if="{{showchoose}}" ></view>
+</view>
+
+
+
+
+
+

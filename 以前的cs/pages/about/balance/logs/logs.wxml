@@ -1,0 +1,16 @@
+<wxs module="fmt" src="../../../../fmt.wxs"></wxs>
+<!--pages/about/li-money/logs/logs.wxml-->
+<view>
+    <block wx:for="{{logs}}" wx:key="">
+        <view class='popupconcent' bindtap="detail" data-orderid="{{item.orderid}}">
+            <view class='popupconcent1'>
+                <view>{{item.reason}}</view>
+                <view class='addcu'>{{item.amount>0?"+":"-"}}{{fmt.formatCurrency(fmt.abs(item.amount))}}</view>
+            </view>
+            <view class='popupconcent2'>
+                <view>{{item.time}}</view>
+                <view>余额</view>
+            </view>
+        </view>
+    </block>
+</view>

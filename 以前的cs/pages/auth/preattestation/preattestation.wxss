@@ -1,0 +1,97 @@
+/* pages/auth/preattestation/preattestation.wxss */
+.editinfo{margin-top: 20rpx;}
+
+.tips{display: flex;color:#cf1518;justify-content: center; font-size: 32rpx;margin: 20rpx 0;}
+
+.logo{display: flex;flex-direction: column;
+    /*align-items: center;*/
+}
+
+.tiplogo{font-size: 32rpx;margin-left: 30rpx;}
+.tiplogo text{font-size: 32rpx;color:#cf1518;}
+.tiplogo1{display: flex;flex-direction: row;}
+.inputtwo{display: flex;flex-direction: row;align-items: center;
+    background: #f4f4f4;margin: 18rpx 30rpx 0 30rpx;height: 70rpx;}
+.inputtwo view{font-size: 28rpx;display: flex;justify-content: center; align-items: center;padding-left: 20rpx;width:258rpx;}
+.search-input{font-size: 28rpx;width:500rpx;}
+
+.onnoviceguidemain{
+    border-radius: 200rpx;font-size: 30rpx;color: #fff;background:#cf1518;
+    margin-top:40rpx;margin-bottom: 100rpx; padding:0rpx 5%;height: 80rpx;width:84%;
+    display:flex;flex-direction:row;justify-content:center;align-items: center;
+}
+
+.addimg{width:120rpx;height:120rpx;margin-left: 50rpx;margin-top: 20rpx;}
+.img_li {width: 120rpx;height: 120rpx;margin-left: 50rpx;margin-top: 20rpx;}
+
+
+/*审核记录*/
+.info_record{font-size: 32rpx;margin:0 0 0 40rpx;}
+.logistics_centent{width: 590rpx;position: absolute;left: 100rpx;font-size: 28rpx;color: #6d6c71;}
+.logistics_centent1{font-size: 28rpx;}
+.logistics_centent2{font-size: 24rpx;color:#6d6c71;}
+.delogistics{
+    margin-left: 49rpx;
+    border-left: 2rpx solid #d0d0d0;
+    position:relative;
+    /*height:800rpx;*/
+    /*overflow-y: auto;*/
+}
+.shopimg{width:100rpx;height:100rpx;}
+.onedelogistics{margin-left: 49rpx;}
+.order{margin:30rpx 0;padding: 0 40rpx;position:relative;}
+.icon{display:flex;justify-content: center;align-items: center;color:#ffffff;font-size:32rpx;width: 50rpx;height: 50rpx;border-radius:50%;background: rgb(123,194,216);position: absolute;z-index: 6;left: -24rpx;top: 0rpx;}
+.icon1{display:flex;justify-content: center;align-items: center;color:#ffffff;font-size:32rpx;width: 50rpx;height: 50rpx;border-radius:50%;background: #6d6c71;position: absolute;z-index: 6;left: -24rpx;top: 0rpx;}
+.oneicon{width: 18rpx;height: 18rpx;border-radius:50%;background: #00a96d;position: absolute;z-index: 6;left: -10rpx;top: 10rpx;}
+
+.empty{height:60rpx;position:absolute;top:20rpx;left:-8rpx;width:10rpx;background:#ffffff;z-index:5;}
+.freeGift{position:fixed;top:34rpx;right:0rpx;width:214rpx;text-align: center;height: 60rpx;line-height: 60rpx;
+    font-size:28rpx;color:#fff;background: #fdb98c;border-top-left-radius: 200rpx;border-bottom-left-radius: 200rpx;z-index: 10;}
+
+.bottom_keyboard{
+    position:fixed;
+    bottom:0rpx;
+    left:0rpx;
+    width:100%;
+    height:100rpx;
+    background: #f7f7f7;
+    border-top:solid 1px #e8e8e8;
+}
+
+.bottom_keyboard image{
+    width:66rpx;
+    height:66rpx;
+}
+.searchs{
+    position:absolute;
+    left:30rpx;
+    bottom:0rpx;
+    width:70%;
+    height: 60rpx;
+    background: #fff;
+    border-radius: 8rpx;
+    border:solid 1px #f7f7f7;
+    margin-bottom: 14rpx;
+    /*margin:10rpx 0 10rpx;*/
+    padding: 6rpx 20rpx 10rpx;
+    display: flex;
+    flex-direction: row;
+}
+.cs2{
+    position:absolute;
+    right:46rpx;
+    bottom:18rpx;
+}
+.sends{
+    position:absolute;
+    right:28rpx;
+    bottom:22rpx;
+    background: #08c060;
+    border-radius: 8rpx;
+    font-size: 30rpx;
+    width:100rpx;
+    height:60rpx;
+    line-height: 60rpx;
+    color:#fff;
+    text-align:center;
+}

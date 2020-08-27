@@ -1,0 +1,120 @@
+<!--pages/optimal/optimal.wxml-->
+<wxs module="fmt" src="../../fmt.wxs"></wxs>
+<view class="deletetop">
+    <view class="deletetop1" wx:if="{{!showdel && productlist.length > 0}}" bindtap="choosedel">管理</view>
+    <view class="deletetop1" wx:if="{{showdel}}" bindtap="canceldel">取消</view>
+</view>
+<view style="height:70rpx;"></view>
+
+<view class="products">
+    <checkbox-group class="" bindchange="checkboxChange">
+        <block wx:for="{{productlist}}" wx:key="">
+            <view class="product">
+                <image class="img" bindtap="productdetail" data-id="{{item.id}}"
+                       src="{{item.pic}}">
+                </image>
+                <view class="info">
+                    <view class="addinfo">
+                        <view class="number">编号：{{item.id}}</view>
+                        <view class="addinfo2">
+                            <image wx:if="{{item.certification == 1}}" src="/image/vlogo.png"></image>
+                            <view class="addinfo2_1">{{item.level}}级</view>
+                            <view class="addinfo2_2" bindtap="product_info" data-id="{{item.id}}">货源说明</view>
+                        </view>
+                    </view>
+                    <view class="name">{{item.name}}</view>
+                    <view class="addinfo1">
+                        <view class="prices">
+                            <text class="price">{{fmt.formatCurrency(item.price)}}</text>
+                            <text class="oprice">{{fmt.formatCurrency(item.sprice)}}</text>
+                            <text class="dprice">{{fmt.toFixed(item.price,item.sprice)}}折</text>
+                        </view>
+                        <view class="buynums">
+                            <view class="range" wx:if="{{item.range == 4}}" bindtap="product_info"
+                                  data-id="{{item.id}}">
+                                <text>点击查看</text>
+                            </view>
+                            <view class="range" wx:else>配送范围:
+                                <text>{{item.province}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="option">
+                        <view class="option_1" >
+                            <view class="option1" wx:if="{{!showdel}}" bindtap="delete_product" data-id="{{item.id}}">删除</view>
+                            <view wx:if="{{item.onsale == 1}}" class="option2" bindtap="apply" data-id="{{item.id}}">代发
+                            </view>
+                        </view>
+                        <view wx:if="{{item.onsale == 2}}" class="option3">下架</view>
+                        <checkbox wx:if="{{showdel}}" class="choose" value="{{item.id}}" checked=""></checkbox>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </checkbox-group>
+    <view class='bottom_taps' wx:if='{{bottom_tap}}'>已经到底了</view>
+</view>
+
+<view style="height:70rpx;"></view>
+<view class="delbtn" wx:if="{{showdel}}">
+    <view class="delbtn1" bindtap="delCheck">批量删除</view>
+</view>
+
+
+<view  class="unpro"  wx:if="{{unpro}}">
+     <view class="unpro1">
+         <image src="/image/tool/empty.png"></image>
+     </view>
+    <view class="unpro2">您还没有添加优选商品哦</view>
+    <view class="unpro3">
+        <view class="unpro31"  bindtap="addpro">立即添加</view>
+    </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

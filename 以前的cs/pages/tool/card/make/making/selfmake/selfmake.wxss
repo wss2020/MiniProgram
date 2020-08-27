@@ -1,0 +1,73 @@
+/* pages/tool/card/make/making/selfmake/selfmake.wxss */
+@import "/pages/template/common/css.wxss";
+.editinfo{margin-top: 20rpx;}
+
+.tips{display: flex;color:#cf1518;justify-content: center; font-size: 32rpx;margin: 20rpx 0;}
+
+.logo{
+    display: flex;flex-direction: row;justify-content: space-between;align-items: center;
+    padding: 0 20rpx;border-bottom: solid 2rpx #eeeeee;
+}
+
+.tiplogo{font-size: 32rpx;margin-left: 30rpx;}
+.tiplogo text{font-size: 32rpx;color:#cf1518;}
+.tiplogo1{display: flex;flex-direction: row;}
+.inputtwo{
+    display: flex;flex-direction: row;align-items: center;justify-content: space-between;
+    border-bottom: solid 2rpx #eeeeee;padding: 16rpx 30rpx 16rpx 30rpx;height: 70rpx;
+}
+.inputtwo .inputtwo1{font-size: 28rpx;display: flex;justify-content: center; align-items: center;padding-left: 20rpx;}
+.inputtwo .inputtwo2{
+    display: flex;flex-direction: row; justify-content: center; align-items: center;
+    padding-left: 20rpx;
+}
+.inputtwo2 image{width:30rpx;height:30rpx;}
+.search-input{font-size: 28rpx;width:300rpx;}
+.search-input1{font-size: 28rpx;width: 630rpx;padding-left:20rpx;}
+.search-input1 text{margin-right: 200rpx;}
+.inputtwo .overtime{width:30rpx;height:30rpx;}
+
+
+.onnoviceguidemain{
+    border-radius: 200rpx;font-size: 30rpx;color: #fff;background:#cf1518;
+    margin-top:40rpx;margin-bottom: 100rpx; padding:0rpx 5%;height: 80rpx;width:84%;
+    display:flex;flex-direction:row;justify-content:center;align-items: center;
+}
+.addimg{width:160rpx;height:100rpx;margin-left: 50rpx;margin-top: 20rpx;}
+.img_li {width: 120rpx;height: 120rpx;margin-left: 50rpx;margin-top: 20rpx;}
+.cardtype{font-size: 28rpx;width:300rpx;height:50rpx;}
+.info_check{
+    width: 680rpx;position:fixed;top:250rpx;left: 35rpx;
+    z-index: 2000;background:#fff;border-radius:18rpx; padding-bottom: 80rpx;
+}
+.radio-group1{display: flex;flex-direction: column;font-size: 32rpx;color: #333333;}
+.title{text-align: center;padding: 20rpx 0rpx;}
+.reasonone1{
+    display: flex;justify-content: space-between;
+    margin: 50rpx 40rpx 0;border-bottom: solid 2rpx #eeeeee;padding:0 20rpx 20rpx;
+}
+.reasonone11{}
+.reasonone12{}
+
+
+/* 单选 */
+/*radio .wx-radio-input{border-radius:50%;width:38rpx;height:38rpx;}*/
+radio .wx-radio-input.wx-radio-input-checked{border: 1px solid #cf1518 !important;
+    background-color: #cf1518 !important;}
+
+.setheight{position: relative;overflow: auto; height: 400rpx;}
+
+.addcategory{
+    display: flex;justify-content: center;align-items: center;
+    width: 100rpx;height:50rpx;color: #ffffff;
+    font-size: 28rpx;background: #cf1518;border-radius:200rpx;
+}
+
+
+
+
+
+
+
+
+

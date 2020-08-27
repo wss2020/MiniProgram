@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body {
+        display: block;
+        margin: 0px;
+    }
+    .button{
+        display: flex;justify-content: space-between;align-items: center;
+        position: fixed;top:0;left: 0;}
+    .button button{width: 200px;height: 50px;}
+</style>
+<body>
+<div class="button">
+    <button onClick="fnScroll(1);" >点击以向下一页</button>
+    <button onClick="fnScroll(2);" >点击以向上一页</button>
+    <button onClick="fnScroll(3);" >点击以向下一页，平滑移动</button>
+    <button onClick="fnScroll(4);" >点击以向上一页，平滑移动</button>
+</div>
+
+<div>
+    <div class="setHeight" style="width:100%;background: #33cc99"></div>
+    <div class="setHeight" style="width:100%;background: #0099ff"></div>
+    <div class="setHeight" style="width:100%;background: rebeccapurple"></div>
+</div>
+</body>
+</html>
+<script>
+    (function () {
+        let oDiv = document.getElementsByClassName('setHeight');
+        for(let i=0; i<oDiv.length; i++){
+            oDiv[i].style.height = window.innerHeight + 'px';
+        }
+    })();
+    function fnScroll(type) {
+        if(type == 1){
+            window.scrollBy(0, window.innerHeight);
+        }
+        if(type == 2){
+            window.scrollBy(0, -window.innerHeight);
+        }
+        if(type == 3){
+            window.scrollBy({
+                top: window.innerHeight,
+                left: 0,
+                behavior: "smooth"
+            });
+        }
+        if(type == 4){
+            window.scrollBy({
+                top: -window.innerHeight,
+                left: 0,
+                behavior: "smooth"
+            });
+        }
+    }
+</script>

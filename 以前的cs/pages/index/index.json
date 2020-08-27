@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "点礼商户端",
+  "usingComponents": {
+    "mp-dialog": "weui-miniprogram/dialog/dialog"
+  }
+}

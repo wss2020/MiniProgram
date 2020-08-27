@@ -1,0 +1,37 @@
+<!--pages/tool/tool.wxml-->
+<view class="tool">
+
+    <view bindtap="go">我的</view>
+
+    <!--  4个工具  -->
+    <view class='taps'>
+        <block wx:for="{{tool}}" wx:key="">
+            <view class='tap_one' bindtap="recommending" data-index='{{index}}'>
+                <image src='/image/index/{{index + 1}}.png'></image>
+                <view class="tap_name">{{tool[index]}}</view>
+            </view>
+        </block>
+    </view>
+
+
+    <!--  方案列表  -->
+    <view class="recommends">
+        <block wx:for="{{recommendlist}}" wx:key="">
+            <view class="recom_content">
+                <view class="top_con" bindtap="view_recom" data-log_id="{{item.log_id}}">
+                    <view class="top_con_name">{{item.title}}</view>
+                    <view class="top_con_time">时间：{{item.time}}</view>
+                </view>
+                <view class="bottom_con">
+                    <view class="recommend_btn1" bindtap="delete_logid" data-log_id="{{item.log_id}}">删除</view>
+                    <view class="recommend_btn1" bindtap="view_recom" data-log_id="{{item.log_id}}">修改</view>
+                    <button class="recommend_btn" wx:if="{{item.status == 1}}" data-link="{{item.link}}"
+                            data-title="{{item.title}}" bindtap="copy">分享
+                    </button>
+                    <button class="recommend_btn" wx:else bindtap="unshare">分享</button>
+                </view>
+            </view>
+        </block>
+    </view>
+
+</view>

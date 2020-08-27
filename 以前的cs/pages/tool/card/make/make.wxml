@@ -1,0 +1,164 @@
+<!--pages/tool/card/make/make.wxml-->
+<view>
+    <view class="add_btn">
+        <view class="add_btn1" bindtap="add_btn">新增</view>
+    </view>
+
+    <view class="products">
+        <block wx:for="{{openlist}}" wx:key="">
+            <view class="cardlist">
+                <view class="product">
+                    <image class="img" bindtap="detail" data-id="{{item.id}}"
+                           src="{{item.pic}}">
+                    </image>
+                    <view class="info">
+                        <view class="addinfo">
+                            <view class="number">{{item.name}}</view>
+                            <view class="addinfo22">{{item.addCount}}次,共{{item.num}}张</view>
+                        </view>
+                        <view class="addinfo_time">{{item.time}}</view>
+                    </view>
+                </view>
+                <view class="option">
+                    <block wx:for-items="{{item.button}}" wx:for-item="action" wx:key="">
+                        <!--                    <view class="option2"  wx:if="{{action.status == 1}}" bindtap="" data-id="{{item.id}}">{{action.name}}</view>-->
+                        <view class="option2" wx:if="{{action.status == 1}}" bindtap="editinfo" data-id="{{item.id}}"
+                              data-design="{{item.design}}">编辑
+                        </view>
+                        <view class="option2" wx:if="{{action.status == 2}}" bindtap="submit" data-id="{{item.id}}">提交
+                        </view>
+
+                        <view class="option2" wx:if="{{action.status == 3}}" bindtap="addproduct" data-id="{{item.id}}">
+                            产品
+                        </view>
+
+                        <view class="option2" wx:if="{{action.status == 4}}" bindtap="creat" data-id="{{item.id}}"
+                              data-type="1">制卡
+                        </view>
+                        <view class="option2" wx:if="{{action.status == 5}}" bindtap="creat" data-id="{{item.id}}"
+                              data-type="2">增发
+                        </view>
+
+                        <button class="option2" open-type="openSetting" bindopensetting="callback"
+                                wx:if="{{action.status == 6 && rejectAuth == 1}}">
+                            分享
+                        </button>
+                        <button class="option2" wx:if="{{action.status == 6 && rejectAuth != 1}}" bindtap="share"
+                                data-id="{{item.id}}"
+                                data-pic="{{item.pic}}" data-apic="{{item.a_pic}}" data-bpic="{{item.b_pic}}">分享
+                        </button>
+
+                        <view class="option2" wx:if="{{action.status == 7}}" bindtap="copycard" data-id="{{item.id}}">
+                            复制
+                        </view>
+
+                        <view class="option2" wx:if="{{action.status == 8}}" bindtap="printing" data-id="{{item.id}}">
+                            印刷
+                        </view>
+
+                        <view class="option2" wx:if="{{action.status == 10}}" bindtap="deletecard" data-id="{{item.id}}">
+                            删除
+                        </view>
+
+                        <view class="checking" wx:if="{{action.status == 9}}">待审核</view>
+                    </block>
+                </view>
+            </view>
+        </block>
+    </view>
+
+    <!--    <view wx:if="{{showbottom : }}"></view>-->
+
+    <view style="height:260rpx;"></view>
+    <view class='card_foot'>
+        <view class="card_btn" bindtap="mack_card">
+            <image src="/image/card/make.png"></image>
+            <view class="btncolor1">制作</view>
+        </view>
+        <view class="card_btn" bindtap="admin_card">
+            <image src="/image/card/unadmin.png"></image>
+            <view class="btncolor">管理</view>
+        </view>
+        <view class="card_btn" bindtap="statistics_card">
+            <image src="/image/card/unstatistics.png"></image>
+            <view class="btncolor">统计</view>
+        </view>
+    </view>
+</view>
+
+
+<view class="floato">
+    <view class="float_index" bindtap="backIndex">首页</view>
+</view>
+
+
+
+<!-- 制作卡券确认框 -->
+<view class="info_check" wx:if="{{showmake}}">
+    <view class='info_title'>制卡数量</view>
+    <form bindsubmit="makecardnums" report-submit="true">
+        <view class='ranges'>
+            <view class="inputtwo">
+                <view>数量：50*</view>
+                <input name="num" class="numbox" placeholder="" bindinput="getNum"
+                        value="{{printinfo.company}}" type="number"/>
+                <view>= {{makenum}}</view>
+            </view>
+            <view class='twobtn'>
+                <view class="leftbtn" bindtap='hideshow'>取消</view>
+                <button form-type="submit" class="rightbtn">确定</button>
+            </view>
+        </view>
+    </form>
+</view>
+
+<!--弹出信息确认框 -->
+<view class="info_check" wx:if="{{showprint}}">
+    <view class='info_title'>印刷信息</view>
+    <form bindsubmit="formsubmit" report-submit="true">
+        <view class='ranges'>
+            <view class="inputtwo">
+                <picker class="search-input1" mode="selector" name="makeid" range="{{makeno}}"
+                        value="{{index}}" bindchange="bindcardChange">
+                    卡号字段：{{makeno[printindex]}}
+                </picker>
+            </view>
+            <view class="inputtwo">
+                <view>公司：</view>
+                <input name="company" class="search-input" placeholder=""
+                       placeholder-class="placeholder-style" value="{{printinfo[printindex].info.company}}" type=""/>
+            </view>
+            <view class="inputtwo">
+                <view>收卡人：</view>
+                <input name="receiver" class="search-input" placeholder=""
+                       placeholder-class="placeholder-style" value="{{printinfo[printindex].info.name}}" type=""/>
+            </view>
+            <view class="inputtwo">
+                <view>手机：</view>
+                <input name="tel" class="search-input" placeholder=""
+                       placeholder-class="placeholder-style" value="{{printinfo[printindex].info.mobile}}" type=""/>
+            </view>
+            <view class="inputtwo">
+                <picker class="search-input1" mode="date" name="time"
+                        value="{{printtime}}" start="" end="" bindchange="bindDateChange">
+                    交货时间：{{printtime}}
+                </picker>
+            </view>
+            <view class="inputtwo">
+                <view>收卡地址：</view>
+                <input name="address" class="search-input" placeholder=""
+                       placeholder-class="placeholder-style" value="{{printinfo[printindex].info.address}}" type=""/>
+            </view>
+            <view class="inputtwo">
+                <view>备注：</view>
+                <input name="content" class="search-input" placeholder=""
+                       placeholder-class="placeholder-style" value="{{printinfo[printindex].info.content}}" type=""/>
+            </view>
+        </view>
+        <view class='twobtn'>
+            <view class="leftbtn" bindtap='hideshow'>取消</view>
+            <button form-type="submit" class="rightbtn">确定</button>
+        </view>
+    </form>
+</view>
+<viewv class="commodity_screen" wx:if="{{showprint || showmake}}"></viewv>

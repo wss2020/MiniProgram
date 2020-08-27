@@ -1,0 +1,23 @@
+.popupconcent{
+    padding: 20rpx 0 10rpx;
+    margin: 0rpx 5%;
+    border-bottom: solid 2rpx #cccccc;
+    display: flex;
+    flex-direction: column;
+}
+.popupconcent1{
+    font-size: 28rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.popupconcent2{
+    font-size: 28rpx;
+    color: #cccccc;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.addcu{
+    font-weight: bold;
+}

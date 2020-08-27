@@ -1,0 +1,61 @@
+<!--pages/tool/card/admin/detail/query-detail/query-detail.wxml-->
+<wxs module="fmt" src="../../../../../../fmt.wxs"></wxs>
+<view class="card_detail">
+    <view class="topname">
+        <view class="topname1">{{data.name}}</view>
+        <view class="topname2">{{status[data.status]}}</view>
+    </view>
+    <view class="creddetail">
+        <view class="creddetail1">
+            <view class="creddetail11">型号：</view>
+            <view class="creddetail12">{{data.no}}</view>
+        </view>
+        <view class="creddetail1">
+            <view class="creddetail11">卡号：</view>
+            <view class="creddetail12">{{data.cardNo}}</view>
+        </view>
+        <view class="creddetail1">
+            <view class="creddetail11">密码：</view>
+            <view class="creddetail12">{{data.password}}</view>
+        </view>
+    </view>
+
+
+    <view class="creddetail" style="margin-top: 100rpx;font-size: 36rpx;">
+        <view class="exchangeinfo">兑换信息</view>
+        <view class="creddetail1">
+            <view class="creddetail11">兑换人：</view>
+            <view class="creddetail12">{{exchangeinfo.name}}</view>
+        </view>
+        <view class="creddetail1">
+            <view class="creddetail11">兑换订单号：</view>
+            <view class="creddetail12">{{exchangeinfo.order_id}}</view>
+        </view>
+        <view class="creddetail1">
+            <view class="creddetail11">兑换订单状态：</view>
+            <view class="creddetail12">{{order_status[exchangeinfo.status]}}</view>
+        </view>
+        <view class="creddetail1">
+            <view class="creddetail11">兑换产品：</view>
+            <view class="creddetail12">{{exchangeinfo.pro_name}}</view>
+        </view>
+        <view class="creddetail1">
+            <view class="creddetail11">兑换时间：</view>
+            <view class="creddetail12">{{exchangeinfo.time}}</view>
+        </view>
+<!--        <view class="creddetail1">-->
+<!--            <view class="creddetail11">到期时间：</view>-->
+<!--            <view class="creddetail12">{{detail.expire}}</view>-->
+<!--        </view>-->
+<!--        <view class="creddetail1">-->
+<!--            <view class="creddetail11">备注：</view>-->
+<!--            <view class="creddetail12">{{detail.content}}</view>-->
+<!--        </view>-->
+    </view>
+</view>
+
+
+
+
+
+

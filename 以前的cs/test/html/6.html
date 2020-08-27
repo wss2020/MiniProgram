@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    #container {
+        width: 100px;height: 100px;
+        border: 1px solid #ccc;overflow-x: scroll;}
+    #content {width: 250px;background-color: #ccc;}
+</style>
+<body>
+
+<div id="container">
+    <div id="content">Click the button to slide right!</div>
+</div>
+<button id="slide" type="button">Slide right</button>
+
+</body>
+</html>
+<script>
+    const button = document.getElementById('slide');
+    button.onclick = function () {
+        document.getElementById('container').scrollLeft += 20;
+    };
+
+
+</script>
+

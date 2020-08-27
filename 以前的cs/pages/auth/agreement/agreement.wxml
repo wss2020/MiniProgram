@@ -1,0 +1,3 @@
+<!--pages/auth/agreement/agreement.wxml-->
+<web-view src="{{src}}"></web-view>
+<!--<web-view src="https://www.dianlinet.com/index.php/customer/login/agreement.html"></web-view>-->

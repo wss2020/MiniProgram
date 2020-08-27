@@ -1,0 +1,2 @@
+/* pages/tool/card/admin/detail/admin-detail/admin-detail.wxss */
+@import "/pages/tool/card/admin/query/query.wxss";

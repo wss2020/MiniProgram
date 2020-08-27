@@ -1,0 +1,195 @@
+<!--pages/tool/recommending/recommending.wxml-->
+<view>
+
+    <!--  头部  -->
+    <!--        <image style="width: 200rpx;" mode="widthFix" src="{{info.logo}}"></image>-->
+
+    <view class="company">
+        <view class="company_left">
+            <image class="company_logo" wx:if="{{info.logo}}" src="{{info.logo}}"></image>
+            <image class="company_logo" wx:else src="/image/tool/logo.png"></image>
+            <view class="company_info">
+                <view class="company_name" wx:if="{{info.title}}">{{info.title}}</view>
+                <view class="company_name" wx:else>某某方案</view>
+                <view class="company_head">联系人:{{info.name}}</view>
+                <view class="company_tel">电话：{{info.tel}}</view>
+            </view>
+        </view>
+        <view class="company_right">
+            <image src="/image/tool/icon.png" bindtap="modify_title"></image>
+        </view>
+    </view>
+
+    <!--  添加方案  -->
+    <view class="recommend_content"  wx:if="{{list.length > 0}}">
+        <view class="recommendlist">
+            <block wx:for="{{list.length}}" wx:key="">
+                <view class="recom {{current==index ? 'addcolor' : ''}}" bindtap="choose_recommend"
+                      data-index="{{index}}" data-plan_id="{{plan_id}}">
+                    <view class="recom_name">方案{{index + 1}}</view>
+                    <image class="recom_del" src="/image/tool/detele.png" bindtap="deleterecommend"
+                           data-plan_id="{{list[index].plan_id}}" data-index="{{index + 1}}"></image>
+                </view>
+            </block>
+        </view>
+        <image wx:if="{{list.length < 3}}" class="addrecom" bindtap="addrecommend" src="/image/tool/icon0.png"></image>
+    </view>
+
+    <!--  产品  -->
+    <block wx:for="{{list}}" wx:key="">
+        <view wx:if="{{current == index}}" class="pro_content">
+            <block wx:for="{{item.sku}}" wx:key="">
+                <view class="modify_pro">
+                    <view class="modify_top">
+                        <view class="proimg"  bindtap="prodetail" data-skuid="{{item.skuid}}">
+                            <image src="{{item.pic}}"></image>
+                        </view>
+
+                        <view class="proinfo">
+                            <view class="proskuid">编号：{{item.skuid}}</view>
+                            <view class="proname">{{item.sku_name}}</view>
+
+                            <view class="modify_info">
+                                <view class="modify_price">
+                                    <view class="company_price">￥{{item.price_sup}}</view>
+                                    <view class="modify_price3">￥{{item.price}}</view>
+                                    <view class="modify_price4">供货价</view>
+                                </view>
+                                <view class="addline"></view>
+                                <view class="modify_price">
+                                    <view class="modify_price1">￥{{item.price_sale}}</view>
+                                    <view class="modify_price2">市场价</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="modify_bottom" wx:if="{{item.content}}">备注：{{item.content}}</view>
+                    <view class="modify_bottom" wx:else>备注：无</view>
+                    <view class="left_position">
+                        <view class="pro_icon" bindtap="delete_product" data-id="{{item.id}}">
+                            <image src="/image/tool/delpro.png"></image>
+                        </view>
+                        <view class="pro_icon1" bindtap="open_modify" data-proname="{{item.sku_name}}"
+                              data-id="{{item.id}}" data-proprice="{{item.price}}" data-procontent="{{item.content}}" >
+                            <image src="/image/tool/icon1.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </block>
+
+    <view class="addpro">
+        <image src="/image/tool/addpro.png" mode="widthFix" bindtap="addproduct"></image>
+    </view>
+
+
+    <view style="height:200rpx;"></view>
+
+
+
+    <view class='new_foot' wx:if="{{list.length > 0}}">
+            <button class='new_btn1' bindtap="showaddprice">批量加价</button>
+            <button class='new_btn1' bindtap="preview">预览方案</button>
+            <button class='new_btn1' bindtap="check">确认生成</button>
+    </view>
+
+<!--    <view class='foot' wx:if="{{list.length > 0}}">-->
+<!--        <view class='foot_left' bindtap="preview" >-->
+<!--            <button class='foot_left1'>预览方案</button>-->
+<!--        </view>-->
+<!--        <view class='foot_right' bindtap="check" >-->
+<!--            <button class='foot_right1'>确认生成</button>-->
+<!--        </view>-->
+<!--    </view>-->
+
+
+    <view class="info_check"  wx:if="{{showmodifyprice}}">
+        <view class='info_title'>批量加价</view>
+        <form  bindsubmit="addprice" report-submit="true">
+            <radio-group class="radio-group" bindchange="radioChange">
+                <radio class="radio"  value="0" checked="{{addpricetype == 0}}">
+                    <text>加价格</text>
+                </radio>
+                <radio class="radio"  value="1" checked="{{addpricetype == 1}}">
+                    <text>加百分比</text>
+                </radio>
+            </radio-group>
+            <view class='ranges'  wx:if="{{addpricetype == 0}}">
+                <view class="inputtwo">
+                    <view>加(￥)：</view>
+                    <input name="price" class="search-input" placeholder=""
+                           placeholder-class="placeholder-style" value="{{}}" type="number"/>
+                </view>
+            </view>
+            <view class='ranges'  wx:if="{{addpricetype == 1}}">
+                <view class="inputtwo">
+                    <view>加(%)：</view>
+                    <input name="price" class="search-input" placeholder=""
+                           placeholder-class="placeholder-style" value="{{}}" type="number"/>
+                </view>
+            </view>
+            <view class='twobtn1'>
+                <view class="leftbtn" bindtap='hideshow'>取消</view>
+                <button form-type="submit" class="rightbtn">确定</button>
+            </view>
+        </form>
+    </view>
+
+    <!--弹出信息确认框 -->
+    <viewv class="commodity_screen" wx:if="{{showmodify || showmodifyprice}}"></viewv>
+    <view class="info_check" wx:if="{{showmodify}}">
+        <view class='info_title'>信息修改</view>
+        <form  bindsubmit="formsubmit" report-submit="true">
+            <view class='ranges'>
+                <view class="inputtwo">
+                    <view>商品名称：</view>
+                    <input name="name" class="search-input" placeholder=""
+                           placeholder-class="placeholder-style" value="{{proname}}" type=""/>
+                </view>
+                <view class="inputtwo">
+                    <view>供货价：￥</view>
+                    <input name="price" class="search-input" placeholder=""
+                           placeholder-class="placeholder-style" value="{{proprice}}" type=""/>
+                </view>
+                <view class="inputtwo">
+                    <view>备注：</view>
+                    <input name="content" class="search-input" placeholder=""
+                           placeholder-class="placeholder-style" value="{{procontent}}" type=""/>
+                </view>
+            </view>
+            <view class='twobtn'>
+                <view class="leftbtn" bindtap='hideshow'>取消</view>
+                <button form-type="submit" class="rightbtn">确定</button>
+            </view>
+        </form>
+    </view>
+
+
+<!--    &lt;!&ndash;弹出复制链接框 &ndash;&gt;-->
+<!--    <viewv class="commodity_screen" wx:if="{{showlink}}"></viewv>-->
+<!--    <view class="info_check" wx:if="{{showlink}}">-->
+<!--        <view class='info_title'>复制链接</view>-->
+<!--            <view class='ranges'>-->
+<!--                <view></view>-->
+<!--            </view>-->
+<!--            <view class='twobtn'>-->
+<!--                <button form-type="submit" class="rightbtn">复制</button>-->
+<!--            </view>-->
+<!--    </view>-->
+
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,128 @@
+/* pages/tool/card/make/making/making.wxss */
+@import "/pages/template/common/css.wxss";
+page{background: #f3f5f6;}
+
+.fixtop{
+    position: fixed;top:0;left: 0;z-index: 1;
+    width: 100%;
+    display:flex;flex-direction: column;
+}
+.tipimg{width:100%;height:86rpx; background: #f3f5f6;}
+.choosetem{display:flex;flex-direction: column;background: #ffffff;padding-bottom: 20rpx;}
+.first{display: flex;justify-content: space-between;margin:20rpx 30rpx 0;}
+.first1{font-size: 26rpx;color: #333333;}
+.first2{
+    display: flex;justify-content: center;align-items: center;
+    font-size:22rpx; width: 140rpx;height: 40rpx;
+    color: #ffffff;background: #e33d3d;border-radius: 200rpx;
+}
+.second{
+    display: flex;justify-content: space-between;align-items: center;
+    font-size: 28rpx;margin: 10rpx 40rpx 10rpx 30rpx;color: #333333;
+}
+.cardpage{border-bottom: solid 2px #e33d3d;font-weight:bold;color:#e33d3d;}
+.second1{text-align: center;padding: 18rpx 0 12rpx;}
+
+
+.second2{width:26%;text-align: center;padding-bottom: 20rpx;}
+.second21{font-size: 28rpx;}
+.second22{font-size: 22rpx;}
+.second3{width:26%;text-align: center;padding-bottom: 20rpx;}
+.second31{font-size: 28rpx;}
+.second32{font-size: 22rpx;}
+
+
+.style{
+    width: 300rpx;line-height: 60rpx;text-align: center;margin:20rpx 0;
+    color: #ffffff;background: #e33d3d;font-size: 30rpx;border-radius: 200rpx;
+}
+.cardtype{
+    display: flex;flex-direction: row;justify-content: space-between;
+    padding:20rpx 200rpx 20rpx;background: #f3f5f6;
+}
+.cardtype  .type1{
+    display: flex;align-items: center;justify-content: center;
+    width: 100rpx;height: 40rpx;border-radius: 200rpx;font-size: 28rpx;
+}
+.cardtype  .type2{border:solid 2rpx #999999;}
+.addcolor{border:solid 2rpx #e33d3d;color:#e33d3d;}
+
+
+.designer {
+    width: 100%;
+    background-color: aliceblue;
+    position: relative;
+}
+
+.bg{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #ffffff;
+    overflow: hidden;
+    z-index: 3000;
+}
+.bg{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+.cardimgs {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 10px;
+}
+.cardimg{width: 710rpx;}
+.cardcontent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* border-bottom: solid 1px #c1c1c1; */
+    padding: 9px 0 3px;
+}
+.cardleft{font-size: 28rpx;}
+.cardright{
+    display: flex;align-items:center;justify-content: center;
+    height:40rpx;width:90rpx;
+    font-size: 20rpx;color: #999999;border: solid 1px #c1c1c1;border-radius: 200rpx
+}
+
+
+.cardSelect{
+    display:flex;justify-content:space-between;
+    margin:20rpx 20rpx 0;
+}
+.cardSelect view{
+    display: flex;justify-content: center;align-items: center;
+    width:100rpx;height:40rpx;border-radius: 200rpx;
+    font-size: 24rpx;
+}
+.define_color1{
+    color:#ffffff;background: #e33d3d;
+}
+.define_color2{
+    color:#999999;background: #f3f5f6;
+}
+
+.modeMaking image{width:500rpx;height:500rpx;margin:120rpx 0 0 124rpx;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,120 @@
+<!--pages/tool/card/make/detail/detail.wxml-->
+<wxs module="fmt" src="../../../../../fmt.wxs"></wxs>
+<view class="card_detail">
+    <view class="topname">
+        <view class="topname1">{{detail.name}}</view>
+        <view class="topname2" wx:if="{{detail.status == 1}}">待提交</view>
+        <view class="topname2" wx:if="{{detail.status>1 && detail.status <=4}}">待审核</view>
+        <view class="topname2" wx:if="{{detail.status == 5}}">已完成</view>
+        <view class="topname2" wx:if="{{detail.status == 6}}">未通过</view>
+    </view>
+    <view class="cardimg">
+        <view class="cardimg1">
+            <image class="cardimg12" bindtap="imgpre" data-src="{{detail.pic}}" mode="widthFix" style="width:600rpx;" src="{{detail.pic}}"></image>
+            <view class="cardimg12">券样</view>
+        </view>
+    </view>
+    <view class="creddetail">
+        <view class="creddetail1">
+            <view class="creddetail11">型号：</view>
+            <view class="creddetail12">{{detail.no}}</view>
+        </view>
+        <view class="creddetail1">
+            <view class="creddetail11">类型：</view>
+            <view class="creddetail12" wx:if="{{detail.type == 1}}">普通卡</view>
+            <view class="creddetail12" wx:else="{{detail.type == 2}}">积分卡</view>
+        </view>
+        <view class="creddetail1">
+            <view class="creddetail11">分类：</view>
+            <view class="creddetail12">
+                <block wx:for="{{cardcategory}}" wx:key="">
+                    <text wx:if="{{item.id == detail.category1}}">{{item.name}}</text>
+                </block>
+            </view>
+        </view>
+<!--        <view class="creddetail1">-->
+<!--            <view class="creddetail11">销售价：</view>-->
+<!--            <view class="creddetail12">{{fmt.formatCurrency(detail.no)}}</view>-->
+<!--        </view>-->
+        <view class="creddetail2" wx:if="{{detail.tips}}">
+            <view class="creddetail21">兑换提示：
+                <text class="creddetail22">{{detail.tips}}</text>
+            </view>
+        </view>
+        <view class="creddetail1">
+            <view class="creddetail11">到期时间：</view>
+            <view class="creddetail12">{{detail.expire}}</view>
+        </view>
+        <view class="creddetail1" wx:if="{{detail.content}}">
+            <view class="creddetail11">备注：</view>
+            <view class="creddetail12">{{detail.content}}</view>
+        </view>
+        <view class="creddetail1">
+            <view class="creddetail11">状态：</view>
+            <view class="creddetail13" wx:if="{{detail.status == 1}}">待提交</view>
+            <view class="creddetail13" wx:if="{{detail.status>1 && detail.status <=4}}">待审核</view>
+            <view class="creddetail13" wx:if="{{detail.status == 5}}">已完成</view>
+            <view class="creddetail13" wx:if="{{detail.status == 6}}">未通过</view>
+        </view>
+    </view>
+    <block wx:for="{{detail.makeList}}" wx:key="">
+        <view class="makerecord">
+            <view class="makerecord1">
+                <view class="makerecord11">张数：</view>
+                <view class="makerecord12">{{item.num}}张</view>
+            </view>
+            <view class="makerecord1">
+                <view class="makerecord11">卡号段：</view>
+                <view class="makerecord12"> {{item.startNo}} - {{item.endNo}}</view>
+            </view>
+            <view class="makerecord1">
+                <view class="makerecord11">印刷状态：</view>
+                <view class="makerecord12" wx:if="{{item.status == 1}}">未印刷</view>
+                <view class="makerecord12" wx:if="{{item.status == 2}}">印刷中</view>
+                <view class="makerecord12" wx:if="{{item.status == 3}}">已完成</view>
+            </view>
+            <view class="makerecord1">
+                <view class="makerecord11">生成时间：</view>
+                <view class="makerecord12"> {{item.make}}</view>
+            </view>
+            <view class="makerecord1"  wx:if="{{item.delivery}}">
+                <view class="makerecord11">交货时间：</view>
+                <view class="makerecord12"> {{item.delivery}}</view>
+            </view>
+            <view class="makerecord1" wx:if="{{item.address}}">
+                <view class="makerecord11">收卡地址：</view>
+                <view class="makerecord12"> {{item.address}}</view>
+            </view>
+            <view class="makerecord1" wx:if="{{item.mobile}}">
+                <view class="makerecord11">收卡电话：</view>
+                <view class="makerecord12"> {{item.mobile}}</view>
+            </view>
+        </view>
+    </block>
+</view>
+
+
+<!-- 卡券产品 -->
+<view style="font-size: 32rpx;margin-left: 30rpx;">卡券产品：</view>
+<view class="products">
+    <block wx:for="{{productlist}}" wx:key="">
+        <view class="product" bindtap="productdetail" data-id="{{item.pro_id}}">
+            <image class="img" src="{{item.pic}}"></image>
+            <view class="info">
+                <view class="addinfo">
+                    <view class="number">编号：{{item.pro_id}}</view>
+                </view>
+                <view class="name">{{item.name}}</view>
+                <view class="addinfo1">
+                    <view class="prices">
+                        <text class="price">{{fmt.formatCurrency(item.price)}}</text>
+                        <text class="oprice">{{fmt.formatCurrency(item.price_sale)}}</text>
+                        <text class="dprice">{{fmt.toFixed(item.price,item.price_sale)}}折</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+</view>
+
+

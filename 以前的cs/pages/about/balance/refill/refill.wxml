@@ -1,0 +1,10 @@
+<!--pages/about/balance/refill/refill.wxml-->
+<view>
+    <form bindsubmit="formsubmit" report-submit="true">
+        <view  class="charge_input">
+            <text>￥</text><input name="amount" placeholder="充值金额" value="{{amount}}"  type="number"  />
+        </view>
+<!--        <view wx:if="{{processing}}">充值中</view>-->
+        <button form-type="submit" wx:if="{{!processing}}"  class="charge"> 充值</button>
+    </form>
+</view>

@@ -1,0 +1,47 @@
+/* pages/tool/card/make/making/selfmake/cardproduct/cardproduct.wxss */
+.pro_content{display: flex;flex-direction: column;}
+.modify_pro{display: flex;flex-direction: column; box-sizing: border-box;
+    width:710rpx;
+    /*height:380rpx; */
+    position: relative;
+    margin:20rpx 20rpx 0 20rpx; padding:20rpx 0 0 20rpx; border:solid 2rpx #cccccc;border-radius: 12rpx;}
+.modify_top{display: flex;flex-direction: row;}
+.proimg{width:200rpx;}
+.proimg image{width:200rpx;height:200rpx;}
+.proinfo{display: flex;flex-direction: column; margin-left: 20rpx;}
+.proskuid{font-size: 32rpx;}
+.proname{
+    width: 380rpx;height: 90rpx;font-size: 32rpx;color: #000;
+    word-break: break-all;text-overflow: -o-ellipsis-lastline;overflow: hidden;
+    text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;
+}
+.price{font-size: 32rpx;}
+
+
+.left_position{position: absolute;top:8rpx;right: 6rpx;z-index: 10;}
+.pro_icon{display: flex;justify-content: flex-end;}
+.pro_icon image{width:52rpx;height:52rpx;}
+
+.addpro{margin:50rpx 0;display: flex;justify-content: center;}
+.addpro image{width: 700rpx;}
+
+.btn_foot {
+    position: fixed;
+    left: 0;
+    bottom: 0rpx;
+    width: 100%;
+    background: #fff;
+    height: 110rpx;
+    border-top:solid 2rpx #f4f4f4;
+}
+.btn_bottom {
+    margin: 18rpx auto;
+    width: 90%;
+    text-align: center;
+    height: 80rpx;
+    line-height: 80rpx;
+    color: #fff;
+    font-size: 36rpx;
+    background: #e33d3d;
+    border-radius: 200rpx;
+}

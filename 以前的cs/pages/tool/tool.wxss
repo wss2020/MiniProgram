@@ -1,0 +1,53 @@
+/* pages/tool/tool.wxss */
+page{background: #f3f5f6;}
+
+.do{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 200rpx;
+    height:60rpx;
+    margin-left: 20rpx;
+    font-size: 26rpx;
+    color: #ffffff;
+    background: #c60c0c;
+}
+
+
+.recommends{margin-top: 20rpx;}
+.recom_content{display: flex;flex-direction: column;background: #ffffff;border-radius: 12rpx;
+    margin:20rpx 20rpx 0;padding:20rpx 20rpx 20rpx 30rpx;}
+.top_con{display: flex;flex-direction: column;}
+.top_con_name{font-size: 34rpx;}
+.top_con_time{font-size: 28rpx;color:#777777;margin: 20rpx 0 20rpx;}
+.bottom_con{display: flex;flex-direction: row;justify-content: flex-end;}
+.recommend_btn1{
+    width: 60rpx;margin-left: 20rpx;padding: 6rpx 30rpx;
+    border: solid 1px #a1a1a1;border-radius: 200px;font-size: 26rpx;color: #555555;}
+/*.recommend_btn{*/
+/*    width: 60rpx;margin-left: 20rpx;padding: 6rpx 30rpx;border: solid 1px #c60c0c;*/
+/*    border-radius: 200px;font-size: 26rpx;color: #ffffff;background: #c60c0c;}*/
+
+.recommend_btn{
+    width: 120rpx;
+    margin:0 0 0 10px;
+    padding: 6rpx 30rpx;
+    border: solid 1px #c60c0c;
+    border-radius: 200px;
+    font-size: 26rpx;
+    color: #ffffff;
+    background: #c60c0c;}
+
+
+
+/*商品分类*/
+.taps{
+    display: flex;flex-direction: row;flex-wrap: wrap;margin:20rpx 0;
+    background: #ffffff;border-top:solid 2rpx #f2f2f2;padding:20rpx 0;
+    border-radius: 16rpx;
+}
+.tap_one{display: flex;flex-direction: column;margin: 14rpx 0.5% 4rpx 0.5%;width: 24%;}
+.tap_one image{margin: 0 auto; /*border-radius: 50%;*/width: 94rpx;height: 94rpx;}
+.tap_name{color:#333333;text-align: center;font-size: 24rpx;margin-top: 10rpx;}
+.tap_namess{color:#c40841;text-align: center;font-size: 26rpx;}

@@ -1,0 +1,79 @@
+<!--pages/tool/card/admin/admin.wxml-->
+<view class="setfont">
+    <view class="topposition">
+        <view class="row">
+            <view class="admin_btn" bindtap="card_operate">批量操作</view>
+            <view class="admin_btn" bindtap="card_query">卡券查询</view>
+        </view>
+    </view>
+    <view style="height: 110rpx;"></view>
+
+    <view class="products">
+        <block wx:for="{{openlist}}" wx:key="">
+            <view class="product">
+                <image class="img" mode="widthFix" bindtap="productdetail" data-id="{{item.id}}"
+                       bindtap="detail" data-index="{{index}}" src="{{item.pic}}">
+                </image>
+                <view class="info">
+                    <view class="name" bindtap="detail" data-index="{{index}}">{{item.cardName}}</view>
+                    <view class="addinfo1" bindtap="detail" data-index="{{index}}">
+                        <view class="oprice">
+                            <text>数量：{{item.num}}</text>
+                            <text class="opennums">已开：{{item.opened}}</text>
+                        </view>
+                        <view class="oprice">卡号段：{{item.startNo}} - {{item.endNo}}</view>
+                        <view class="otime">创建时间：{{item.time}}</view>
+                        <view class="otime">过期时间：{{item.expire}}</view>
+                    </view>
+                    <view class="option">
+                        <view class="option1" wx:if="{{(item.num ==  item.opened) &&  item.opened > 0 }}">已开通</view>
+                        <view class="option2" wx:if="{{item.opened == 0 && item.num > 0}}"
+                              bindtap="apply_opencard" data-index="{{index}}">开卡
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+
+    <view class="bottom_taps" wx:if="{{pageEnd}}">已经到底了</view>
+
+    <view style="height:130rpx;"></view>
+    <view class='card_foot'>
+        <view class="card_btn" bindtap="mack_card">
+            <image src="/image/card/unmake.png"></image>
+            <view class="btncolor">制作</view>
+        </view>
+        <view class="card_btn" bindtap="admin_card">
+            <image src="/image/card/admin.png"></image>
+            <view class="btncolor1">管理</view>
+        </view>
+        <view class="card_btn" bindtap="statistics_card">
+            <image src="/image/card/unstatistics.png"></image>
+            <view class="btncolor">统计</view>
+        </view>
+    </view>
+</view>
+
+<!--弹出信息确认框 -->
+<viewv class="commodity_screen" wx:if="{{showbox}}"></viewv>
+<view class="info_check" wx:if="{{showbox}}">
+    <form  bindsubmit="opencard" report-submit="true">
+        <view class='info0'>开卡</view>
+        <view class='info1'>您即将开通{{openlist[openno_index].num}}张卡</view>
+        <view class='info2'>卡号段：{{openlist[openno_index].startNo}} - {{openlist[openno_index].endNo}}</view>
+        <view class="inputtwo">
+            <view>销售价：</view>
+            <input name="price" class="search-input" placeholder="请输入销售价" focus="{{true}}"
+                   placeholder-class="placeholder-style"  value="" type="number"/>
+        </view>
+        <view class='twobtn'>
+            <view class="leftbtn" bindtap='hideshow'>取消</view>
+            <button class="rightbtn" form-type="submit"  data-start="{{openlist[openno_index].startNo}}"
+                    data-end="{{openlist[openno_index].endNo}}">确定
+            </button>
+        </view>
+    </form>
+</view>
+
+

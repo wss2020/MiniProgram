@@ -1,0 +1,72 @@
+<!--pages/index/chat/chat.wxml-->
+<view>
+    <!--<view class="head return" >-->
+    <!--    <view class="head_title" style="top:{{inputHeight + 6}}px">-->
+    <!--        <view class="icon" bindtap="return">返回</view>-->
+    <!--        <view class="name"> {{room.user.nick}} </view>-->
+    <!--    </view>-->
+    <!--</view>-->
+
+    <scroll-view  scroll-y="true"   scroll-into-view="{{itemid}}"  style="height:{{windowHeight}}px;" class="chat_content">
+        <view class="messageheight {{showpage? 'show' : 'hide'}}">
+            <!--   <view class="messageheight">-->
+            <block wx:for="{{messages}}" wx:key="">
+                <view class="showtime">{{item.timestr}}</view>
+                <view class="showleft" wx:if="{{item.source == 2 && item.type == 1}}">
+                    <view class="showleft_uers"><image src="{{room.user.avator}}"></image></view>
+                    <view class="showleft_icon"><image src="/image/lefticon.png"></image></view>
+                    <view class="showleft_font">{{item.title}}</view>
+                </view>
+                <view class="showleft" wx:if="{{item.source == 2 && item.type == 2}}">
+                    <view class="showleft_uers"><image src="{{room.user.avator}}"></image></view>
+                    <image class="img" src="{{item.pic}}" bindtap="previewImg" mode="widthFix" data-url="{{item.pic}}"></image>
+                </view>
+                <view class="showleft" wx:if="{{item.source == 2 && item.type == 3}}">
+                    <view class="showleft_uers"><image src="{{room.user.avator}}"></image></view>
+                    <view class="showleft_icon"><image src="/image/lefticon.png"></image></view>
+                    <view class="card" data-page="{{item.page}}" ontap="tapcard">
+                        <view class="cardname">{{item.title}}</view>
+                        <view class="cardimg" wx:if="{{item.pic.length >0}}"><image src="{{item.pic}}"></image></view>
+                        <view class="cardimg" wx:else><image src="/image/guide.png"></image></view>
+                    </view>
+                </view>
+
+                <view class="showright" wx:if="{{item.source == 1 && item.type == 1}}">
+                    <view class="showright_uers"><image src="{{room.mates[item.userid].avator}}"></image></view>
+                    <view class="showright_icon"><image src="/image/righticon.png"></image></view>
+                    <view class="showright_font">{{item.title}}</view>
+                </view>
+                <view class="showright" wx:if="{{item.source == 1 && item.type == 2}}">
+                    <view class="showright_uers"><image src="{{room.mates[item.userid].avator}}"></image></view>
+                    <image class="img" src="{{item.pic}}" bindtap="previewImg" mode="widthFix" data-url="{{item.pic}}"></image>
+                </view>
+                <view class="showright" wx:if="{{item.source == 1 && item.type == 3}}">
+                    <view class="showright_uers"><image src="{{room.mates[item.userid].avator}}"></image></view>
+                    <view class="showright_icon"><image src="/image/righticon.png"></image></view>
+                    <view class="card">
+                        <view class="cardname">{{item.title}}</view>
+                        <view class="cardimg"><image src="{{item.pic}}"></image></view>
+                    </view>
+                </view>
+            </block>
+            <view id="bottomid" style="height: 110rpx;"></view>
+        </view>
+    </scroll-view>
+
+    <!--    <view id="bottom_empty" style="height: 200rpx;"></view>-->
+
+    <!--    -->
+    <view class="bottom_keyboard">
+        <form bindreset="res" bindsubmit="send" report-submit="true">
+            <input class="searchs"  placeholder="" value="{{inputvalue}}"
+                   confirm-type="send" bindinput="layoutvalue"  bindconfirm="sendconfirm"
+                   confirm-hold="true" cursor-spacing="10"  focus="{{focus}}"/>
+            <!--               <button  class='sends' wx:if="{{showbtn==2}}"  form-type="submit">发送</button>-->
+            <image class="cs2"   ontap="sendpic" src="/image/cs2.png"></image>
+        </form>
+    </view>
+
+
+
+
+</view>

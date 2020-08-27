@@ -1,0 +1,83 @@
+<!--pages/tool/card/make/making/making.wxml-->
+<view class="makingmain">
+    <view class="fixtop">
+        <image class="tipimg" src="/image/card/tips1.png"></image>
+        <view class="choosetem">
+            <view class="first">
+                <view class="first1">选择卡券模版</view>
+                <!--                <view class="first2" bindtap="selfmake">自己设计</view>-->
+            </view>
+            <view class="second">
+                <block wx:for="{{cardChoose}}" wx:key="">
+                    <view class="second1 {{cardindex== index+1?'cardpage':''}}" data-index="{{index+1 }}"
+                          bindtap="cardpage">{{item}}
+                    </view>
+                </block>
+            </view>
+            <view class="cardSelect">
+                <block wx:for="{{scene}}" wx:key="">
+                    <view class="{{clickScene == index ? 'define_color1' : 'define_color2'}}" bindtap="clickScene"
+                          data-index="{{index}}">{{item.name}}
+                    </view>
+                </block>
+            </view>
+        </view>
+    </view>
+
+    <view style="height:310rpx;"></view>
+    <view style="display:flex;flex-direction: column;">
+        <block wx:for="{{cardinfo[cardindex]}}" wx:key="">
+            <view  hidden="{{clickScene !=0}}"  class="cardimgs" bindtap="makeCard" data-amode="{{item.a_template_id}}"
+                  data-bmode="{{item.b_template_id}}" data-products="{{item.products}}">
+                <image mode="widthFix" class="cardimg" src="{{item.pic}}"></image>
+                <view class="cardcontent">
+                    <view class="cardleft">{{item.name}}</view>
+                    <view class="cardright">{{item.scene_name}}</view>
+                </view>
+            </view>
+            <view wx:if="{{item.scene  == clickScene}}"  class="cardimgs" bindtap="makeCard" data-amode="{{item.a_template_id}}"
+                  data-bmode="{{item.b_template_id}}" data-products="{{item.products}}">
+                <image mode="widthFix" class="cardimg" src="{{item.pic}}"></image>
+                <view class="cardcontent">
+                    <view class="cardleft">{{item.name}}</view>
+                    <view class="cardright">{{item.scene_name}}</view>
+                </view>
+            </view>
+        </block>
+        <view  wx:if="{{!scene[clickScene].value && clickScene != 0}}" class="modeMaking">
+            <image  src="https://files.dianlinet.com/dianli/images/2019-12-27/15-24-49.jpg"></image>
+        </view>
+        <view wx:if="{{clickScene == 0 || scene[clickScene].value}}" class="bottom_taps" >已经到底了</view>
+    </view>
+
+
+
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

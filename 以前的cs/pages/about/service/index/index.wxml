@@ -1,0 +1,23 @@
+<!--<view class="head">-->
+<!--    <view class="head_title">点礼商户端（20）</view>-->
+<!--</view>-->
+<view class="main">
+    <block wx:for="{{rooms}}" wx:key="">
+        <form bindsubmit="gochat" report-submit="true" data-roomid="{{item.roomid}}">
+            <button class="message"  form-type="submit">
+                <view class="message-left">
+                    <image src="{{item.avator}}"></image>
+                    <view class="{{item.unread >9 ? 'num1': 'num'}}" wx:if="{{item.unread>0}}">{{item.unread}}</view>
+                </view>
+                <view class="message-right">
+                    <view class="content">
+                        <view class="name">{{item.nick}}</view>
+                        <view class="info">{{item.msg}}</view>
+                    </view>
+                    <view class="time">{{item.timestr}}</view>
+                </view>
+            </button>
+        </form>
+    </block>
+</view>
+

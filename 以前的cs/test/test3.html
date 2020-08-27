@@ -1,0 +1,57 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--    <script src="jquery-2.0.3.min.js"></script>-->
+<!--</head>-->
+<!--<body>-->
+
+
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--</head>-->
+<!--<div class="refresh">-->
+<!--    1111111111111111111-->
+<!--    1111111111111111111-->
+<!--    1111111111111111111-->
+<!--</div>-->
+<!--<div>-->
+<!--    &lt;!&ndash;不刷新这边的内容&ndash;&gt;-->
+<!--    22222222222222222222-->
+<!--</div>-->
+<!--<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--    $(function(){-->
+<!--        setInterval(function () { $(".refresh").load(location.href + " .refresh"); }, 5000);-->
+<!--    })-->
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->
+
+<html>
+<head>
+    <script type="text/javascript" src="jquery-2.0.3.min.js"></script>
+    <script type="text/javascript">
+        function getOtherMessage(){
+            $.ajax({
+                type:"post",
+                url:"${pageContext.request.contextPath}/getOtherMessage.do",
+                success:function(msg){
+                    $("#view").html(msg);
+                },
+                error:function(){
+                    alert("wrong");
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="修改" onclick="getOtherMessage();" />
+<div id="view">
+    456
+</div>
+</body>
+</html>

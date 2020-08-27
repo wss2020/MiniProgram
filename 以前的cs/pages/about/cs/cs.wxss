@@ -1,0 +1,51 @@
+/* pages/about/cs/cs.wxss */
+@import "/pages/tool/recommending/newadddpro/newadddpro.wxss";
+
+/* 全部筛选*/
+.one_bg {
+    width: 100%;height: 100%;position: fixed;top: 0;left: 0;
+    background: #000;opacity: 0.6;overflow: hidden;z-index: 1980;
+}
+.one_content {
+    position: fixed;top: 0rpx;left: 0;z-index: 2000;
+    height: 100%;width: 500rpx;
+    background: #ffffff;border-top: solid 1px #999999;
+    overflow: hidden;display: flex;flex-direction: column;
+    padding-left:50rpx;
+}
+.contenttop{
+    display:flex;flex-direction: row;justify-content: space-between;align-items: center;
+    margin: 40rpx 40rpx 0 0;
+}
+.tipstext{font-size: 36rpx;}
+.backvbtn{font-size: 30rpx;background: #999999;border-radius: 200rpx;color:#ffffff;padding:4rpx 20rpx;}
+.ratetext{font-size: 30rpx;margin-top: 50rpx;}
+.pricearea{font-size: 30rpx;margin-top: 60rpx;}
+.inputnum{display: flex;margin-top: 14rpx;}
+.inputnum input{width:200rpx;height:50rpx;  font-size: 28rpx;border-radius: 200rpx;border:solid 1px #777777;text-align: center;}
+.inputnum text{margin:0 20rpx;}
+.commendpro { display: flex;justify-content: space-between;align-items: center;padding:0 44rpx 0 20rpx;
+    width:230rpx;height:56rpx;margin-top:56rpx;
+    border-radius: 200rpx;border:solid 1px #777777;
+}
+.commendpro image{ width:44rpx;height:44rpx;}
+.commendpro view{ font-size: 30rpx; }
+.commendpro1 { display: flex;justify-content: space-between;align-items: center;padding:0 44rpx 0 20rpx;
+    width:230rpx;height:56rpx;margin-top:56rpx;
+    border-radius: 200rpx;border:solid 1px #e42828;
+}
+.commendpro1 image{ width:44rpx;height:44rpx;}
+.commendpro1 view{ font-size: 30rpx;color:#e42828; }
+.comfirearea{
+    margin-top: 60rpx;
+    width:460rpx;height:70rpx;
+    background: #e33d3d;border-radius: 200rpx;color:#ffffff;font-size: 30rpx;
+    display: flex;justify-content: center;align-items: center;
+}
+
+button{padding:0rpx;margin:0rpx;}
+
+
+input-placeholder {
+    color:#999;
+}

@@ -1,0 +1,2 @@
+<!--pages/gifts/pages/receive-order-detail/shopdetail/shopdetail.wxml-->
+<web-view src="{{showUrl}}#wechat_redirect"></web-view>

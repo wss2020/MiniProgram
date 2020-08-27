@@ -1,0 +1,28 @@
+<wxs module="fmt" src="../../../fmt.wxs"></wxs>
+<!--pages/about/balance/balance.wxml-->
+<view class='detailmain'>
+    <view class='detailone'>
+        <view class='detailonenum'>{{fmt.formatCurrency(userInfo.customers[0].balance)}}</view>
+        <view class='detailonemoney'>余额</view>
+
+
+<!--        <view >-->
+<!--            <view class='detailonenum' >{{fmt.formatCurrency(userInfo.customers[0].balance)}}</view>-->
+<!--            <view class='detailonemoney'>押金</view>-->
+<!--        </view>-->
+
+
+
+
+
+        <view class='detailonedetail' bindtap='showModal'>余额明细</view>
+<!--        <view class='detailonedetail' style="margin-top: 30rpx" bindtap='refill'>充值</view>-->
+        <!-- <view class='detailoneobtain'>提现</view> -->
+    </view>
+
+
+    <!--屏幕背景变暗的背景 -->
+    <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+</view>
+
+

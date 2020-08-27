@@ -1,0 +1,63 @@
+/* pages/index/productdetail/product-description/product-description.wxss */
+page {background: #f4f4f4;}
+
+
+
+
+
+.deduction{
+    margin: 0 20rpx;
+    background:#fff;
+    padding: 0 40rpx 0rpx 40rpx;
+    display: flex;
+    flex-direction: column;
+}
+.deduction-title{
+    font-size: 26rpx;
+    color: #e33d3d;
+    padding: 20rpx 0;
+    border-bottom: solid 2rpx #f4f4f4;
+}
+.deduction-con{
+    font-size: 28rpx;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    padding: 20rpx 0;
+    border-bottom: solid 2rpx #f4f4f4;
+}
+.deduction-limoney{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    font-size: 26rpx;
+    color: #666666;
+}
+.deduction-limoney image{
+    margin-left: 10rpx;
+    width: 34rpx;
+    height: 34rpx;
+}
+.deduction-limoneys{
+    display: flex;
+    flex-direction: row;
+    font-size: 26rpx;
+    width: 400rpx;
+    justify-content: flex-end;
+}
+.deduction-choose{
+    /* font-size: 30rpx; */
+    width: 40rpx;
+    height: 40rpx;
+    margin-left: 20rpx;
+    margin-right: 40rpx;
+}
+.programme-right text{
+    margin-left:10rpx;
+    color:#666666;
+}
+
+button{
+    padding:0;
+    margin: 0;
+}

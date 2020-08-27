@@ -1,0 +1,53 @@
+/* pages/tool/card/admin/operate/operate.wxss */
+
+/*输入框*/
+.input_no{background: #ffffff;padding: 30rpx 0;}
+.inputtwo{display: flex;flex-direction: row;align-items: center;
+    margin: 0rpx 60rpx 30rpx 60rpx;height: 80rpx;border-bottom: solid 2rpx #eeeeee;}
+.inputtwo view{font-size: 28rpx;display: flex;align-items: center;padding-left: 20rpx;}
+.search-input{font-size: 28rpx;}
+
+.three_type{display: flex;margin:0 30rpx;}
+.operate_type{
+    border-radius: 200rpx;font-size: 30rpx; border: solid 1px #cccccc;color: #333333;
+    padding:0rpx 5%;height: 60rpx;width:20%;
+    display:flex;flex-direction:row;justify-content:center;align-items: center;
+}
+
+.tag{display: flex;flex-direction: column; margin: 20rpx 20rpx;}
+.tag1{font-size: 28rpx;}
+.tag2{font-size: 28rpx;}
+
+
+/*修改*/
+page{background: #f3f5f6;}
+
+.products{display:flex;flex-direction: column;}
+
+.product{display: flex;flex-direction: row;padding:20rpx 0 20rpx 0;background: #ffffff; margin:20rpx 20rpx 0rpx 20rpx;border-radius:8rpx;}
+.product .img{width:180rpx;height:140rpx;margin:30rpx 30rpx 0 20rpx;}
+.product .info{display:flex;flex-direction:column;width:466rpx;}
+.product .name{margin-top: 10rpx; font-size:30rpx;}
+.product .info{disply:flex;flex-direction: column;}
+.product .addinfo{display:flex;flex-direction: row;justify-content: space-between;align-items: center;}
+.product .addinfo  .number{font-size: 28rpx;color:#777777;}
+.product .addinfo  .addinfo2{font-size: 24rpx;color:#777777;width:200rpx;display:flex;flex-direction: row;justify-content: flex-end;align-items: center;}
+.product .addinfo  .addinfo2 image{width: 30rpx;margin-right: 10rpx;height:24rpx;}
+.product .addinfo  .addinfo2 .addinfo2_1{background: #ffeedb;border-radius: 200rpx;width:60rpx;text-align: center;margin-right: 10rpx;}
+.product .addinfo  .addinfo2 .addinfo2_2{background: #ffeedb;border-radius: 200rpx;width:120rpx;text-align: center;}
+
+.product .addinfo1{display:flex;flex-direction: column;justify-content: space-between;align-items: baseline;margin-top: 0rpx;}
+
+
+.product  .price{font-size:34rpx;height:32rpx;color:#e33d3d;}
+.product  .oprice{color:#777777;font-size:26rpx;margin-left: 6rpx;}
+.opennums{margin-left: 40rpx;}
+
+
+.product  .dprice{font-size:28rpx;height:32rpx;color:#e33d3d;margin-left: 40rpx;}
+.product  .buynums{display: flex;align-items: center;justify-content: space-between;width: 100%; margin-top: 10rpx;}
+.product  .range{color:#777777;font-size:26rpx;}
+.product  .range text{background: #ffeedb;border-radius: 200rpx;width: 60rpx;text-align: center;
+    margin-left: 10rpx; font-size: 22rpx;padding:2rpx 10rpx;}
+
+.info_record{font-size: 30rpx;margin: 0 0 0 20rpx;}

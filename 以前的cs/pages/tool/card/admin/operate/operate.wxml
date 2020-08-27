@@ -1,0 +1,63 @@
+<!--pages/tool/card/admin/operate/operate.wxml-->
+<view>
+    <view class='input_no'>
+        <form  bindsubmit="formsubmit" report-submit="true">
+            <view class="inputtwo">
+                <view>开始卡号：</view>
+                <input name="startno" class="search-input" placeholder="请输入开始卡号"
+                       placeholder-class="placeholder-style" value="{{}}" type=""/>
+            </view>
+            <view class="inputtwo">
+                <view>结束卡号：</view>
+                <input name="endno" class="search-input" placeholder="请输入结束卡号"
+                       placeholder-class="placeholder-style" value="{{}}" type=""/>
+            </view>
+            <view class="inputtwo">
+                <view>销售价：</view>
+                <input name="price" class="search-input" placeholder="开卡时请填写销售价"
+                       placeholder-class="placeholder-style" value="{{}}" type="number"/>
+            </view>
+            <view class="three_type">
+                <button class='operate_type' form-type="submit" data-type="1">开卡</button>
+                <button class='operate_type' form-type="submit" data-type="2">退卡</button>
+                <button class='operate_type' form-type="submit" data-type="3">废卡</button>
+            </view>
+        </form>
+    </view>
+
+
+    <view class="tag">
+        <view class="tag1">注：1、开卡只能开未开通的卡券，退卡只能退已开通的卡券，废卡只能作废未开通和已开通的。</view>
+        <view class="tag2">   2、卡券号码段所有卡券必须在同一状态、同一类型连续不能中断。</view>
+    </view>
+
+    <view class="info_record" wx:if="{{openlist.length > 0}}">操作记录</view>
+    <view class="products">
+        <block  wx:for="{{openlist}}" wx:key="">
+            <view class="product" >
+                <image class="img"  bindtap="productdetail" data-id="{{item.id}}"
+                       src="{{item.pic}}">
+                </image>
+                <view class="info">
+                    <view class="addinfo">
+                        <view class="number">编号：{{item.id}}</view>
+                    </view>
+                    <view class="name">{{item.cardName}}</view>
+                    <view class="addinfo1">
+                        <view class="prices oprice">
+                            <text wx:if="{{item.status == 1}}">开卡数量：{{item.num}}</text>
+                            <text wx:if="{{item.status == 2}}">退卡数量：{{item.num}}</text>
+                            <text wx:if="{{item.status == 3}}">废卡数量：{{item.num}}</text>
+                        </view>
+                        <view class="prices oprice" wx:if="{{item.startNo == item.endNo}}">卡号：{{item.startNo}}</view>
+                        <view class="prices oprice" wx:else>卡号段：{{item.startNo}} - {{item.endNo}}</view>
+                        <view class="prices oprice">时间：{{item.time}}</view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view class="bottom_taps"  wx:if="{{pageEnd}}">已经到底了</view>
+</view>
+
+

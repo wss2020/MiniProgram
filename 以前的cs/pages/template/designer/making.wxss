@@ -1,0 +1,148 @@
+@import "/pages/template/common/css.wxss";
+
+.main {
+    /*position: relative;*/
+    border: dashed 1px;
+    margin-left: 18rpx;margin-right: 18rpx;
+}
+.cardarea {
+    horiz-align: center;
+    border-right: dashed 1px;
+    border-bottom: dashed 1px;
+}
+.cardarea .name {
+    position: absolute;left: 5px;top: 5px;
+    font-size: 28 rpx;color: blueviolet;
+}
+.cardarea .content {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+.cardarea .tooltip {font-size: 15px;color: gray;}
+.cardarea .text {
+    position: absolute;border-width: 1px;border-style: dotted;
+    text-overflow: ellipsis;overflow: hidden;
+}
+.cardarea .img {width: 100px;
+    height: 100px;}
+
+
+/* 弹框 */
+.info_check {
+    width: 680rpx;height: 410rpx;
+    position: fixed;top: 134rpx;left: 35rpx;z-index: 1001;
+    background: #fff;border-radius: 38rpx;
+}
+.info_title {text-align: center;font-size: 30rpx;margin: 20rpx 0 0rpx;color: #555555;}
+.inputtwo view {font-size: 28rpx;display: flex;align-items: center;}
+.inputtwo {
+    display: flex;flex-direction: row;align-items: center;justify-content: center;
+    border-bottom: solid 2rpx #eeeeee;padding: 20rpx 0 20rpx;
+}
+.search-input{
+    font-size: 22rpx;width: 580rpx;height: 166rpx;border: solid 2rpx #999999;padding:10rpx 10rpx 0;
+    overflow: auto;
+}
+.search-input1{font-size: 28rpx;width: 200rpx;text-align: center;}
+.twobtn{
+    display: flex;flex-direction: row;justify-content: space-between;
+    height: 80rpx;margin: 30rpx 60rpx 0;
+}
+.twobtn .leftbtn{
+    display: flex;align-items: center;justify-content: center;
+    color: #555555;width: 240rpx;font-size: 30rpx;height: 70rpx;border:solid 1px #a6a6a6;border-radius:200rpx;
+}
+.twobtn .rightbtn{
+    display: flex;align-items: center;justify-content: center;
+    margin: 0;color: #ffffff;width: 240rpx;font-size: 30rpx;height: 70rpx;
+    border:solid 1px #cf1518;border-radius:200rpx;background: #cf1518;
+}
+
+
+.delete{
+    width: 680rpx;height: 370rpx;
+    position: fixed;top: 184rpx;left: 35rpx;z-index: 1001;
+    background: #ffffff;border-radius: 38rpx;
+    display: flex;flex-direction: column;
+}
+.topname{text-align: center;font-size: 28rpx;padding: 20rpx 0;border-bottom: solid 1px #f4f4f4;}
+.procontent{display: flex;flex-direction: row;justify-content: center;align-items: center;margin: 20rpx 0;}
+.procontent image{width: 126rpx;height:126rpx;}
+.procontent .name{font-size: 28rpx;max-width:400rpx;}
+
+
+.databox{display:flex;flex-direction: column;}
+.onedate{
+    display: flex;flex-direction: row;align-items: center;justify-content: space-between;
+    padding:0 20rpx;border-bottom: solid 2rpx #999999;
+}
+.onedate text{font-size: 30rpx;}
+.date-input {
+    font-size: 28rpx;
+    width: 410rpx;
+    height: 68rpx;
+    padding: 2rpx 0rpx 0;
+    overflow: auto;
+    line-height: 68rpx;
+}
+/*.inputtwodate view {font-size: 28rpx;display: flex;align-items: center;}*/
+.inputtwodate {
+    display: flex;flex-direction: row;align-items: center;justify-content: center;
+    border-bottom: solid 2rpx #eeeeee;padding: 10rpx 0 0rpx;
+}
+
+/* 可放置*/
+.dropable {
+    border-radius: 10px;
+    background:rgba(174,190,110,0.35);
+}
+
+/* 可放置*/
+.dropover {
+    border-radius: 10px;
+    background:rgba(174,190,110,0.75);
+}
+
+/*删除区*/
+.removearea {
+    border-radius: 10px;
+    left:0px;
+    position:absolute;
+    text-align: center;
+}
+
+.removearea button {
+    display:flex;flex-direction:row;justify-content:center;align-items: center;
+    position: relative;width: 100%; height: 100%;
+}
+
+.dragover {
+    border-radius: 10px;
+    background:rgba(174,190,110,0.35);
+}
+
+.arrow {
+    color: #ff9f00;
+    word-wrap: break-word;
+}
+
+.wizardarea {
+    border-width: 1px;border-color: #ff9f00;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

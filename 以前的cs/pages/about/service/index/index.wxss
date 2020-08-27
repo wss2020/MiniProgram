@@ -1,0 +1,108 @@
+page{
+    background: #f2f2f2;
+}
+
+
+.head_title{
+    position:absolute;
+    top:6px;
+    left:10px;
+}
+.main{
+    /*margin-top: 73px;*/
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+    border-top:solid 1px #ececec;
+}
+.message{
+    display: flex;
+    flex-direction:row;
+    background: #ffffff;
+    border-bottom:solid 1px #ececec;
+    width:100%;
+}
+.message-left{
+    position:relative;
+    z-index: 99;
+    width: 20%;
+    display: flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+}
+.message-left image{
+    width: 98rpx;
+    height: 98rpx;
+    border-radius:8rpx;
+}
+.num{
+    position:absolute;
+    top:12rpx;
+    right:12rpx;
+    font-size:28rpx;
+    text-align: center;
+    width: 36rpx;
+    height:36rpx;
+    line-height: 36rpx;
+    color:#fff;
+    border-radius: 50%;
+    background: #f44242;
+}
+.num1{
+    position:absolute;
+    top:12rpx;
+    right:12rpx;
+    font-size:28rpx;
+    text-align: center;
+    width: 50rpx;
+    height:36rpx;
+    line-height: 36rpx;
+    color:#fff;
+    border-radius: 200rpx;
+    background: #f44242;
+}
+.message-right{
+    display: flex;
+    flex-direction:row;
+    justify-content:space-between;
+    width: 80%;
+    padding:28rpx 28rpx 28rpx 0;
+    /*border-bottom:solid 1px #ececec;*/
+}
+.content{
+    display: flex;
+    flex-direction: column;
+}
+.name{
+    color: #000;
+    text-align: left;
+    font-size: 32rpx;
+    max-width:328rpx;
+    word-break:break-all;
+    text-overflow:-o-ellipsis-lastline;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;
+    min-height:40rpx;
+}
+.info{
+    text-align:left;
+    font-size: 26rpx;
+    color: #929292;
+    max-width:328rpx;
+    word-break:break-all;
+    text-overflow:-o-ellipsis-lastline;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;
+    min-height:40rpx;
+}
+.time{
+    font-size: 26rpx;
+    color:#929292;
+}

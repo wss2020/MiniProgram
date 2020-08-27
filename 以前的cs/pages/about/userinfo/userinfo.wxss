@@ -1,0 +1,13 @@
+/* pages/about/userinfo/userinfo.wxss */
+page{background: #f4f4f4;}
+
+.head_title{
+    position:absolute;
+    top:6px;
+    left:320rpx;
+}
+.container {height: 100%;display: flex;flex-direction: column;align-items: center;justify-content: space-between;box-sizing:border-box;}
+.userinfo {display: flex;flex-direction: column;align-items: center;padding: 100rpx 0;}
+.userinfo-avatar {width: 128rpx;height: 128rpx;margin: 20rpx;border-radius: 50%;}
+.userinfo-nickname {color: #aaa;}
+.give_button{width: 200rpx;background-color: #00c575; color: #fff;}

@@ -1,0 +1,18 @@
+
+
+<view bindtap="go">我的go</view>
+
+
+<view>4561234568</view>
+
+<view bindtap="go1">go1</view>
+
+
+<view class="audio"  bindtap="audio">录音</view>
+
+
+
+<!--<mp-dialog title="test" show="{{true}}" bindbuttontap="tapDialogButton" buttons="{{[{text: '取消'}, {text: '确认'}]}}">-->
+<!--    <view>test content</view>-->
+<!--</mp-dialog>-->
+

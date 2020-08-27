@@ -1,0 +1,111 @@
+<!--pages/tool/recommending/newadddpro/newadddpro.wxml-->
+<wxs module="fmt" src="../../../../fmt.wxs"></wxs>
+<import src="/pages/template/product/product.wxml"/>
+<view class='indexmain'>
+    <scroll-view class='scroll-view' scroll-x="true" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+        <block wx:for="{{categorylist}}" wx:key="">
+            <view id="classify-{{index + 1}}" class="padd {{currentTab==index + 1?'thisdh':''}}" wx:key=""
+                  bindtap='selected_classify' data-id='{{item.id}}' data-index='{{index + 1}}'
+                  data-current='{{index + 1}}'>
+                {{item.name}}
+            </view>
+        </block>
+    </scroll-view>
+</view>
+
+<view style="height: 80rpx;"></view>
+
+<view class="">
+
+    <view class="sift"  wx:if="{{id != 999}}">
+        <view style="height:2rpx;background: #f4f4f4;"></view>
+
+        <view class="choose_shop">
+            <view bindtap="choosetype" class="choose_type {{type== 1 ? 'type1' : 'type2'}}" data-type="1">推荐</view>
+            <view bindtap="choosediscount" class="choose_type {{type== 3 ? 'type1' : 'type2'}}" data-type="3">
+                <view class="choose_price">折扣</view>
+                <image wx:if="{{ showdiscount == 0}}" class="choose_type1" src="/image/index_up.png"></image>
+                <image wx:if="{{ showdiscount == 1}}" class="choose_type1" src="/image/index_down.png"></image>
+            </view>
+            <view bindtap="chooseprice" class="choose_type {{type== 2 ? 'type1' : 'type2'}}" data-type="2">
+                <view class="choose_price">价格</view>
+                <image wx:if="{{ showprice == 0}}" class="choose_type1" src="/image/index_up.png"></image>
+                <image wx:if="{{ showprice == 1}}" class="choose_type1" src="/image/index_down.png"></image>
+            </view>
+        </view>
+
+        <view class="price_area  price_area_inte" wx:if="{{showprice == 1}}">
+            <form bindsubmit="searchPrice" report-submit="true">
+                <input name="minp" value="{{minp}}" type="number" placeholder="最小价格" />
+                <text>-</text>
+                <input name="maxp" value="{{maxp}}" type="number" placeholder="最大价格" />
+                <button  form-type="submit" >确定</button>
+            </form>
+        </view>
+        <view class="price_area price_area_inte" wx:if="{{ showdiscount == 1}}">
+            <form bindsubmit="searchDiscount" report-submit="true">
+                <input name="mind" value="{{mind}}" type="number" placeholder="最小折扣" />
+                <text>-</text>
+                <input name="maxd" value="{{maxd}}" type="number" placeholder="最大折扣" />
+                <button  form-type="submit" >确定</button>
+            </form>
+        </view>
+    </view>
+
+
+    <checkbox-group class="{{id == 999 ? '' : 'classify_top'}}" bindchange="checkboxChange">
+        <block wx:for="{{productlist[skuid].data}}" wx:key="">
+            <view class="product">
+                <image class="img" bindtap="productdetail" data-id="{{item.id}}"
+                       src="{{item.pic}}">
+                </image>
+                <view class="info">
+                    <view class="addinfo">
+                        <view class="number">编号：{{item.id}}</view>
+                        <view class="addinfo2">
+                            <image wx:if="{{item.certification == 1}}" src="/image/vlogo.png"></image>
+                            <view class="addinfo2_1">{{item.level}}级</view>
+                            <view class="addinfo2_2" bindtap="product_info" data-id="{{item.id}}">货源说明</view>
+                        </view>
+                    </view>
+                    <view class="name">{{item.name}}</view>
+                    <view class="addinfo1">
+                        <view class="prices">
+                            <text class="price">{{fmt.formatCurrency(item.price)}}</text>
+                            <text class="oprice">{{fmt.formatCurrency(item.sprice)}}</text>
+                            <text class="dprice">{{fmt.toFixed(item.price,item.sprice)}}折</text>
+                        </view>
+                        <view  class="buynums">
+                            <view class="range" wx:if="{{item.range == 4}}" bindtap="product_info" data-id="{{item.id}}"><text>点击查看</text></view>
+                            <view class="range" wx:else>配送范围:<text>{{item.province}}</text></view>
+                            <checkbox class="addonradio" value="{{index}}" checked="{{item.checked}}"></checkbox>
+                        </view>
+                    </view>
+                    <view class="option">
+                        <!-- <view wx:if="{{item.onsale == 1}}" class="option2" bindtap="addproduct" data-id="{{item.id}}">添加</view>-->
+                        <view wx:if="{{item.onsale == 2}}" class="option3">下架</view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </checkbox-group>
+    <view class='bottom_taps bottompadd' wx:if='{{productlist[skuid].pageEnd}}'>已经到底了</view>
+</view>
+
+<view style="height:120rpx;"></view>
+
+<view class="btn_foot">
+    <button class="btn_bottom"  bindtap="add_array">确认添加</button>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+

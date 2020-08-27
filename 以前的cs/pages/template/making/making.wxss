@@ -1,0 +1,62 @@
+@import "/pages/template/common/css.wxss";
+
+.main {
+    /*position: relative;*/
+    /*border-top: dashed 1px;*/
+    /*border-left: dashed 1px;*/
+    margin-left: 4px;margin-right: 2px;
+}
+.cardarea {
+    horiz-align: center;
+    /*border-right: dashed 1px;*/
+    /*border-bottom: dashed 1px;*/
+}
+.cardarea .name {
+    position: absolute;left: 5px;top: 5px;
+    font-size: 28 rpx;color: blueviolet;
+}
+.cardarea .content {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+.cardarea .tooltip {font-size: 15px;color: gray;}
+.cardarea .text {
+    position: absolute;border-width: 1px;
+    word-wrap: break-word;
+}
+.cardarea .img {width: 100px;
+    height: 100px;}
+
+
+/* 弹框 */
+.info_check {
+    width: 680rpx;height: 370rpx;
+    position: fixed;top: 184rpx;left: 35rpx;z-index: 1001;
+    background: #fff;border-radius: 38rpx;
+}
+.info_title {text-align: center;font-size: 30rpx;margin: 20rpx 0 0rpx;color: #555555;}
+.inputtwo view {font-size: 28rpx;display: flex;align-items: center;}
+.inputtwo {
+    display: flex;flex-direction: row;align-items: center;justify-content: center;
+    border-bottom: solid 2rpx #eeeeee;padding: 20rpx 0 20rpx;
+}
+.search-input{
+    font-size: 22rpx;width: 580rpx;height: 120rpx;border: solid 2rpx #999999;padding:10rpx 10rpx 0;
+    overflow: auto;
+}
+.search-input1{font-size: 28rpx;width: 200rpx;text-align: center;}
+.twobtn{
+    display: flex;flex-direction: row;justify-content: space-between;
+    height: 80rpx;margin: 30rpx 60rpx 0;
+}
+.twobtn .leftbtn{
+    display: flex;align-items: center;justify-content: center;
+    color: #555555;width: 240rpx;font-size: 30rpx;height: 70rpx;border:solid 1px #a6a6a6;border-radius:200rpx;
+}
+.twobtn .rightbtn{
+    display: flex;align-items: center;justify-content: center;
+    margin: 0;color: #ffffff;width: 240rpx;font-size: 30rpx;height: 70rpx;
+    border:solid 1px #cf1518;border-radius:200rpx;background: #cf1518;
+}
+

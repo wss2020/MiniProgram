@@ -1,0 +1,9 @@
+<!--pages/about/userinfo/userinfo.wxml-->
+<view class="container">  
+  <view class="userinfo">
+    <view class="usermotto">
+      <image class="userinfo-avatar" src="../../../image/head.jpg" mode="cover"></image>
+      <button open-type="getUserInfo" class='give_button' bindgetuserinfo="getUserInfo"> 授权登录 </button>      
+    </view>
+  </view>  
+</view>

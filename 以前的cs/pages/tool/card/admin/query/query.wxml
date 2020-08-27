@@ -1,0 +1,121 @@
+<!--pages/tool/card/admin/query/query.wxml-->
+<view class='indexmain'>
+    <view class='scroll-view'>
+        <block wx:for="{{topclass}}" wx:key="">
+            <view  class="padd {{status == item.status ?'thisdh':''}}" bindtap='onclass' data-status='{{item.status}}'>
+                <view class="c_name">{{item.name}}</view>
+                <view class="c_num" wx:if="{{item.num > 10}}">({{item.num}})</view>
+                <view class="c_num" wx:else>( {{item.num}} )</view>
+            </view>
+        </block>
+        <view  class="query_btn" bindtap='query'> 筛选 </view>
+    </view>
+</view>
+
+<view style="height: 90rpx;"></view>
+
+<view class="">
+
+    <view class="classify_top">
+        <block wx:for="{{cardlist[status]}}" wx:key="">
+                <view class="product"  bindtap="detail" data-index="{{index}}">
+                    <image class="img"  bindtap="productdetail" data-id="{{item.id}}"
+                           src="{{item.pic}}">
+                    </image>
+                    <view class="info">
+                        <view class="addinfo">
+                            <view class="number">编号：{{item.id}}</view>
+                        </view>
+                        <view class="name">{{item.name}}</view>
+                        <view class="addinfo1">
+                            <view class="prices oprice">卡号：{{item.cardNo}}</view>
+                            <view class="prices oprice">密码：{{item.password}}</view>
+                        </view>
+                    </view>
+                </view>
+        </block>
+    </view>
+    <view class='bottom_taps bottompadd' wx:if='{{pageEnd}}'>已经到底了</view>
+</view>
+
+<!--弹出信息确认框 -->
+<view class="commodity_screen" wx:if="{{showquery}}"></view>
+<view class="info_check" wx:if="{{showquery}}">
+    <view class='info_title'>条件筛选</view>
+    <form  bindsubmit="formsubmit" report-submit="true">
+        <view class='ranges'>
+            <view class="inputtwo">
+                <view>卡号/关键字：</view>
+                <input name="name" class="search-input" placeholder="请输入卡号或关键字"
+                       placeholder-class="placeholder-style" value="" type=""/>
+            </view>
+            <view class="choosereason1">
+                <view class="choosereason_title">供应商类型:</view>
+                <view class="choosereason_content">
+                    <radio-group class="radio-group1" name="suptype">
+                        <view class="reasonone1">
+                            <radio class="radio" value="1"></radio>
+                            <view class="detail_reason">自制卡</view>
+                        </view>
+                        <view class="reasonone1">
+                            <radio class="radio" value="2"></radio>
+                            <view class="detail_reason">购买卡</view>
+                        </view>
+                    </radio-group>
+                </view>
+            </view>
+            <view class="choosereason1">
+                <view class="choosereason_title">卡券类型:</view>
+                <view class="choosereason_content">
+                    <radio-group class="radio-group1" name="cardtype">
+                        <view class="reasonone1">
+                            <radio class="radio" value="1"></radio>
+                            <view class="detail_reason">普通卡</view>
+                        </view>
+                        <view class="reasonone1">
+                            <radio class="radio" value="2"></radio>
+                            <view class="detail_reason">积分卡</view>
+                        </view>
+                    </radio-group>
+                </view>
+            </view>
+            <view class="choosereason1">
+                <view class="choosereason_content">
+                    <picker name="status" mode="selector" bindchange="bindRegionChange" value="{{index}}"
+                            range="{{allstatus}}">
+                        <view class="picker">
+                            <text class="choosereason_title">卡状态：</text>
+                            <text class="text2">{{cardStatus}}</text>
+                        </view>
+                    </picker>
+                </view>
+            </view>
+
+            <view class="inputtwo">
+                <view>卡号段：</view>
+                <input name="start" class="search-input1" placeholder="起始卡号"  value="{{}}" type=""/>
+                <text> - </text>
+                <input name="end" class="search-input1" placeholder="结束卡号"  value="{{}}" type=""/>
+            </view>
+
+        </view>
+        <view class='twobtn'>
+            <view class="leftbtn" bindtap='hideshow'>取消</view>
+            <button form-type="submit" class="rightbtn">确定</button>
+        </view>
+    </form>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

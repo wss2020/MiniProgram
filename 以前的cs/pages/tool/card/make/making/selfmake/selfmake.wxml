@@ -1,0 +1,117 @@
+<!--pages/tool/card/make/making/selfmake/selfmake.wxml-->
+<view class="editinfo">
+    <image wx:if="{{modify != 1}}" class="tipimg" mode="widthFix" style="width:750rpx;" src="/image/card/tops2.png"></image>
+    <form bindsubmit="formsubmit" report-submit="true">
+        <view class="logo">
+            <view class="tiplogo">券样：
+                <text></text>
+            </view>
+            <view class="tiplogo1">
+                <block wx:for="{{imglist}}" wx:key="{{index}}">
+                    <image class='img_li' bindtap="imgYu" mode="widthFix" src="{{item}}" data-src="{{item}}"></image>
+                </block>
+                <image wx:if="{{imglist.length == 0}}" class='img_li' bindtap="imgYu" mode="widthFix" src="{{editimg}}"
+                       data-src="{{editimg}}"></image>
+
+                <image bindtap='img_w_show' class="addimg" src="/image/card/addimg.png"></image>
+            </view>
+        </view>
+        <view class="inputtwo">
+            <view class="inputtwo1">名称：</view>
+            <view class="inputtwo2">
+                <input name="name" class="search-input" placeholder=""
+                       placeholder-class="placeholder-style" value="{{cardinfo.name}}" type=""/>
+                <image src="/image/card/arrow.png"></image>
+            </view>
+        </view>
+        <view class="inputtwo">
+            <view class="inputtwo1">面值：</view>
+            <view class="inputtwo2">
+                <input name="no" class="search-input" placeholder=""
+                       placeholder-class="placeholder-style" value="{{cardinfo.no}}" type=""/>
+                <image src="/image/card/arrow.png"></image>
+            </view>
+        </view>
+        <view class="inputtwo">
+            <view class="inputtwo1">类型：</view>
+            <view class="inputtwo2" bindtap="choose_category" data-index="1">
+                <view class="cardtype" wx:if="{{cardtype == 1}}">普通卡</view>
+                <view class="cardtype" wx:elif="{{cardtype == 2}}">积分卡</view>
+                <view class="cardtype" wx:else></view>
+                <image src="/image/card/arrow.png"></image>
+            </view>
+        </view>
+        <view class="inputtwo">
+            <view class="inputtwo1">分类：</view>
+            <view class="inputtwo2" bindtap="choose_category" data-index="2">
+                <view class="cardtype" wx:if="{{categoryindex}}">
+                    <block wx:for="{{cardcategory}}" wx:key="">
+                        <text wx:if="{{item.id == categoryindex}}">{{item.name}}</text>
+                    </block>
+                </view>
+                <view class="cardtype" wx:else></view>
+                <image src="/image/card/arrow.png"></image>
+            </view>
+        </view>
+        <view class="inputtwo">
+            <view class="inputtwo1">兑换提示：</view>
+            <view class="inputtwo2">
+                <input name="tips" class="search-input" placeholder=""
+                       placeholder-class="placeholder-style" value="{{cardinfo.tips}}" type="" readonly="readonly"/>
+                <image src="/image/card/arrow.png"></image>
+            </view>
+        </view>
+        <view class="inputtwo">
+            <picker class="search-input1" mode="date"  name="time"
+                    value="{{printtime}}" start="" end="" bindchange="bindDateChange">
+                <text>到期时间：</text>{{printtime}}
+            </picker>
+            <image class="overtime" src="/image/card/arrow.png"></image>
+        </view>
+        <view class="inputtwo">
+            <view class="inputtwo1">备注：</view>
+            <view class="inputtwo2">
+                <input name="content" class="search-input" placeholder=""
+                       placeholder-class="placeholder-style" value="{{cardinfo.content}}" type=""/>
+                <image src="/image/card/arrow.png"></image>
+            </view>
+        </view>
+        <button class='onnoviceguidemain' form-type="submit">确认提交</button>
+    </form>
+
+</view>
+
+<view class="commodity_screen" wx:if="{{showbox}}"></view>
+<view class="info_check" wx:if="{{showbox}}">
+    <radio-group class="radio-group1" bindchange="radioChange"  wx:if="{{chooseindex == 1}}">
+        <view class="title">类型</view>
+        <view class="reasonone1">
+            <view class="reasonone11">普通卡</view>
+            <radio class="reasonone12" value="1"></radio>
+        </view>
+        <view class="reasonone1">
+            <view class="detail_reason">积分卡</view>
+            <radio class="radio" value="2"></radio>
+        </view>
+    </radio-group>
+
+    <radio-group class="radio-group1" bindchange="radioChange1" wx:if="{{chooseindex == 2}}">
+        <view class="title">分类</view>
+        <view class="{{cardcategory.length == 0 ? '' : 'setheight' }}">
+            <block wx:for="{{cardcategory}}">
+                <view class="reasonone1">
+                    <view class="reasonone11">{{item.name}}</view>
+                    <radio class="reasonone12" value="{{item.id}}"></radio>
+                </view>
+            </block>
+        </view>
+        <view class="reasonone1">
+            <input  class="search-input" placeholder="输入分类名称"  bindinput="categorytext"
+                    placeholder-class="placeholder-style" value="{{}}" type=""/>
+            <view class="addcategory"  bindtap="addcategory">新增</view>
+        </view>
+    </radio-group>
+</view>
+
+
+

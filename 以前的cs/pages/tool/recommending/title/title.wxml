@@ -1,0 +1,41 @@
+<!--pages/tool/recommending/title/title.wxml-->
+<view class="editinfo">
+    <form bindsubmit="formsubmit" report-submit="true">
+        <view class="logo">
+            <view class="tiplogo">上传logo：<text>*图片长宽保持1:1*</text></view>
+            <view class="tiplogo1">
+                <view wx:if="{{imglist}}">
+                    <block wx:for="{{imglist}}" wx:key="{{index}}">
+                        <image class='img_li' bindtap="imgYu" mode="widthFix" src="{{item}}" data-src="{{item}}"></image>
+                    </block>
+                </view>
+                <image bindtap='img_w_show' class="addimg" src="/image/tool/addimg.png"></image>
+            </view>
+        </view>
+        <view class="inputtwo">
+            <view>方案名：</view>
+            <input name="title" class="search-input" placeholder="请输入方案名称"
+                   placeholder-class="placeholder-style" value="{{title}}" type=""/>
+        </view>
+        <view class="inputtwo">
+            <view>联系人：</view>
+            <input name="name" class="search-input" placeholder="请输入联系人"
+                   placeholder-class="placeholder-style" value="{{name}}" type=""/>
+        </view>
+        <view class="inputtwo">
+            <view>电话：</view>
+            <input name="tel" class="search-input" placeholder="请输入电话"
+                   placeholder-class="placeholder-style" value="{{tel}}" type="number"/>
+        </view>
+        <view class="inputtwo">
+            <view>备注：</view>
+            <input name="content" class="search-input" placeholder="请输入备注"
+                   placeholder-class="placeholder-style" value="{{content}}" type=""/>
+        </view>
+        <button class='onnoviceguidemain' form-type="submit">确认修改</button>
+    </form>
+
+
+</view>
+
+

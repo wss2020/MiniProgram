@@ -1,0 +1,63 @@
+<import src="./product.wxml"/>
+
+<view class="main">
+    <block wx:for="{{template}}" wx:key="">
+        <view class="cardarea" style="transform: rotate({{item.rotate}}deg); width:{{item.width}}px;height: {{item.height}}px">
+            <view class="content">
+                <image src="{{item.background}}" style="width: {{item.width}}px;height:{{item.height}}px"/>
+                <view class="name">{{item.name}}</view>
+                <block wx:for="{{item.texts}}" wx:key="">
+                    <view style="left: {{item.left}}px;top: {{item.top}}px; width: {{item.width}}px; height: {{item.height}}px;text-align: {{item.align}};font-size: {{item.font}}px;"
+                          class="text" data-field="{{item.field}}" data-multiline="{{item.multiline}}"
+                          data-tooltip="{{item.tooltip}}">
+                        <text wx:if="{{data[item.field]}}" style="color:rgb({{item.color}});">{{data[item.field]}}</text>
+                        <text wx:else class="tooltip">{{item.tooltip}}</text>
+                    </view>
+                </block>
+                <block wx:for="{{item.images}}" wx:key="">
+                    <view style="left: {{item.left}}px;top: {{item.top}}px; width: {{item.width}}px; height: {{item.height}}px;"
+                          class="text" data-field="{{item.field}}">
+                        <image src="{{data[item.field]}}" wx:if="{{data[item.field]}}" class="img"
+                               style="width: {{item.width}}px; height: {{item.height}}px;"/>
+                        <view class="tooltip" wx:else>{{item.tooltip}}</view>
+                    </view>
+                </block>
+                <block wx:for="{{item.products}}" wx:key="">
+                    <view style="left: {{item.left}}px;top: {{item.top}}px; width: {{item.width}}px; height: {{item.height}}px;"
+                          class="text" data-field="{{item.field}}">
+                        <view style="width: 100%;height: 100%" wx:if="{{data[item.field]}}">
+                            <template is="product"
+                                      data="{{design:item, data:data[item.field], field:item.field}}"/>
+                        </view>
+                        <view class="tooltip" wx:else>{{item.tooltip}}</view>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </block>
+</view>
+
+<view class="info_check" wx:if="{{form.show}}">
+    <view class='info_title'>{{form.tooltip}}：</view>
+    <form bindsubmit="formsubmit" report-submit="true">
+        <view class='ranges'>
+            <view wx:if="{{form.multiline}}">
+                <view class="inputtwo">
+                    <textarea name="value" class="search-input" placeholder="请输入{{form.tooltip}}"  fixed="true"
+                              placeholder-class="placeholder-style" value="{{form.value}}" maxlength="1000" />
+                </view>
+            </view>
+            <view wx:else>
+                <view class="inputtwo">
+                    <input name="value" class="input-area" placeholder="请输入{{form.tooltip}}"
+                           placeholder-class="placeholder-style" value="{{form.value}}"/>
+                </view>
+            </view>
+        </view>
+        <view class='twobtn'>
+            <view class="leftbtn" bindtap='hideshow'>取消</view>
+            <button form-type="submit" class="rightbtn">确定</button>
+        </view>
+    </form>
+</view>
+<view class="commodity_screen" wx:if="{{form.show}}"></view>

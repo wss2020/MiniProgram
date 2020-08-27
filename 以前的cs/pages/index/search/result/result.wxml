@@ -1,0 +1,11 @@
+<!--pages/index/search/result/result.wxml-->
+<wxs  module="fmt"  src="../../../../fmt.wxs"></wxs>
+<import src="/pages/template/product/product.wxml"  />
+
+<view class="products">
+    <block wx:for="{{productlist}}" wx:key="">
+        <template  is="product"  data="{{item}}" />
+    </block>
+
+    <view class='bottom_taps' wx:if='{{bottom_tap}}'>已经到底了</view>
+</view>

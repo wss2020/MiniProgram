@@ -1,0 +1,91 @@
+<view class="makingmain">
+
+    <view class="fixtop">
+        <view class="cardtype">
+            <view class="type1 {{current == 1 ? 'addcolor' : 'type2'}}" bindtap="choosetype" data-index="1">A面</view>
+            <view class="type1 {{current == 2 ? 'addcolor' : 'type2'}}" bindtap="choosetype" data-index="2">B面</view>
+            <!--            <view class="type11" wx:if="{{current == 2}}" bindtap="addproduct">添加产品</view>-->
+        </view>
+    </view>
+
+
+<!--   showbox 为 true 展示 canvas  -->
+    <view class="bg" wx:if="{{showbox}}">
+
+        <view width="100%" height="100%">
+            <view width="100%" hidden="{{current != 1}}">
+                <designer
+                        template="{{areas1}}"
+                        width="{{designerWidth}}"
+                        data="{{data}}"
+                        height="{{designerHeight1}}"
+                        wizardmode="{{wizarda}}"
+                        wizardindex="{{wizardindexa}}"
+                        bind:dataChanged="onDataChangeda" bind:wizardFinish="wizardFinishA" bind:wizardnext="wizardNextA"/>
+            </view>
+
+            <view width="100%" hidden="{{current != 2}}">
+                <designer
+                        template="{{areas2}}"
+                        width="{{designerWidth}}"
+                        data="{{data}}"
+                        height="{{designerHeight2}}"
+                        addpro="{{addpro}}"
+                        wizardmode="{{wizardb}}"
+                        wizardindex="{{wizardindexb}}"
+                        bind:dataChanged="onDataChangedb" bind:wizardFinish="wizardFinishB" bind:wizardnext="wizardNextB"/>
+            </view>
+        </view>
+
+    </view>
+
+    <!--    <view class="designer" wx:if="{{current == 1}}">-->
+    <!--        <preview template="{{areas1}}" width="{{designerWidth}}" data="{{data}}"/>-->
+    <!--    </view>-->
+
+    <!--    <view class="designer" wx:if="{{current == 2}}">-->
+    <!--        <preview template="{{areas2}}" width="{{designerWidth}}" data="{{data}}"/>-->
+    <!--    </view>-->
+
+
+    <view class='foots' style="">
+        <view class='foot_lefts' bindtap="preview">
+            <button class='foot_left1'>预览</button>
+        </view>
+        <view class='foot_rights'>
+            <button bindtap='submit_info' class='foot_right1'>生成卡券</button>
+        </view>
+    </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

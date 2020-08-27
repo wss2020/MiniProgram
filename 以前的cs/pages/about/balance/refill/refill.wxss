@@ -1,0 +1,19 @@
+/* pages/about/balance/refill/refill.wxss */
+.charge_input{display: flex;flex-direction: row;align-items: center;margin: 30rpx 0 0 60rpx;}
+.charge_input text{ font-size: 42rpx;}
+.charge_input input{ font-size: 32rpx;}
+
+.charge{
+    margin-top: 60rpx;
+    width: 80%;
+    height: 80rpx;
+    border-radius: 200rpx;
+    font-size: 30rpx;
+    color: #fff;
+    background: #e33d3d;
+    padding: 0rpx 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

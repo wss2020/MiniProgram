@@ -1,0 +1,27 @@
+<!--pages/giftbag/record/record.wxml-->
+<!--<view wx:if="{{recording}}">录音中</view>-->
+<!--<view wx:if="{{url != null}}">{{duration/1000}}秒</view>-->
+<!--<button    bindtouchstart="startRecord" bindtouchend="endRecord">录音</button>-->
+
+
+<!--<button bindtap="confirm" wx:if="{{url != null}}">确定</button>-->
+
+
+<view style="height: 250rpx;"></view>
+
+<!--播放-->
+<div bindtap="play" wx:if="{{url != null}}">
+    <image src="https://files.dianlinet.com/dianli/images/2020-08-24/20-52-11.jpg" style="width: 500rpx;height: 100rpx;margin: 0 0 0 120rpx;" wx:if="{{!voice_playing}}"></image>
+    <image src="/image/index/vedio.gif" style="width: 500rpx;height: 100rpx;margin: 0 0 0 120rpx;" wx:if="{{voice_playing}}"></image>
+</div>
+
+
+<!--录音-->
+<view  class="add_bag">
+    <button  bindtouchstart="startRecord" bindtouchend="endRecord">
+        <image  wx:if="{{recording}}"  src="https://files.dianlinet.com/dianli/images/2020-08-24/20-34-40.jpg"></image>
+        <image  wx:else  src="https://files.dianlinet.com/dianli/images/2020-08-24/20-27-25.jpg"></image>
+    </button>
+
+    <button class="submit" wx:if="{{url != null}}"  catchtap="confirm">确定</button>
+</view>

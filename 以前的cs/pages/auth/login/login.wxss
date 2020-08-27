@@ -1,0 +1,21 @@
+/* pages/auth/login/login.wxss */
+.auth{width: 100%;height: 100%;background: #fff;display: flex;flex-direction: column;}
+.auth .header{position: fixed;top: 0rpx;left: 0rpx;z-index: 3333;width: 100%;background-color: #fff;display: flex;flex-direction: row;}
+.auth .header view {width: 50%;text-align: center;font-size: 32rpx;padding: 20rpx 0;}
+.auth .header .thisdh {border-bottom: solid 6rpx #e33d3d;color: #000;font-weight: bold;}
+/*.auth .login{margin-top: 100rpx;}*/
+
+.logo{display: flex;justify-content: center;margin: 40rpx 0 0rpx;padding-bottom: 40rpx;}
+.logo image{width:170rpx;height:170rpx;}
+
+.inputtwo{display: flex;flex-direction: row;align-items: center;
+          background: #f4f4f4;margin: 30rpx 60rpx 0 60rpx;height: 80rpx;}
+.inputtwo view{font-size: 32rpx;display: flex;align-items: center;padding-left: 20rpx;}
+.search-input{font-size: 28rpx;}
+
+.onnoviceguidemain{
+    border-radius: 200rpx;font-size: 30rpx;color: #fff;background:#e33d3d;
+    margin-top:80rpx;padding:0rpx 5%;height: 80rpx;width:84%;
+    display:flex;flex-direction:row;justify-content:center;align-items: center;
+}
+.noauth{margin-top: 40rpx;font-size: 28rpx;text-align: center;}

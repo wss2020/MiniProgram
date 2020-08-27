@@ -1,0 +1,23 @@
+<!--pages/tool/card/admin/detail/admin-detail/admin-detail.wxml-->
+<view class="">
+    <view class="classify_top">
+        <block wx:for="{{data}}" wx:key="">
+            <view class="product" >
+                <image class="img"
+                       src="{{pic}}">
+                </image>
+                <view class="info">
+                    <view class="addinfo">
+                        <view class="number">编号：{{item.id}}</view>
+                    </view>
+                    <view class="name">{{name}}</view>
+                    <view class="addinfo1">
+                        <view class="prices oprice">卡号：{{item.no}}</view>
+                        <view class="prices oprice">密码：{{item.password}}</view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view class='bottom_taps' wx:if='{{bottom_tap}}'>已经到底了</view>
+</view>

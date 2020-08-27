@@ -1,0 +1,75 @@
+<wxs module="fmt" src="../../fmt.wxs"></wxs>
+<view class='myinfo'>
+    <view class='head_my' bindtap='onauth' wx:if="{{!authoried || !login}}">
+        <view class='unauth_head_row1'>
+            <image src="/image/about/unauth.png"></image>
+        </view>
+        <view class='unauth_head_row2'>立即登录</view>
+    </view>
+
+    <view class='head_my' wx:else="{{authoried}}">
+        <view class='head_row'>
+            <view class='head_rows'>
+                <view class='head_row1'>
+                    <image src="{{userinfomation.avatarUrl}}"></image>
+                </view>
+                <view class='head_row2'>
+                    <view class='head_name'>{{userinfomation.nickName}}</view>
+                </view>
+            </view>
+            <view class='head_row3' bindtap='oninformation'>
+                <view style="font-size: 28rpx;">个人中心</view>
+                <view class='icon_information'>
+                    <image src="/image/arrow.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class='line'></view>
+    </view>
+
+    <button class='news1' bindtap='attestation' wx:if="{{login && authoried}}">
+        <view class='news_title'>认证消息</view>
+        <view class='news_icon'>
+            <image src="/image/arrow.png"></image>
+        </view>
+    </button>
+
+    <button class='news1' bindtap='balance' wx:if="{{login && authoried}}">
+        <view class='news_title'>帐户余额</view>
+        <view class='news_icon'>
+            <image src="/image/arrow.png"></image>
+        </view>
+    </button>
+
+    <button class='news1' bindtap='myorder'>
+        <view class='news_title'>我的订单</view>
+        <view class='news_icon'>
+            <image src="/image/arrow.png"></image>
+        </view>
+    </button>
+
+    <button class='news1' bindtap='mynews'  wx:if="{{myinfo.suppliers.length > 0}}">
+        <view class='news_title'>消息中心</view>
+        <view class='news_icon'>
+            <image src="/image/arrow.png"></image>
+        </view>
+    </button>
+
+    <button class='news1' open-type="contact">
+        <view class='news_title'>在线客服</view>
+        <view class='news_icon1'>
+            <image src="/image/arrow.png"></image>
+        </view>
+    </button>
+
+    <button class='news1' open-type="feedback">
+        <view class='news_title'>投诉与反馈</view>
+        <view class='news_icon1'>
+            <image src="/image/arrow.png"></image>
+        </view>
+    </button>
+
+    <!-- <navigator hover-class="none" target="miniProgram" open-type="exit"> 退出当前小程序</navigator> -->
+
+
+</view>

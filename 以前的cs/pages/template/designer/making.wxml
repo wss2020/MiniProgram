@@ -1,0 +1,164 @@
+<import src="./product.wxml"/>
+
+<view class="main">
+
+<!--   canvas 组件自带的 事件
+            canvas-id="designer"
+            bindtap="onTap"
+            bindtouchend="onTouchEnd"
+            bindlongtap="onLongTap"
+            bindtouchmove="onTouchMove"  -->
+    <canvas wx:if="{{!form.show && !removeArea.show}}"
+            style="width:{{width}}px;height:{{removeArea.show ? height + removeArea.height : height}}px"
+            canvas-id="designer"
+            bindtap="onTap"
+            bindtouchend="onTouchEnd"
+            bindlongtap="onLongTap"
+            bindtouchmove="onTouchMove">
+
+
+        <!--向导蒙层vvvvvv-->
+        <!--上方-->
+        <cover-view wx:if="{{wizard.mode}}"
+                    style="left:0px;top:0px;width:{{width}}px;height:{{wizard.top}}px;background:rgba(0,0,0, 0.5);position: absolute;">
+            <cover-view wx:if="{{wizard.arrow == 'left-bottom'}}" class="arrow"
+                        style="left: {{wizard.left + wizard.width}}px;bottom:0px;position: absolute;">
+                ↙{{wizard.tooltip}}
+            </cover-view>
+            <cover-view wx:if="{{wizard.arrow == 'right-bottom'}}" class="arrow"
+                        style="right: {{wizard.left}}px;bottom:0px;position: absolute;">
+                {{wizard.tooltip}}↘
+            </cover-view>
+        </cover-view>
+        <!--左侧-->
+        <cover-view wx:if="{{wizard.mode}}"
+                    style="left:0px;top:{{wizard.top}}px;width:{{wizard.left}}px;height:{{wizard.height}}px;background:rgba(0, 0, 0, 0.5);position: absolute;"></cover-view>
+        <!--右侧-->
+        <cover-view wx:if="{{wizard.mode}}"
+                    style="left:{{wizard.left + wizard.width}}px;top:{{wizard.top}}px;width:{{width - wizard.width - wizard.left}}px;height:{{wizard.height}}px;background:rgba(0, 0, 0, 0.5);position: absolute;"></cover-view>
+        <!--下方-->
+        <cover-view wx:if="{{wizard.mode}}"
+                    style="left:0px;top:{{wizard.top + wizard.height}}px;width:{{width}}px;height:{{height - wizard.height - wizard.top}}px;background:rgba(0, 0, 0, 0.5);position: absolute;">
+            <cover-view wx:if="{{wizard.arrow == 'left-top'}}" class="arrow"
+                        style="left: {{wizard.left + wizard.width}}px;position:absolute;">
+                ↖{{wizard.tooltip}}
+            </cover-view>
+            <cover-view wx:if="{{wizard.arrow == 'right-top'}}" class="arrow"
+                        style="right:{{wizard.left}}px;position:absolute;">
+                {{wizard.tooltip}}↗
+            </cover-view>
+        </cover-view>
+        <!--向导蒙层^^^^^-->
+
+
+
+
+        <block wx:for="{{dropable}}" wx:key="*this" wx:if="{{drag.mode}}">
+            <cover-view class="{{item.over?'dropover':'dropable'}}"
+                        style="left:{{item.left}}px;top:{{item.top}}px;width:{{item.width}}px;height:{{item.height}}px;position: absolute">
+            </cover-view>
+        </block>
+
+
+        <cover-view wx:if="{{drag.mode}}" class="removearea"
+                    style="top:{{height}}px;width:{{width}}px;height:{{removeArea.height}}px;">
+            <button style="vertical-align: middle;">删除产品</button>
+        </cover-view>
+
+
+        <cover-view wx:if="{{drag.mode}}"
+                    style="border-radius: 10px;left:{{drag.handle.left}}px;top:{{drag.handle.top}}px;width:{{drag.handle.width}}px;height:{{drag.handle.height}}px;background:rgba(255,229,226,0.75);position: absolute">
+            <block wx:for="{{drag.product.texts}}" wx:key="*this">
+                <cover-view
+                        style="left: {{item.left}}px;top: {{item.top}}px; width: {{item.width}}px; height: {{item.height}}px;text-align: {{item.align}};font-size: {{item.font}}px;position: absolute"
+                        class="text" data-multiline="{{item.multiline}}">
+                    {{data[drag.product.field][item.field]}}
+                </cover-view>
+            </block>
+            <block wx:for="{{drag.product.images}}" wx:key="*this">
+                <cover-image
+                        style="left: {{item.left}}px;top: {{item.top}}px; width: {{item.width}}px; height: {{item.height}}px;position: absolute"
+                        class="text" src="{{data[drag.product.field][item.field]}}">
+                </cover-image>
+            </block>
+        </cover-view>
+
+
+    </canvas>
+
+
+    <image wx:else style="width:{{width}}px;height: {{height}}px" src="{{thumbnail}}"></image>
+</view>
+
+
+
+<!--确认删除产品-->
+<view class="delete" wx:if="{{removeArea.show}}">
+    <view class="topname">确认删除</view>
+    <view class="procontent">
+        <image src="{{removeArea.product.image}}"></image>
+        <view class="name">{{removeArea.product.title}}</view>
+    </view>
+    <view class="twobtn">
+        <view class="leftbtn" bindtap='hideshow'>取消</view>
+        <view class="rightbtn" bindtap="confirmDelete">确认</view>
+    </view>
+</view>
+
+
+
+<!--选择输入弹框-->
+<view class="info_check" wx:if="{{form.show}}">
+    <view class='info_title'>{{form.tooltip}}：</view>
+    <form bindsubmit="formsubmit" report-submit="true">
+        <view class='ranges'>
+            <view wx:if="{{form.input == 'date'}}" class="databox">
+                <block wx:for="{{3}}" wx:key="*this">
+                    <view class="onedate">
+                        <view><input name="date{{index}}" class="date-input" placeholder=""
+                                     value="{{form.date[index].title}}" type=""/></view>
+                        <picker name="time{{index}}" mode="date" bindchange="formDateChange" data-index="{{index}}"
+                                value="{{form.date[index].time}}" start="{{dateStartTime}}">
+                            <view class="inputtwodate1">
+                                <text class="">{{form.date[index].time ? form.date[index].time : '请选择日期'}}</text>
+                            </view>
+                        </picker>
+                    </view>
+                </block>
+            </view>
+<!--            <view wx:elif="{{form.input == 'serviceTime'}}" class="databox">-->
+<!--                <picker name="value" mode="time" bindchange="serviceStartTime" >-->
+<!--                    <view class="inputtwodate">-->
+<!--                        <text class="">服务开始时间</text>-->
+<!--                    </view>-->
+<!--                </picker>-->
+<!--                <text>-</text>-->
+<!--                <picker name="value" mode="time" bindchange="serviceEndTime" >-->
+<!--                    <view class="inputtwodate">-->
+<!--                        <text class="">服务结束时间</text>-->
+<!--                    </view>-->
+<!--                </picker>-->
+<!--            </view>-->
+            <view wx:else>
+                <view wx:if="{{form.multiline}}">
+                    <view class="inputtwo">
+                    <textarea name="value" class="search-input" auto-focus placeholder="请输入{{form.tooltip}}"
+                              fixed="true"
+                              placeholder-class="placeholder-style" value="{{form.value}}" maxlength="1000"/>
+                    </view>
+                </view>
+                <view wx:else>
+                    <view class="inputtwo">
+                        <input name="value" class="input-area" auto-focus placeholder="请输入{{form.tooltip}}"
+                               placeholder-class="placeholder-style" value="{{form.value}}"/>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class='twobtn'>
+            <view class="leftbtn" bindtap='hideshow'>取消</view>
+            <button form-type="submit" class="rightbtn">确定</button>
+        </view>
+    </form>
+</view>
+<view class="commodity_screen" wx:if="{{form.show||removeArea.show}}"></view>

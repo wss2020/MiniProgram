@@ -1,0 +1,89 @@
+<!--pages/tool/card/make/making/design/design/design.wxml-->
+<view class="makingmain">
+
+    <view class="fixtop">
+        <view class="cardtype">
+            <view class="type1 {{current == 1 ? 'addcolor' : 'type2'}}" bindtap="choosetype" data-index="1">A面</view>
+            <view class="type1 {{current == 2 ? 'addcolor' : 'type2'}}" bindtap="choosetype" data-index="2">B面</view>
+<!--            <view class="tips">灰色区域编辑内容</view>-->
+<!--            <view class="type11" wx:if="{{current == 2}}" bindtap="addproduct">添加产品</view>-->
+        </view>
+    </view>
+
+    <view wx:if="{{!showbox}}"  style="margin-top: 50rpx;">
+        <image style="width:100%;" mode="widthFix" src="{{tipsbg}}"></image>
+    </view>
+    <view wx:if="{{!showbox}}" class="commodity_screen"  style="z-index: 1005;"></view>
+    <view wx:if="{{!showbox}}" class="tips" style="background:#ffffff;" >
+        <view class="tipstop">温馨提示</view>
+        <view class="tips1">1.长按商品，然后拖动至另一商品处，可互换位置。</view>
+        <view class="tips1">2.长按商品，拖动移出屏幕，可删除商品。</view>
+        <view class="confirmbtn"  bindtap="confirmbtn">我知道了</view>
+    </view>
+
+    <view class="bg" wx:if="{{showbox}}">
+        <view width="100%" height="100%">
+            <view hidden="{{current != 1}}" width="100%">
+                <designer template="{{areas1}}" width="{{designerWidth}}" data="{{data}}" height="{{designerHeight1}}" wizardmode="{{wizarda}}"
+                          wizardindex="{{wizardindexa}}"
+                          bind:dataChanged="onDataChangeda" bind:wizardFinish="wizardFinishA" bind:wizardnext="wizardNextA"/>
+            </view>
+
+            <view hidden="{{current != 2}}" width="100%">
+                <designer template="{{areas2}}" width="{{designerWidth}}" data="{{data}}" height="{{designerHeight2}}" addpro="{{addpro}}" wizardmode="{{wizardb}}"
+                          wizardindex="{{wizardindexb}}"
+                          bind:dataChanged="onDataChangedb" bind:wizardFinish="wizardFinishB" bind:drawFinish="drawFinish" bind:wizardnext="wizardNextB"/>
+            </view>
+        </view>
+
+    </view>
+
+<!--    <view class="designer" wx:if="{{current == 1}}">-->
+<!--        <preview template="{{areas1}}" width="{{designerWidth}}" data="{{data}}"/>-->
+<!--    </view>-->
+
+<!--    <view class="designer" wx:if="{{current == 2}}">-->
+<!--        <preview template="{{areas2}}" width="{{designerWidth}}" data="{{data}}"/>-->
+<!--    </view>-->
+
+
+    <view class='foots' style="">
+        <view class='foot_lefts' bindtap="preview">
+            <button class='foot_left1'>预览</button>
+        </view>
+        <view class='foot_rights'>
+            <button bindtap='submit_info' class='foot_right1'>生成卡券</button>
+        </view>
+    </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

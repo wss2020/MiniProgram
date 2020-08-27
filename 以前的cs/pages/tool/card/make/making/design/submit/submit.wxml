@@ -1,0 +1,96 @@
+<!--pages/tool/card/make/making/design/submit/submit.wxml-->
+<view class="editinfo">
+    <form bindsubmit="formsubmit" report-submit="true">
+        <view class="inputtwo">
+            <view class="inputtwo1">名称：</view>
+            <view class="inputtwo2">
+                <input name="name" class="search-input" placeholder=""
+                       placeholder-class="placeholder-style" value="{{cardinfo.name}}" type=""/>
+                <image src="/image/card/arrow.png"></image>
+            </view>
+        </view>
+        <view class="inputtwo">
+            <view class="inputtwo1">面值：</view>
+            <view class="inputtwo2">
+                <input name="no" class="search-input" placeholder=""
+                       placeholder-class="placeholder-style" value="{{cardinfo.no}}" type="number"/>
+                <image src="/image/card/arrow.png"></image>
+            </view>
+        </view>
+        <view class="inputtwo">
+            <view class="inputtwo1">类型：</view>
+            <view class="inputtwo2" bindtap="choose_category" data-index="1">
+                <view class="cardtype" wx:if="{{cardtype == 1}}">普通卡</view>
+                <view class="cardtype" wx:elif="{{cardtype == 2}}">积分卡</view>
+                <view class="cardtype" wx:else></view>
+                <image src="/image/card/arrow.png"></image>
+            </view>
+        </view>
+        <view class="inputtwo">
+            <view class="inputtwo1">分类：</view>
+            <view class="inputtwo2" bindtap="choose_category" data-index="2">
+                <view class="cardtype" wx:if="{{categoryindex}}">
+                    <block wx:for="{{cardcategory}}" wx:key="">
+                        <text wx:if="{{item.id == categoryindex}}">{{item.name}}</text>
+                    </block>
+                </view>
+                <view class="cardtype" wx:else></view>
+                <image src="/image/card/arrow.png"></image>
+            </view>
+        </view>
+        <view class="inputtwo">
+            <picker class="search-input1" mode="date"  name="time"
+                    value="{{printtime}}" start="" end="" bindchange="bindDateChange">
+                <text>到期时间：</text>{{printtime}}
+            </picker>
+            <image class="overtime" src="/image/card/arrow.png"></image>
+        </view>
+        <view class="inputtwo">
+            <view class="inputtwo1">备注：</view>
+            <view class="inputtwo2">
+                <input name="content" class="search-input" placeholder=""
+                       placeholder-class="placeholder-style" value="{{cardinfo.content}}" type=""/>
+                <image src="/image/card/arrow.png"></image>
+            </view>
+        </view>
+        <button class='onnoviceguidemain' form-type="submit">确认提交</button>
+    </form>
+
+</view>
+
+<view class="commodity_screen" wx:if="{{showbox}}"  bindtap="hidebox"></view>
+<view class="info_check" wx:if="{{showbox}}">
+    <radio-group class="radio-group1" bindchange="radioChange"  wx:if="{{chooseindex == 1}}">
+        <view class="title">类型</view>
+        <view class="reasonone1">
+            <view class="reasonone11">普通卡</view>
+            <radio class="reasonone12" value="1" checked="{{cardtype == 1}}"></radio>
+        </view>
+        <view class="reasonone1">
+            <view class="detail_reason">积分卡</view>
+            <radio class="radio" value="2" checked="{{cardtype == 2}}"></radio>
+        </view>
+    </radio-group>
+
+    <radio-group class="radio-group1" bindchange="radioChange1" wx:if="{{chooseindex == 2}}">
+        <view class="title">分类</view>
+        <view class="{{cardcategory.length == 0 ? '' : 'setheight' }}">
+            <block wx:for="{{cardcategory}}"  wx:key="">
+                <view class="reasonone1">
+                    <view class="reasonone11">{{item.name}}</view>
+                    <radio class="reasonone12" value="{{item.id}}"  checked="{{item.id == categoryindex}}"></radio>
+                </view>
+            </block>
+        </view>
+        <view class="reasonone1">
+            <input  class="search-input" placeholder="输入分类名称"  bindinput="categorytext"
+                    placeholder-class="placeholder-style" value="{{}}" type=""/>
+            <view class="addcategory"  bindtap="addcategory">新增</view>
+        </view>
+    </radio-group>
+</view>
+
+
+
+
+

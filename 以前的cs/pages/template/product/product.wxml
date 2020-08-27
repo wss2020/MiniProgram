@@ -1,0 +1,34 @@
+<wxs  module="fmt"  src="../../../fmt.wxs"></wxs>
+<template name="product">
+    <view class="product" >
+        <image class="img"  bindtap="productdetail" data-id="{{item.id}}"
+               src="{{item.pic}}">
+        </image>
+        <view class="info">
+            <view class="addinfo">
+                <view class="number">编号：{{item.id}}</view>
+                <view class="addinfo2">
+                    <image wx:if="{{item.certification == 1}}"  src="/image/vlogo.png"></image>
+                    <view class="addinfo2_1" >{{item.level}}级</view>
+                    <view class="addinfo2_2" bindtap="product_info" data-id="{{item.id}}">货源说明</view>
+                </view>
+            </view>
+            <view class="name">{{item.name}}</view>
+            <view class="addinfo1"  wx:if="{{item.key}}">
+                <view class="prices">
+                    <text class="price">{{fmt.formatCurrency(item.price)}}</text>
+                    <text class="oprice">{{fmt.formatCurrency(item.sprice)}}</text>
+                    <text class="dprice">{{fmt.toFixed(item.price,item.sprice)}}折</text>
+                </view>
+                <view class="buynums">
+                    <view class="range" wx:if="{{item.range == 4}}" bindtap="product_info" data-id="{{item.id}}"><text>点击查看</text></view>
+                    <view class="range" wx:else>配送范围:<text>{{item.province}}</text></view>
+                    <view class="addOptimal" bindtap="addOptimal" data-id="{{item.id}}">加入优选</view>
+                </view>
+            </view>
+            <view class="addinfo1" wx:else>
+                  <view class="login_price"  bindtap="login">登录后查看价格</view>
+            </view>
+        </view>
+    </view>
+</template>

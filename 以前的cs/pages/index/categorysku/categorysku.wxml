@@ -1,0 +1,116 @@
+<!-- index.wxml -->
+<wxs module="fmt" src="../../../fmt.wxs"></wxs>
+<import src="/pages/template/product/product.wxml"/>
+<view class='indexmain'>
+    <scroll-view class='scroll-view' scroll-x="true" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+        <block wx:for="{{categorylist}}" wx:key="">
+            <view id="classify-{{index}}" class="padd {{currentTab==index ?'thisdh':''}}" wx:key=""
+                  bindtap='selected_classify' data-id='{{item.id}}' data-index='{{index}}'
+                  data-current='{{index}}'>
+                {{item.name}}
+            </view>
+        </block>
+    </scroll-view>
+</view>
+
+<view style="height: 80rpx;"></view>
+
+<view class="">
+
+    <view class="sift">
+        <view style="height:2rpx;background: #f4f4f4;"></view>
+
+        <view class="choose_shop">
+            <view bindtap="choosetype" class="choose_type {{type== 1 ? 'type1' : 'type2'}}" data-type="1">推荐</view>
+
+
+<!--            <block wx:for="{{2}}"  wx:key="">-->
+<!--                <view bindtap="choosetype" bindtap="proListOrder" class="choose_type {{sort ? 'type1' : 'type2'}}" data-type="{{index}}">-->
+<!--                    <view>{{ index == 0 ? '折扣' : '价格'}}</view>-->
+<!--                    <image class="choose_order" wx:if="{{index ==1 && sort == 1}}" src="/image/index/order3.png"></image>-->
+<!--                    <image class="choose_order" wx:elif="{{index ==1 &&sort == 2}}" src="/image/index/order2.png"></image>-->
+<!--                    <image class="choose_order" wx:elif="{{index ==0 &&sort == 3}}" src="/image/index/order{{sort}}.png"></image>-->
+<!--                    <image class="choose_order" wx:elif="{{index ==0 &&sort == 4}}" src="/image/index/order2.png"></image>-->
+<!--                    <image class="choose_order" wx:else src="/image/index/order1.png"></image>-->
+<!--                </view>-->
+<!--            </block>-->
+
+
+
+
+            <view bindtap="choosetype" bindtap="proListOrder" class="choose_type {{sort== 3 || sort==4 ? 'type1' : 'type2'}}" data-type="0">
+                <view>折扣</view>
+                <image class="choose_order" wx:if="{{sort == 3}}" src="/image/index/order1.png"></image>
+                <image class="choose_order" wx:elif="{{sort == 4}}" src="/image/index/order0.png"></image>
+                <image class="choose_order" wx:else src="/image/index/order.png"></image>
+            </view>
+            <view bindtap="choosetype" bindtap="proListOrder" class="choose_type {{sort== 1 || sort==2 ? 'type1' : 'type2'}}" data-type="1">
+                <view class="choose_price">价格</view>
+                <image wx:if="{{ sort == 1}}" class="choose_order" src="/image/index/order1.png"></image>
+                <image wx:elif="{{ sort == 2}}" class="choose_order" src="/image/index/order0.png"></image>
+                <image wx:else class="choose_order" src="/image/index/order.png"></image>
+            </view>
+
+            <view bindtap="chooseall" class="choose_type {{type== 4 ? 'type1' : 'type2'}}" data-type="4">
+                <view class="choose_price">筛选</view>
+            </view>
+        </view>
+
+    </view>
+
+    <view class='classify_3 classify_top'>
+        <block wx:for="{{productlist[currentTab]}}" wx:key="">
+            <template is="product" data="{{item}}"/>
+        </block>
+    </view>
+</view>
+
+<view class='bottom_taps' wx:if='{{pageEnd}}'>已经到底了</view>
+
+
+<view class="one_bg" bindtap="backbtn" wx:if="{{showbox}}"></view>
+<view class="one_content" wx:if="{{showbox}}">
+    <form bindsubmit="formsubmit" report-submit="true">
+        <view class="contenttop">
+            <view class="tipstext">筛选</view>
+            <view class="backvbtn" bindtap="backbtn">返回</view>
+        </view>
+        <view class="ratetext">商品名</view>
+        <view class="inputnum">
+            <input name="key" placeholder="商品名称" type="text" value=""/>
+        </view>
+        <view class="ratetext">折扣</view>
+        <view class="inputnum">
+            <input name="minrate" placeholder="最小折扣" type="text" value=""/>
+            <text>-</text>
+            <input name="maxrate" placeholder="最大折扣" type="text" value=""/>
+        </view>
+        <view class="pricearea">价格</view>
+        <view class="inputnum">
+            <input name="minprice" placeholder="最小价格" type="number" value=""/>
+            <text>-</text>
+            <input name="maxprice" placeholder="最大价格" type="number" value=""/>
+        </view>
+        <view class="commendpro" wx:if="{{chooseindex == 4}}" data-index="1" bindtap="chooseindex">
+            <image src="/image/card/uncheck.jpg"></image>
+            <view>只看推荐商品</view>
+        </view>
+        <view class="commendpro1" wx:if="{{chooseindex == 1}}" data-index="4" bindtap="chooseindex">
+            <image src="/image/card/check.jpg"></image>
+            <view>只看推荐商品</view>
+        </view>
+
+        <view>
+            <button form-type="submit" class="comfirearea">确定</button>
+        </view>
+    </form>
+</view>
+
+
+
+
+
+
+
+
+

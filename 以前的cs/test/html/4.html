@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .lala{background: pink;color: #333;width: 1200px;height: 200px;}
+</style>
+<body>
+<!-- 把纵轴上第 100 个像素置于窗口顶部 -->
+<button onClick="scroll(0, 100);">点击以向下滚动 100 像素</button>     //自带的 Chrome 上没反应
+<button onClick="fnScroll(100);">点击以向下滚动 100 像素</button>
+<div id="outerDiv" class="lala">
+        水光潋滟晴方好
+        山色空蒙雨亦奇
+        欲把西湖比西子
+        淡妆浓抹总相宜
+        水光潋滟晴方好
+        山色空蒙雨亦奇
+        欲把西湖比西子
+    <div style="height: 10000px;"></div>
+</div>
+</body>
+</html>
+<script>
+    function fnScroll(top) {
+        window.scrollTo( 0, top );
+
+        // 等同于
+        window.scroll({
+            top: top,
+            behavior: 'smooth'
+        });
+    }
+</script>

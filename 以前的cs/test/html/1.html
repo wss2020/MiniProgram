@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Title</title></head>
+<link rel="stylesheet" type="text/css" href="../test.css" >
+<link rel="stylesheet" type="text/css" href="../css/1.css" >
+<script type="text/javascript"  src="../js/FileSaver.js"></script>
+<script type="text/javascript"  src="../js/FileSaver.min.js"></script>
+
+<script type="text/javascript" src="../jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+<body class="mouse-following">
+
+<div class="bruce"  id="downloadImg">
+    <div class="gradient-bg">iCSS</div>
+</div>
+
+
+<div onclick="downloadForJS()"> 下载图片</div>
+</body>
+</html>
+<script>
+
+    //步骤二：完成以下方法即可
+
+    function downloadForJS(){
+
+        //使用html2canvas 转换html为canvas
+        html2canvas($("#downloadImg")).then(function(canvas) {
+            if(IE){ //判断IE下保存方法
+                var blob = canvas.msToBlob();
+                window.navigator.msSaveBlob(blob, fileName);
+            }else{//其他浏览器保存方法
+                var imgUri = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"); // 获取生成的图片的url
+
+                console.log(imgUri);
+                                　
+                var saveLink = document.createElement( 'a');
+                saveLink.href =imgUri;
+                saveLink.download = fileName; saveLink.click();
+            }
+        });
+    }
+
+</script>
+
+

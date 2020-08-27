@@ -1,0 +1,23 @@
+<!--pages/auth/login/login.wxml-->
+<view class='auth'>
+    <view class="login" >
+
+        <view class="logo">
+            <image  src="/image/logo.png"></image>
+        </view>
+
+        <form  bindsubmit="formsubmit" report-submit="true">
+            <view class="inputtwo">
+                <view>账号：</view>
+                <input name="name" class="search-input" placeholder="请输入账号"
+                           placeholder-class="placeholder-style" type=""/>
+            </view>
+            <view class="inputtwo">
+                <view>密码：</view>
+                <input name="password" class="search-input" placeholder="请输入密码"
+                           placeholder-class="placeholder-style" type="password"/>
+            </view>
+            <button class='onnoviceguidemain' form-type="submit">登录</button>
+        </form>
+    </view>
+</view>

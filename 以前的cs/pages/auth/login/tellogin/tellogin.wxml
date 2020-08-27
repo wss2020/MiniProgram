@@ -1,0 +1,29 @@
+<!--pages/auth/login/tellogin/tellogin.wxml-->
+<!--pages/auth/auth.wxml-->
+<view class='noviceguidemain'>
+    <view class="logo">
+        <image  src="/image/logo.png"></image>
+    </view>
+    <view class='topwords'>品牌货源，一件代发</view>
+
+
+    <button class='onnoviceguidemain padding' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+        手机号快速登录
+    </button>
+
+
+    <view  class="info_check"  wx:if="{{showchoose}}">
+        <view class='info_title'>提示</view>
+        <view class='ranges'>
+            <view class="limitfont1">你当前手机号没有绑定账号!!!</view>
+        </view>
+        <view class='twobtn'>
+            <button class="leftbtn"  bindtap='bindlogin'>绑定已有账户</button>
+            <button class="rightbtn" bindtap="register" >注册新账户</button>
+        </view>
+    </view>
+    <!-- 背景变暗 -->
+    <view class="one_reward_bg" wx:if="{{showchoose}}" ></view>
+
+</view>
+

@@ -1,0 +1,34 @@
+<!--pages/tool/card/make/making/selfmake/cardproduct/cardproduct.wxml-->
+<!--  产品  -->
+    <view  class="pro_content">
+        <block wx:for="{{product}}" wx:key="">
+            <view class="modify_pro">
+                <view class="modify_top">
+                    <view class="proimg"  bindtap="prodetail" data-skuid="{{item.pro_id}}">
+										    <image wx:if="{{ index > pronums - 1 }}" src="{{item.image}}"></image>
+                        <image wx:else src="{{item.pic}}"></image>
+                    </view>
+                    <view class="proinfo">
+                        <view class="proskuid">编号：{{item.pro_id}}</view>
+                        <view class="proname">{{item.name}}</view>
+                        <view class="price">￥{{item.price}}</view>
+                    </view>
+                </view>
+                <view class="left_position" wx:if="{{ index > pronums - 1 }}">
+                   <view class="pro_icon" bindtap="delete_product" data-id="{{item.pro_id}}">
+                       <image src="/image/tool/delpro.png"></image>
+                   </view>
+                </view>
+            </view>
+        </block>
+
+    </view>
+
+<view class="addpro">
+    <image src="/image/tool/addpro.png" mode="widthFix" bindtap="addproduct"></image>
+</view>
+
+<view style="height:110rpx;"></view>
+<view class="btn_foot">
+    <button class="btn_bottom"  bindtap="add_array">确认提交</button>
+</view>

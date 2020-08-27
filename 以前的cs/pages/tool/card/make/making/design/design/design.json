@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "制作中",
+  "usingComponents": {
+    "preview": "../../../../../../template/making/making",
+    "designer": "../../../../../../template/designer/making"
+  }
+}

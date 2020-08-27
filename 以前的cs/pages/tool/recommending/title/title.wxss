@@ -1,0 +1,21 @@
+/* pages/tool/recommending/title/title.wxss */
+.editinfo{margin-top: 20rpx;}
+
+.logo{display: flex;flex-direction: column;}
+
+.tiplogo{font-size: 32rpx;margin-left: 30rpx;}
+.tiplogo text{font-size: 32rpx;color:#cf1518;}
+.tiplogo1{display: flex;flex-direction: row;}
+.inputtwo{display: flex;flex-direction: row;align-items: center;
+    background: #f4f4f4;margin: 30rpx 30rpx 0 30rpx;height: 80rpx;}
+.inputtwo view{font-size: 32rpx;display: flex;align-items: center;padding-left: 20rpx;}
+.search-input{font-size: 28rpx;width:500rpx;}
+
+.onnoviceguidemain{
+    border-radius: 200rpx;font-size: 30rpx;color: #fff;background:#cf1518;
+    margin-top:80rpx;padding:0rpx 5%;height: 80rpx;width:84%;
+    display:flex;flex-direction:row;justify-content:center;align-items: center;
+}
+
+.addimg{width:120rpx;height:120rpx;margin-left: 50rpx;margin-top: 20rpx;}
+.img_li {width: 120rpx;height: 120rpx;margin-left: 50rpx;margin-top: 20rpx;}

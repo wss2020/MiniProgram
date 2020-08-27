@@ -1,0 +1,17 @@
+<template name="product">
+    <block wx:for="{{design.texts}}" wx:key="">
+        <view style="left: {{item.left}}px;top: {{item.top}}px; width: {{item.width}}px; height: {{item.height}}px;text-align: {{item.align}};font-size: {{item.font}}px;"
+              class="text" data-field="{{field + item.field}}" data-multiline="{{item.multiline}}">
+            <text wx:if="{{data[item.field]}}" style="color:{{item.color}};">{{data[item.field]}}</text>
+            <text wx:else class="tooltip">{{item.tooltip}}</text>
+        </view>
+    </block>
+    <block wx:for="{{design.images}}" wx:key="">
+        <view style="left: {{item.left}}px;top: {{item.top}}px; width: {{item.width}}px; height: {{item.height}}px;"
+              class="text" data-field="{{field + item.field}}">
+            <image src="{{data[item.field]}}" wx:if="{{data[item.field]}}" class="img"
+                   style="width: {{item.width}}px; height: {{item.height}}px;"/>
+            <view class="tooltip" wx:else>{{item.tooltip}}</view>
+        </view>
+    </block>
+</template>
