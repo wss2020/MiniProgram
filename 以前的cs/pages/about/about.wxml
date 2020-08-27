@@ -27,12 +27,7 @@
         <view class='line'></view>
     </view>
 
-    <button class='news1' bindtap='attestation' wx:if="{{login && authoried}}">
-        <view class='news_title'>认证消息</view>
-        <view class='news_icon'>
-            <image src="/image/arrow.png"></image>
-        </view>
-    </button>
+
 
     <button class='news1' bindtap='balance' wx:if="{{login && authoried}}">
         <view class='news_title'>帐户余额</view>
@@ -41,33 +36,54 @@
         </view>
     </button>
 
-    <button class='news1' bindtap='myorder'>
-        <view class='news_title'>我的订单</view>
-        <view class='news_icon'>
-            <image src="/image/arrow.png"></image>
-        </view>
-    </button>
 
-    <button class='news1' bindtap='mynews'  wx:if="{{myinfo.suppliers.length > 0}}">
-        <view class='news_title'>消息中心</view>
-        <view class='news_icon'>
-            <image src="/image/arrow.png"></image>
-        </view>
-    </button>
 
-    <button class='news1' open-type="contact">
-        <view class='news_title'>在线客服</view>
-        <view class='news_icon1'>
-            <image src="/image/arrow.png"></image>
-        </view>
-    </button>
 
-    <button class='news1' open-type="feedback">
-        <view class='news_title'>投诉与反馈</view>
-        <view class='news_icon1'>
-            <image src="/image/arrow.png"></image>
-        </view>
-    </button>
+
+
+
+
+
+
+
+
+
+<!--    <button class='news1' bindtap='attestation' wx:if="{{login && authoried}}">-->
+<!--        <view class='news_title'>认证消息</view>-->
+<!--        <view class='news_icon'>-->
+<!--            <image src="/image/arrow.png"></image>-->
+<!--        </view>-->
+<!--    </button>-->
+
+
+
+<!--    <button class='news1' bindtap='myorder'>-->
+<!--        <view class='news_title'>我的订单</view>-->
+<!--        <view class='news_icon'>-->
+<!--            <image src="/image/arrow.png"></image>-->
+<!--        </view>-->
+<!--    </button>-->
+
+<!--    <button class='news1' bindtap='mynews'  wx:if="{{myinfo.suppliers.length > 0}}">-->
+<!--        <view class='news_title'>消息中心</view>-->
+<!--        <view class='news_icon'>-->
+<!--            <image src="/image/arrow.png"></image>-->
+<!--        </view>-->
+<!--    </button>-->
+
+<!--    <button class='news1' open-type="contact">-->
+<!--        <view class='news_title'>在线客服</view>-->
+<!--        <view class='news_icon1'>-->
+<!--            <image src="/image/arrow.png"></image>-->
+<!--        </view>-->
+<!--    </button>-->
+
+<!--    <button class='news1' open-type="feedback">-->
+<!--        <view class='news_title'>投诉与反馈</view>-->
+<!--        <view class='news_icon1'>-->
+<!--            <image src="/image/arrow.png"></image>-->
+<!--        </view>-->
+<!--    </button>-->
 
     <!-- <navigator hover-class="none" target="miniProgram" open-type="exit"> 退出当前小程序</navigator> -->
 

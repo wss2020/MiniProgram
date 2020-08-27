@@ -13,6 +13,51 @@ app.func.page(
             invitenew: true,
             login: true
         },
+
+
+
+
+        // 点击页面账户余额，查看两个页面之间通信。
+        balance: function () {
+            this.navigateModal("/pages/about/balance/balance", {
+                amount: 13
+            }).then((res) => {
+                return app.func.toastPromise("return:" + res);
+            }).catch((res) => {
+                console.log(res);
+            })
+        },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         onLoad: function (options) {
             app.func.onPageLoad(this, options);
         },
@@ -50,14 +95,7 @@ app.func.page(
             })
         },
 
-        balance: function () {
-            this.navigateModal("/pages/about/balance/balance", {amount: 13})
-                .then((res) => {
-                    return app.func.toastPromise("return:" + res);
-                }).catch((res) => {
-                console.log(res);
-            })
-        },
+
 
         //登录
         onauth: function () {

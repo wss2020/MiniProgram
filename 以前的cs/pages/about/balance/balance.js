@@ -10,6 +10,77 @@ app.func.page({
         userInfo: null
     },
 
+
+
+    // 接收上一个页面，传过来的参数
+    onModal: function (args) {
+        this.setData({
+            amount: args.amount
+        });
+        app.func.toastPromise("receive:" + args.amount);
+    },
+
+
+    // 返回上一页面，并且传参数
+    showModal: function () {
+        this.closeModal(this.data.amount * 2);
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /**
      * 生命周期函数--监听页面加载
      */
@@ -73,18 +144,7 @@ app.func.page({
     },
 
 
-    onModal: function (args) {
-        console.log(123);
 
-        this.setData({
-            amount: args.amount
-        });
-        app.func.toastPromise("receive:" + args.amount);
-    },
-   //显示对话框
-    showModal: function () {
-        this.closeModal(this.data.amount * 2);
-    },
 
 
     // //显示对话框

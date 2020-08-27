@@ -92,7 +92,7 @@ let mpages = {
             ret = true;
         }
         this.data._ret = ret;    // 把 ret 赋值给  this.data._ret
-        wx.navigateBack();     // 默认返回，上一页面
+        wx.navigateBack();       // 默认delta值为1，返回上一页面
     },
 
 
@@ -103,15 +103,15 @@ let mpages = {
         }
     },
 
-    navigateTo(url, _events) {        //  当页面执行，navigateTo时，执行以下函数
+    navigateTo(url, _events) {        //  当页面执行，navigateTo 函数时
         return getApp().func.promise((resolve, reject) => {
-            this._outEvent = new events.EventEmitter();   // 创建一个 EventEmitter 对象
+            this._outEvent = new events.EventEmitter();   // 创建一个 EventEmitter 对象,赋值给 this._outEvent
             this._outEvent.on('ready', (e) => {           // 注册一个名为 ready 的监听器，并指定回调函数
                 let childEvent = e;                       // 回调函数，接受的参数，  赋值给 childEvent
                 resolve({                                 // 指定成功的回调
                     event: new _EventChannel(childEvent, this._outEvent)    // 把 ready 监听器的回调函数的参数，  再做一次处理。
                 });
-                childEvent.on('user', (e) => {            //
+                childEvent.on('user', (e) => {            // e 创建一个名为 user 的广播。并指定回调函数
                     let key = e.key;
                     let data = e.data;
                     if (_events != null && _events.hasOwnProperty(key)) {
