@@ -1,0 +1,5 @@
+<!--pages/index/param/param.wxml-->
+
+
+
+<view class='detailonedetail' bindtap='showModal'>返回上一页面，并带参数</view>

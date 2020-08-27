@@ -1,0 +1,11 @@
+/* pages/index/param/param.wxss */
+
+.detailonedetail{
+    margin: 0 10%;
+    font-size: 28rpx;
+    width: 80%;
+    text-align: center;
+    height: 60rpx;
+    line-height: 60rpx;
+    border: solid 2rpx #eeeeee;
+}

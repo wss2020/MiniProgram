@@ -1,8 +1,7 @@
 //获取应用实例
-// const app = getApp();
+const app = getApp();
 
-Page({
-    mixins: [require('../../mixins/common.js')],
+let page = {
 
     data:{
        index1:'123',
@@ -18,8 +17,21 @@ Page({
        wx.navigateTo({
            url:"/pages/index/audio/audio"
        })
+    },
+
+
+    //页面传参数
+    param(){
+        this.navigateModal("/pages/index/param/param", {
+            amount: 13
+        }).then((res) => {
+            return app.func.toastPromise("return:" + res);
+        }).catch((res) => {
+            console.log(res);
+        })
     }
 
 
+};
 
-})
+app.func.mpage(page);

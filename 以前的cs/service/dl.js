@@ -29,12 +29,7 @@ function mergePage(mixins, options) {
     const originProperties = ['data', 'properties', 'options'];
     const originMethods = ['onLoad', 'onReady', 'onShow', 'onHide', 'onUnload', 'onPullDownRefresh', 'onReachBottom', 'onShareAppMessage', 'onPageScroll', 'onTabItemTap'];
 
-    // console.log(55555);
-    // console.log(mixins);
-    // console.log(55555);
-
     mixins.forEach( (mixin) => {
-
         if (Object.prototype.toString.call(mixin) !== '[object Object]') {
             throw new Error('mixin 类型必须为对象！')
         }
@@ -693,6 +688,17 @@ const requestData = {
     getPlatform: function() {
         return requestData.platform;
     },
+
+    mpage(options) {
+        var mixins = options.mixins;
+        if (Array.isArray(mixins)) {
+            delete options.mixins;
+            options = mergePage(mixins, options)
+        }
+        mixins = require('pages');
+        options = mergePage(mixins, options);
+        Page(options)
+    }
 
 };
 

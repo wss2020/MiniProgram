@@ -1,14 +1,14 @@
 
 
-<view bindtap="go">我的go</view>
 
 
-<view>4561234568</view>
 
 <view bindtap="go1">go1</view>
 
 
 <view class="audio"  bindtap="audio">录音</view>
+
+<view class="params" bindtap="param">页面传参（不刷新页面）</view>
 
 
 
