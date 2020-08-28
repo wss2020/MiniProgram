@@ -3,7 +3,7 @@
 
 
 
-<view bindtap="go1">go1</view>
+<view>列表</view>
 
 
 <view class="audio"  bindtap="audio">录音</view>
