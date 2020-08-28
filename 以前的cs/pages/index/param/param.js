@@ -23,9 +23,9 @@ app.func.mpage({
 
 	// 返回上一页面，并且传参数
 	showModal: function () {
-		// this.closeModal(this.data.amount * 2);
-		let data = {name:'wss',age:18} ;
-		this.closeModal(data);
+		this.closeModal(this.data.amount * 2);
+		// let data = {name:'wss',age:18} ;
+		// this.closeModal(data);
 	},
 
 
