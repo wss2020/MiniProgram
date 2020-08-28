@@ -7,7 +7,7 @@ app.func.mpage({
 	 * 页面的初始数据
 	 */
 	data: {
-
+		value:'二级页面',
 	},
 
 

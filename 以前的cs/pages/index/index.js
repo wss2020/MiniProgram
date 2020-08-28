@@ -4,6 +4,7 @@ const app = getApp();
 let page = {
 
     data:{
+       value:'一级页面',
        index1:'123',
        index2:'123',
     },
