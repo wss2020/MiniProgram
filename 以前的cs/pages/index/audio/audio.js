@@ -9,6 +9,30 @@ Page({
 		voice_playing: false
 	},
 
+
+	startRecord: function () {
+		this.mgr.start({
+			sampleRate: 11025,
+			numberOfChannels: 1,
+			format: "mp3",
+			encodeBitRate: 16000,
+			frameSize: 50
+		});
+	},
+
+	endRecord: function () {
+		this.mgr.stop();
+	},
+
+	play: function (res) {
+		if(this.data.voice_playing) {
+			this.ctx.stop();
+		} else {
+			this.ctx.src = this.data.url;
+			this.ctx.play();
+		}
+	},
+
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
@@ -133,28 +157,9 @@ Page({
 
 
 
-	play: function (res) {
-		if(this.data.voice_playing) {
-			this.ctx.stop();
-		} else {
-			this.ctx.src = this.data.url;
-			this.ctx.play();
-		}
-	},
 
-	startRecord: function () {
-		this.mgr.start({
-			sampleRate: 11025,
-			numberOfChannels: 1,
-			format: "mp3",
-			encodeBitRate: 16000,
-			frameSize: 50
-		});
-	},
 
-	endRecord: function () {
-		this.mgr.stop();
-	},
+
 
 
 	/**

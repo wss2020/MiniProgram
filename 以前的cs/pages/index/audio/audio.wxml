@@ -11,7 +11,11 @@
 
 <!--播放-->
 <div bindtap="play" wx:if="{{url != null}}">
+
+    <!-- 播放录音  -->
     <image src="https://files.dianlinet.com/dianli/images/2020-08-24/20-52-11.jpg" style="width: 500rpx;height: 100rpx;margin: 0 0 0 120rpx;" wx:if="{{!voice_playing}}"></image>
+
+    <!-- 播放中 -->
     <image src="/image/index/vedio.gif" style="width: 500rpx;height: 100rpx;margin: 0 0 0 120rpx;" wx:if="{{voice_playing}}"></image>
 </div>
 
@@ -19,7 +23,11 @@
 <!--录音-->
 <view  class="add_bag">
     <button  bindtouchstart="startRecord" bindtouchend="endRecord">
+
+        <!-- 录音中 -->
         <image  wx:if="{{recording}}"  src="https://files.dianlinet.com/dianli/images/2020-08-24/20-34-40.jpg"></image>
+
+        <!--  录音 -->
         <image  wx:else  src="https://files.dianlinet.com/dianli/images/2020-08-24/20-27-25.jpg"></image>
     </button>
 
