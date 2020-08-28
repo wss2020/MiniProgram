@@ -26,6 +26,9 @@ let page = {
         this.navigateModal("/pages/index/param/param", {
             amount: 13
         }).then((res) => {
+            console.log('接收resolve,返回的值res为');
+            console.log(res);
+
             return app.func.toastPromise("return:" + res);
         }).catch((res) => {
             console.log(res);

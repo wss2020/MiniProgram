@@ -64,6 +64,8 @@ let mpages = {
 
             if (this.onModal != null) {
                 this.onModal(args);
+
+                console.log('---------------------------- 传入参数结束 --------------------------------');
             }
         });
     },
@@ -93,32 +95,42 @@ let mpages = {
     },
 
 
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload() {
-        if (this.data._ret == null) {        //如果 this.data._ret 为 null，执行emitOpener函数。
-            this.emitOpener('onBack')
-        } else {                              //如果 this.data._ret 不为 null，执行emitOpener函数。
-            this.emitOpener('onRet', this.data._ret);
-        }
-    },
-
     closeModal(ret) {
-        if (ret == null) {     // 页面触发，closeModal事件，如果传入参数ret为 null, ret 赋值为 true.
+        if (ret == null) {     // 执行closeModal函数，如果传入参数ret为 null, ret 赋值为 true.
             ret = true;
         }
         this.data._ret = ret;    // 把 ret 赋值给  this.data._ret
-        wx.navigateBack();       // 默认delta值为1，返回上一页面
+
+        console.log('用户执行closeModal函数，并且给了返回数据 this.data._ret,它的值为');
+        console.log(this.data._ret);
+
+        wx.navigateBack();       // 默认delta值为1，返回上一页面  这时候二级页面生命周期函数--监听页面卸载 onUnload() 被触发。
     },
-
-
+    /*** 生命周期函数--监听页面卸载  */
+    onUnload() {
+        console.log('二级页面卸载');
+        if (this.data._ret == null) {
+            this.emitOpener('onBack')
+        } else {
+            this.emitOpener('onRet', this.data._ret);
+        }
+    },
     emitOpener: function (eventName, args) {
-        let channel = this.getEventChannel();        // 获取当前页面创建的广播类，并把它赋值给 channel
+        let channel = this.getEventChannel();              // 获取当前页面创建的广播类，并把它赋值给 channel
         if (channel != null && channel.emit != null) {     // 如果 channel 不为null, 并且 channel.emit 不为null
+
+            console.log('用户触发了 名为 user 的广播，广播的数据是一个对象，有 key ,data 两个字段');
+            console.log('key的值：');
+            console.log(eventName);
+            console.log('data的值：');
+            console.log(args);
+
             channel.emit("user", {key: eventName, data: args});   // 执行名为 user，参数为一个自定义对象的广播，
         }
     },
+
+
+
 
     navigateTo(url, _events) {          //  navigateTo 事件
         return getApp().func.promise((resolve, reject) => {
@@ -135,10 +147,15 @@ let mpages = {
                 childEvent.on('user', (e) => {            // e 创建一个名为 user 的广播。并指定回调函数
                     let key = e.key;
                     let data = e.data;
+
+                    console.log('执行了，名为 user 的监听，并执行指定的回调函数');
+
                     if (_events != null && _events.hasOwnProperty(key)) {
                         let func = _events[key];
                         if (typeof func == 'function') {
                             func(data);
+                            console.log('执行了funch函数，函数名为')
+                            console.log(func);
                         }
                     }
                 });
