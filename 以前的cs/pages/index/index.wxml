@@ -1,12 +1,11 @@
 
-
-
-
-
 <view style="height: 50rpx;"></view>
 
-
 <view class="audio"  bindtap="audio">录音</view>
+
+<navigator class="audio params"  url="/pages/index/backgroundaudio/backgroundaudio">
+    音频后台播放
+</navigator>
 
 <view class="params" bindtap="param">页面传参（不刷新页面）</view>
 

@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/index/audio/audio",
+    "pages/index/backgroundaudio/backgroundaudio",
     "pages/index/param/param",
     "pages/index/productdetail/productdetail",
     "pages/index/productdetail/product-description/product-description",

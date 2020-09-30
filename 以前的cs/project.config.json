@@ -1,84 +1,96 @@
 {
-	"description": "项目配置文件。",
-	"packOptions": {
-		"ignore": []
-	},
-	"setting": {
-		"urlCheck": true,
-		"es6": true,
-		"postcss": true,
-		"preloadBackgroundData": false,
-		"minified": true,
-		"newFeature": true,
-		"coverView": true,
-		"nodeModules": true,
-		"autoAudits": false,
-		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false,
-		"uglifyFileName": false,
-		"checkInvalidKey": true,
-		"checkSiteMap": true,
-		"uploadWithSourceMap": true,
-		"babelSetting": {
-			"ignore": [],
-			"disablePlugins": [],
-			"outputPath": ""
-		},
-		"useCompilerModule": true,
-		"userConfirmedUseCompilerModuleSwitch": false
-	},
-	"compileType": "miniprogram",
-	"libVersion": "2.6.6",
-	"appid": "wxb9f007ffa632f98e",
-	"projectname": "%E4%BB%A5%E5%89%8D%E7%9A%84cs",
-	"isGameTourist": false,
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"currentL": -1,
-			"list": []
-		},
-		"gamePlugin": {
-			"current": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": -1,
-			"list": [
-				{
-					"id": -1,
-					"name": "测试模板",
-					"pathName": "pages/tool/card/make/making/design/design1/design1",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "我的页面",
-					"pathName": "pages/about/about",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "录音页面",
-					"pathName": "pages/index/audio/audio",
-					"scene": null
-				}
-			]
-		}
-	}
+  "description": "项目配置文件。",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "useMultiFrameRuntime": false,
+    "useApiHook": false
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.6.6",
+  "appid": "wxb9f007ffa632f98e",
+  "projectname": "%E4%BB%A5%E5%89%8D%E7%9A%84cs",
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
+    "conversation": {
+      "current": -1,
+      "list": []
+    },
+    "plugin": {
+      "current": -1,
+      "list": []
+    },
+    "game": {
+      "currentL": -1,
+      "list": []
+    },
+    "gamePlugin": {
+      "current": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "current": -1,
+      "list": [
+        {
+          "id": -1,
+          "name": "测试模板",
+          "pathName": "pages/tool/card/make/making/design/design1/design1",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "我的页面",
+          "pathName": "pages/about/about",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "录音页面",
+          "pathName": "pages/index/audio/audio",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "录音",
+          "pathName": "pages/index/audio/audio",
+          "scene": null
+        }
+      ]
+    }
+  }
 }

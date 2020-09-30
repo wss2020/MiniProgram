@@ -26,9 +26,11 @@ Page({
 
 	play: function (res) {
 		if(this.data.voice_playing) {
+			console.log('播放暂停');
 			this.ctx.stop();
 		} else {
 			this.ctx.src = this.data.url;
+			console.log('进行播放');
 			this.ctx.play();
 		}
 	},
@@ -89,6 +91,9 @@ Page({
 
 		var that = this;
 		this.onRecordStop = (res) => {
+
+			console.log('开始上传录音音频');
+
 			if (this.data.recording) {
 				let duration = res.duration;
 				return app.func.uploadPromise(
@@ -135,8 +140,6 @@ Page({
 	},
 
 
-
-
 	onModal: function(res) {
 		if(res != null) {
 			this.setData({
@@ -154,12 +157,6 @@ Page({
 	confirm: function() {
 		this.closeModal({url: this.data.url, duration: this.data.duration});
 	},
-
-
-
-
-
-
 
 
 	/**

@@ -11,16 +11,25 @@ class RecordManager {
 
         this.event = new events.EventEmitter();
         this.onStop = (res) => {
+
+            console.log('广播 record-stop，值为 ');
+            console.log(res);
+
             this.event.emit("record-stop", res);
         };
         this.onFrameRecorded = (res) => {
+            console.log('广播 record-frame，值为 ');
             console.log(res);
             this.event.emit("record-frame", res);
         };
         this.onError = (res) => {
+            console.log('广播 record-error，值为 ');
+            console.log(res);
             this.event.emit("record-error", res);
         };
         this.onStart = (res) => {
+            console.log('广播 record-start，值为 ');
+            console.log(res);
             this.event.emit("record-start", res);
         };
         this.mgr.onStop(this.onStop);
