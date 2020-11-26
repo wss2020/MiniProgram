@@ -1,5 +1,0 @@
-/* pages/index/search/result/result.wxss */
-@import "/pages/template/product/product.wxss";
-page{background: #f3f5f6;}
-
-.products{display:flex;flex-direction: column;}

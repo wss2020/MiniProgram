@@ -4,57 +4,14 @@
     "pages/index/audio/audio",
     "pages/index/backgroundaudio/backgroundaudio",
     "pages/index/param/param",
-    "pages/index/productdetail/productdetail",
-    "pages/index/productdetail/product-description/product-description",
-    "pages/index/categorysku/categorysku",
-    "pages/index/brandsku/brandsku",
-    "pages/index/search/search",
-    "pages/index/search/result/result",
-    "pages/optimal/optimal",
-    "pages/tool/tool",
-    "pages/tool/card/make/make",
-    "pages/tool/card/make/addproduck/addproduct",
-    "pages/tool/card/make/making/making",
-    "pages/tool/card/make/making/design/design/design",
     "pages/tool/card/make/making/design/design1/design1",
-    "pages/tool/card/make/making/design/submit/submit",
-    "pages/tool/card/make/making/selfmake/selfmake",
-    "pages/tool/card/make/making/selfmake/cardproduct/cardproduct",
-    "pages/tool/card/make/detail/detail",
-    "pages/tool/card/admin/admin",
-    "pages/tool/card/admin/detail/admin-detail/admin-detail",
-    "pages/tool/card/admin/detail/query-detail/query-detail",
-    "pages/tool/card/admin/query/query",
-    "pages/tool/card/admin/operate/operate",
-    "pages/tool/card/statistics/statistics",
-    "pages/tool/recommending/recommending",
-    "pages/tool/recommending/title/title",
-    "pages/tool/recommending/newadddpro/newadddpro",
-    "pages/shoppingcart/shoppingcart",
-    "pages/about/about",
-    "pages/about/service/index",
-    "pages/about/service/index/index",
-    "pages/about/service/index/chat/index",
-    "pages/gifts/pages/receive-order-detail/receive-order-detail",
-    "pages/gifts/pages/receive-order-detail/shopdetail/shopdetail",
-    "pages/gifts/pages/order/order",
-    "pages/about/information/information",
-    "pages/about/orderlist/orderlist",
-    "pages/about/orderlist/orderdetail/orderdetail",
-    "pages/about/orderlist/logistics/logistics",
-    "pages/auth/auth",
-    "pages/auth/agreement/agreement",
-    "pages/auth/attestation/attestation",
-    "pages/auth/preattestation/preattestation",
-    "pages/auth/login/login",
-    "pages/auth/login/tellogin/tellogin",
-    "pages/auth/register/register",
-    "pages/about/balance/balance",
-    "pages/about/balance/refill/refill",
-    "pages/about/balance/logs/logs",
-    "pages/about/message/message",
+    "pages/optimal/optimal",
+
     "pages/about/cs/cs",
     "pages/about/test/test"
+
+
+
   ],
   "useExtendedLib": {
     "weui": true
@@ -82,18 +39,6 @@
         "iconPath": "image/index/optimal.jpg",
         "selectedIconPath": "image/index/onoptimal.jpg",
         "text": "优选"
-      },
-      {
-        "pagePath": "pages/tool/tool",
-        "iconPath": "image/index/tool.jpg",
-        "selectedIconPath": "image/index/ontool.jpg",
-        "text": "工具"
-      },
-      {
-        "pagePath": "pages/about/about",
-        "iconPath": "image/index/about.jpg",
-        "selectedIconPath": "image/index/onabout.jpg",
-        "text": "我"
       }
     ]
   },

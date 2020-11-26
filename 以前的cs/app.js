@@ -25,13 +25,13 @@ var app = {
         accesstoken:null,
         imgUrl: 'https://www.dianlinet.com',
         // ceshi: "https://www.dianlinet.com/cs",
-        // ceshi: "https://cs.dianlinet.cn/cs",
+        ceshi: "https://cs.dianlinet.cn/cs",
         // ceshi: "http://127.0.0.1:84/cs",
         // invalid : null
 
 
         // 录音专用接口
-        ceshi: "https://cs.dianlinet.cn/wxa/",
+        // ceshi: "https://cs.dianlinet.cn/wxa/",
 
     },
 

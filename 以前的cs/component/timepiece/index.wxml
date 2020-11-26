@@ -1,0 +1,12 @@
+<!--<view> {{text}}</view>-->
+<!--<view>-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</view>-->
+<!--<view> {{showText}}</view>-->
+
+<text wx:if="{{showNumType==1 || showNumType==2}}" class="polestar-font">{{showText}}</text>
+
+
+
+<view class="timepiece  polestar-font" wx:if="{{showNumType==0}}">
+    <view class="timepiece1">{{showText}}</view>
+    <view class="timepiece2">{{unit}}</view>
+</view>

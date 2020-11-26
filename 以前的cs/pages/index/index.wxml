@@ -4,10 +4,14 @@
 <view class="audio"  bindtap="audio">录音</view>
 
 <navigator class="audio params"  url="/pages/index/backgroundaudio/backgroundaudio">
-    音频后台播放
+    音频后台播放（未完成）
 </navigator>
 
 <view class="params" bindtap="param">页面传参（不刷新页面）</view>
+
+<navigator class="params"  url="/pages/index/backgroundaudio/backgroundaudio">
+    计时器
+</navigator>
 
 
 

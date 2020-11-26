@@ -1,0 +1,23 @@
+/* components/timepiece/index.wxss */
+
+@import '../../common/font.wxss';
+
+
+.timepiece {
+    padding-top: 80rpx;
+    display: flex;
+    /*justify-content: center;*/
+    align-items: baseline;
+    color: #FF7500;
+}
+
+.timepiece1 {
+    font-size: 248rpx;
+    line-height: 100rpx;
+    padding: 24rpx 0;
+}
+
+.timepiece2 {
+    font-size: 96rpx;
+    line-height: 72rpx;
+}
