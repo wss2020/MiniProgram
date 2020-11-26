@@ -1,0 +1,4 @@
+<view class="custom-list">
+  <view class="name" wx:if="{{ name }}">{{ name }}</view>
+  <slot></slot>
+</view>

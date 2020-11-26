@@ -1,0 +1,3 @@
+<view class="pane" hidden="{{ hide }}">
+  <slot></slot>
+</view>

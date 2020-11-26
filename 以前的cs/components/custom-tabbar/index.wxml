@@ -1,0 +1,19 @@
+<view class="custom-tabbar">
+  <view class="price-btn" catchtap="onClickPrice">
+    <view class="price">
+      <slot name="left-text"></slot>
+      <view style="color:{{ color }};">
+        <slot></slot>
+      </view>
+      <image wx:if="{{ showIcon }}" style="transition-property:all;transition-duration:{{ duration }}s;"
+        src="../../assets/images/arrow_icon_top.png" class="icon {{rotate?'rotate':''}}"></image>
+    </view>
+    <view class="date">
+      <slot name="date"></slot>
+    </view>
+  </view>
+  <view class="sure-btn {{ sureActived ? 'actived':'' }}" catchtap="onClickSure">
+    <text>{{ sureText }}</text>
+    <image class="icon" src="../../assets/images/arrow_icon.png"></image>
+  </view>
+</view>

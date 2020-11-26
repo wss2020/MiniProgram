@@ -1,0 +1,5 @@
+.custom-list .name{
+  font-size: 56rpx;
+  line-height: 72rpx;
+  padding-bottom: 24rpx;
+}

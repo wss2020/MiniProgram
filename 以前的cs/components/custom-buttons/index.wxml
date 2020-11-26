@@ -1,0 +1,6 @@
+<view class="buttons-wraper">
+  <block wx:if="{{ buttons.length }}">
+    <view class="button {{ activedIndex === index ? 'actived' : '' }}" style="{{ buttonStyle }}" wx:for="{{ buttons }}"
+      wx:key="index" catchtap="onClick" data-index="{{index}}" data-button="{{item}}" >{{ item.title }}</view>
+  </block>
+</view>

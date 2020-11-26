@@ -1,0 +1,10 @@
+<van-popup class="error-tips" show="{{ showDialog }}" overlay-style="background-color: rgba(16, 24, 32, 0.6);">
+	<view class="content" catchtouchmove="noTouchMove">
+		<text class="title">{{ title }}</text>
+		<text style="text-align:{{ center ? 'center':'left' }};">{{ message }}</text>
+		<view class="actions">
+			<text style="color:{{ cancelColor }};" class="cancel-btn" catchtap="oncancel" wx:if="{{ showCancel }}">{{ cancelText }}</text>
+			<text style="color:{{ sureColor }};" class="sure-btn" catchtap="onsure">{{ sureText }}</text>
+		</view>
+	</view>
+</van-popup>

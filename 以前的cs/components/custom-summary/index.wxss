@@ -1,0 +1,81 @@
+.summary-wraper {
+  /* height: 100%; */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  color: #75787B;
+  padding-bottom: 68px;
+  padding-bottom: calc(env(safe-area-inset-bottom) + 68px);
+}
+
+.summary-wraper .flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.summary-wraper .price {
+  color: #101820;
+}
+.summary-wraper .price.hightlight {
+  color: #101820;
+  text-decoration: line-through;
+}
+.summary-wraper .hightlight {
+  color: #FF7500;
+}
+
+.summary-wraper .title {
+  color: #101820;
+  font-size: 32rpx;
+  line-height: 48rpx;
+  height: 144rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  background-color: #fff;
+}
+.summary-wraper .content {
+  flex: 1;
+  overflow: auto;
+}
+
+.summary-wraper .total {
+  font-size: 32rpx;
+  line-height: 48rpx;
+  padding: 24rpx 0;
+}
+
+.summary-wraper .config-des .item {
+  padding: 24rpx 0;
+  font-size: 32rpx;
+  line-height: 48rpx;
+}
+.summary-wraper .config-des .item .right {
+  flex-basis: 30%;
+  text-align: right;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.summary-wraper .promo {
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+
+.summary-wraper .promo-item {
+  padding: 20rpx 0;
+}
+
+.summary-wraper .coupon-title {
+  font-size: 32rpx;
+  line-height: 48rpx;
+  padding: 20rpx 0;
+}
+
+.summary-wraper .coupon-list {
+  background-color: #F8F8F8;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  padding: 24rpx 0;
+}

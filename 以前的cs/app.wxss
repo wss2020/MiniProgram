@@ -70,3 +70,126 @@ input{
   vertical-align: middle;
 }
 
+
+page {
+    font-family: 'PingFang SC', 'Helvetica Neue', 'Arial', 'sans-serif';
+    color: #101820;
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.btn {
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
+    border-radius: 0;
+    background-color: transparent;
+}
+
+.btn::after {
+    border-radius: 0;
+    border: none;
+}
+
+.grey-bg {
+    background-color: #f1eff2 !important;
+}
+
+.pl-48 {
+    padding-left: 48rpx !important;
+}
+
+.pl-20 {
+    padding-left: 20rpx !important;
+}
+
+.plr-24 {
+    padding-left: 24rpx !important;
+    padding-right: 24rpx !important;
+}
+
+.plr-48 {
+    padding-left: 48rpx !important;
+    padding-right: 48rpx !important;
+}
+
+.pl-96 {
+    padding-left: 96rpx !important;
+}
+
+.pb-48 {
+    padding-bottom: 48rpx !important;
+}
+
+.mt-128 {
+    margin-top: 128rpx !important;
+}
+
+.mt-64 {
+    margin-top: 64rpx !important;
+}
+
+.mlr-24 {
+    margin-left: 24rpx !important;
+    margin-right: 24rpx !important;
+}
+
+.pb-128 {
+    padding-bottom: 128rpx !important;
+}
+
+.mt-50 {
+    margin-top: 50rpx !important;
+}
+
+.white-color {
+    color: #fff !important;
+}
+
+.black-color {
+    color: #101820 !important;
+}
+
+.black-bg {
+    background-color: #222830 !important;
+}
+
+.blod {
+    font-weight: 700;
+}
+
+/* total 10 */
+
+.col-3 {
+    width: 33.33%;
+}
+
+.col-4 {
+    width: 40%;
+}
+
+.col-5 {
+    width: 50%;
+}
+
+.col-6 {
+    width: 60%;
+}
+
+.col-7 {
+    width: 70%;
+}
+
+.col-8 {
+    width: 80%;
+}
+
+.border-right {
+    border-right: 1px solid rgba(16, 24, 32, 0.15);
+}
+

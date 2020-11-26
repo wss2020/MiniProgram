@@ -1,0 +1,38 @@
+.custom-heroswiper {
+  position: relative;
+}
+.custom-heroswiper .swiper {
+  height: 480rpx;
+}
+.custom-heroswiper .swiper-item,
+.custom-heroswiper .swiper-item .img {
+  height: 100%;
+}
+.custom-heroswiper .dots {
+  position: absolute;
+  display: flex;
+  bottom: 32rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.custom-heroswiper .dots .dots-mark,
+.custom-heroswiper .dots .dots-item {
+  width: 40rpx;
+}
+.custom-heroswiper .dots .dots-item {
+  height: 1px;
+  background-color: rgba(16, 24, 32, 0.3);
+}
+.custom-heroswiper .dots .dots-mark {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background-color: #FF7500;
+}
+.custom-heroswiper .panoramic-btn {
+  position: absolute;
+  width: 118rpx;
+  height: 32rpx;
+  top: 32rpx;
+  right: 32rpx;
+}

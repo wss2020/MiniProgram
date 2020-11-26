@@ -1,0 +1,4 @@
+<view class="custom-list-item" catchtap="onclick">
+  <text>{{ name }}</text>
+  <image class="icon" src="../../assets/images/arrow_icon.png"></image>
+</view>

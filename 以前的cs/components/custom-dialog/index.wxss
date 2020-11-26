@@ -1,0 +1,28 @@
+.error-tips .content {
+  width: 540rpx;
+  /* white-space: nowrap; */
+  padding: 96rpx 56rpx 40rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #101820;
+  line-height: 44rpx;
+  font-size: 32rpx;
+}
+
+.error-tips .content .title {
+  margin-bottom: 48rpx;
+}
+
+.error-tips .actions {
+  padding-top: 76rpx;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.error-tips .content .cancel-btn,
+.error-tips .content .sure-btn {
+  padding: 20rpx 16rpx;
+}

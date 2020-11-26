@@ -1,0 +1,56 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+<wxs src="./index.wxs" module="getters" />
+
+<view class="custom-class {{ utils.bem('tabs', [type]) }}">
+  <van-sticky disabled="{{ !sticky }}" z-index="{{ zIndex }}" offset-top="{{ offsetTop }}" container="{{ container }}"
+    bind:scroll="onTouchScroll">
+    <view
+      class="van-tabs__wrap--scrollable {{ utils.bem('tabs__wrap', { scrollable }) }} {{ type === 'line' && border ? 'van-hairline--top-bottom' : '' }}">
+      <slot name="nav-left" />
+
+      <scroll-view enhanced show-scrollbar="{{ false }}" scroll-x="{{ scrollable || canroll }}" scroll-with-animation
+        scroll-left="{{ scrollLeft }}" class="{{ utils.bem('tabs__scroll', [type]) }}"
+        style="{{ color ? 'border-color: ' + color : '' }}">
+        <view class="{{ utils.bem('tabs__nav', [type, { complete: !ellipsis }]) }} nav-class"
+          style="{{ getters.tabCardTypeBorderStyle(color, type) }}">
+
+          <view wx:for="{{ tabs }}" wx:key="index" data-index="{{ index }}"
+            class="{{ getters.tabClass(index === currentIndex, ellipsis) }} {{ utils.bem('tab', { active: index === currentIndex, disabled: item.disabled, complete: !ellipsis }) }}"
+            style="{{ getters.tabStyle(index === currentIndex, ellipsis, color, type, item.disabled, titleActiveColor, titleInactiveColor, swipeThreshold, scrollable) }}"
+            bind:tap="onTap">
+
+            <!--数字类型icon-->
+            <block wx:if="{{ item.icon === 'number' }}">
+              <image wx:if="{{ currentIndex > index }}" class="icon" src="./imgs/right_icon.png"></image>
+              <view wx:else class="number">0{{ index+1 }}</view>
+            </block>
+            <!--星星类型icon-->
+            <block wx:if="{{ item.icon === 'star' }}">
+              <image wx:if="{{ currentIndex >= index }}" class="icon" src="./imgs/star_icon_actived.png"></image>
+              <image wx:else class="icon" src="./imgs/star_icon.png"></image>
+            </block>
+
+            <view class="{{ ellipsis ? 'van-ellipsis' : '' }}" style="{{ item.titleStyle }}">
+              {{ item.title }}
+              <van-info wx:if="{{ item.info !== null || item.dot }}" info="{{ item.info }}" dot="{{ item.dot }}"
+                custom-class="van-tab__title__info" />
+            </view>
+
+            <view class="line-wraper {{ currentIndex > index ? 'pass':'' }} {{ currentIndex === index ? 'actived':'' }}" wx:if="{{ item.showLine }}"></view>
+
+          </view>
+        </view>
+      </scroll-view>
+
+      <slot name="nav-right" />
+    </view>
+  </van-sticky>
+
+  <view class="van-tabs__content" bind:touchstart="onTouchStart" bind:touchmove="onTouchMove" bind:touchend="onTouchEnd"
+    bind:touchcancel="onTouchEnd">
+    <view class="{{ utils.bem('tabs__track', [{ animated }]) }} van-tabs__track"
+      style="{{ getters.trackStyle({ duration, currentIndex, animated }) }}">
+      <slot />
+    </view>
+  </view>
+</view>

@@ -9,7 +9,7 @@
 
 <view class="params" bindtap="param">页面传参（不刷新页面）</view>
 
-<navigator class="params"  url="/pages/index/backgroundaudio/backgroundaudio">
+<navigator class="params"  url="/pages/index/calculate/charging/index">
     计时器
 </navigator>
 

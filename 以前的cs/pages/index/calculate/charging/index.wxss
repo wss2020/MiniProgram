@@ -1,0 +1,132 @@
+/* pages/calculate/charging/index.wxss */
+@import '../../../../common/font.wxss';
+@import '../../../../common/common.wxss';
+
+/* more-tools */
+.more-tools {
+    padding: 80rpx 0;
+}
+
+.main {
+    padding: 0 10rpx;
+}
+
+.range-header {
+    padding-top: 56rpx;
+    padding-bottom: 80rpx;
+}
+
+.range-header .title {
+    font-size: 60rpx;
+    line-height: 64rpx;
+    color: #75787B;
+}
+
+.range-header .subtitle {
+    font-size: 56rpx;
+    line-height: 72rpx;
+}
+
+
+
+
+
+
+
+
+
+
+.custom-button {
+    margin-top: 88rpx;
+    height: 48rpx;
+    font-size: 32rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.custom-button1 {
+    color: rgba(16, 24, 32, 0.6);
+}
+
+.slider {
+    margin-top: 50rpx;
+}
+
+.titles {
+    margin-top: 98rpx;
+}
+
+
+
+
+.slider .van-slider__button {
+    width: 40rpx;
+    height: 40rpx;
+    background-color: #0f1820;
+}
+
+.slider .van-slider {
+    border-radius: 0;
+}
+
+
+.tabs-title {
+    display: flex;
+    width: 60%;
+    font-size: 32rpx;
+    color: #101820;
+}
+
+.tab-title {
+    display: flex;
+    justify-content: center;
+}
+
+.titles .van-tabs__line {
+    bottom: 12rpx;
+}
+
+.titles .van-ellipsis {
+    font-size: 32rpx;
+}
+
+
+
+.tabs {
+    margin-top: 32rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tabs-content {
+    box-sizing: border-box;
+    font-size: 32rpx;
+    line-height: 48rpx;
+    color: #101820;
+    padding-top: 24rpx;
+    padding-bottom: 24rpx;
+    padding-left: 48rpx;
+    background-color: #ECECE7;
+    transition: background-color 200ms ease 0s, color 200ms ease 0s;
+}
+
+.w-49 {
+    width: 49%;
+}
+
+.w-32 {
+    width: 32%;
+}
+
+.actived {
+    color: #fff;
+    background-color: #101820;
+}
+
+.tips {
+    margin-top: 80rpx;
+    font-size: 24rpx;
+    line-height: 32rpx;
+    color: #97999B;
+}

@@ -1,0 +1,72 @@
+page {
+  padding-bottom: 68px;
+  padding-bottom: calc(env(safe-area-inset-bottom) + 68px);
+}
+
+.custom-tabbar,
+.custom-tabbar .price-btn,
+.custom-tabbar .sure-btn,
+.custom-tabbar .price-btn .price {
+  display: flex;
+}
+
+.custom-tabbar {
+  position: fixed;
+  z-index: 99;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* width: 100%; */
+  padding-top: 10px;
+  padding-left: 24px;
+  padding-right: 24px;
+  /* box-sizing: border-box; */
+  /* height: 8px; */
+  align-items: flex-end;
+  justify-content: space-between;
+  background-color: #fff;
+  padding-bottom: calc(env(safe-area-inset-bottom) + 10px);
+}
+.custom-tabbar .price-btn {
+  flex-direction: column;
+}
+.custom-tabbar .price-btn .price {
+  align-items: center;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.custom-tabbar .price-btn .date {
+  font-size: 11px;
+  line-height: 15px;
+  padding-top: 3px;
+  color: #53565A;
+}
+
+.custom-tabbar .price-btn .icon {
+  width: 12px;
+  height: 7px;
+  padding: 8px 6px;
+  margin-left: 4px;
+}
+.custom-tabbar .price-btn .icon.rotate {
+  transform: rotate(180deg);
+}
+.custom-tabbar .sure-btn {
+  height: 48px;
+  padding-left: 24px;
+  padding-right: 50px;
+  align-items: center;
+  color: #fff;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), #53565A;
+  opacity: 0.6;
+}
+.custom-tabbar .sure-btn.actived {
+  background: #53565A;
+  opacity: 1;
+}
+.custom-tabbar .sure-btn .icon {
+  width: 12px;
+  height: 12px;
+  margin-left: 10px;
+}

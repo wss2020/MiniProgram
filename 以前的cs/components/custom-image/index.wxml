@@ -1,0 +1,4 @@
+<view style="{{ imgStyle }}">
+  <image wx:if="{{ !imgWrong }}" class="image-class img" src="{{ src }}"  mode="{{ mode }}" binderror="onImgError"></image>
+<image wx:else class="image-class img" src="{{ errorLink }}" mode="{{ mode }}"></image>
+</view>

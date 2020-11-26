@@ -1,0 +1,4 @@
+function randomImg(url) {
+  return url + '?v=' + getDate().getTime()
+}
+module.exports.randomImg = randomImg

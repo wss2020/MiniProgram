@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "nav-bar":"/components/nav-bar/nav-bar",
+    "custom-buttons":"/components/custom-buttons/index",
+    "van-tab": "/components/default-tab/index",
+    "van-tabs": "/components/default-tabs/index",
+    "timepiece": "/components/timepiece/index",
+    "van-slider": "/components/slider/index",
+    "custom-ul": "/components/custom-list/ul",
+    "custom-li": "/components/custom-list/li",
+    "van-toast": "/components/toast/index"
+  }
+}

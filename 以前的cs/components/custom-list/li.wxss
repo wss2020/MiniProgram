@@ -1,0 +1,15 @@
+.custom-list-item {
+  height: 112rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: 40rpx;
+  line-height: 48rpx;
+  border-bottom: 1px solid#101820;
+}
+
+.custom-list-item .icon {
+  width: 48rpx;
+  height: 48rpx;
+}

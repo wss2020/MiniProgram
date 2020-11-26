@@ -1,0 +1,50 @@
+<nav-bar background="#fff" back="{{ true }}" bind:back="onBack" isImmersived="{{false}}"></nav-bar>
+
+<!-- header -->
+<view class="range-header plr-48">
+    <view class="title polestar-font letter-spacing-minus2point4">Polestar 2</view>
+    <view class="subtitle">充电计算器</view>
+</view>
+
+<view class="main">
+    <timepiece id="timepiece" class="stopwatch" showNumType="{{0}}" />
+
+    <view class="custom-button">
+        <view class="custom-button1">所需电池电量 %</view>
+        <view class="custom-button2 polestar-font">{{ KMValue }}km / {{currentValue}}%</view>
+    </view>
+    <view class="slider">
+        <van-slider value="{{ currentValue }}" min="1" maxRange="{{80}}" outTab="{{currentTab}}"
+            inTab="{{currentTabIndex}}" bind:drag="onDrag" bind:change="change" inactive-color="#dbdcde"
+            active-color="#0f1820" bar-height="6"></van-slider>
+    </view>
+</view>
+
+<view wx:if="{{tabs.length>0}}" class="titles">
+    <van-tabs nav-class="tabs-title" color="#FF7500" line-width="62" line-height="2" active="{{ currentTab }}"
+        bind:change="onChange">
+        <block wx:for="{{tabs}}" wx:key="index">
+            <van-tab title="{{item.tabTitle}}"></van-tab>
+        </block>
+    </van-tabs>
+</view>
+
+
+<view class="main">
+    <block wx:for="{{tabs}}" wx:key="index">
+        <view class="tabs" hidden="{{currentTab!=index}}">
+            <view
+                class=" tabs-content {{item.items.length==2 ? 'w-49' : 'w-32'}}  {{currentTabIndex==index1 ? 'actived' : ''}} "
+                bindtap="onChangeTabValue" data-index="{{index1}}" wx:for="{{item.items}}" wx:for-item="items"
+                wx:key="index1" wx:for-index="index1">
+                {{items.powerValue}}
+            </view>
+        </view>
+    </block>
+</view>
+
+<view class="main tips">
+    *免责声明：Polestar 2充电计算器基于我们的认证综合续航里程450公里 (NEDC) 和最大充电能力150千瓦。此处提供的数据为近似值，根据电源和其他因素而有所不同。
+</view>
+
+

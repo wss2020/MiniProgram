@@ -1,0 +1,20 @@
+.swiper{
+  height: 468rpx;
+}
+.swiper-item{
+  width: 96%;
+  height: 100%;
+}
+.swiper-item image {
+  width: 100%;
+  height: 100%;
+}
+.dots {
+  display: flex;
+  margin-top: 32rpx;
+}
+.dots-item {
+  width: 80rpx;
+  height: 4rpx;
+  margin-right: 16rpx;
+}

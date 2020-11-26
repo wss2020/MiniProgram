@@ -1,0 +1,16 @@
+<view class="steps">
+  <view class="steps-content">
+    <slot></slot>
+  </view>
+  <view class="steps-bar">
+    <view class="number">{{ currentValue + 1 }} / {{stepList.length}}</view>
+    <view class="steps-line-wraper">
+      <view class="line" style="width: {{ (currentValue + 1) / stepList.length * 100 }}%"></view>
+    </view>
+    <view class="controls">
+      <van-icon custom-class="icon" name="arrow-left" bind:click="toPrev" />
+      <view>{{ stepList[currentValue].label }}</view>
+      <van-icon custom-class="icon" name="arrow" bind:click="toNext" />
+    </view>
+  </view>
+</view>

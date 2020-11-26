@@ -1,0 +1,4 @@
+function str2num(str) {
+  return typeof str === 'string' ? parseInt(str) : str
+}
+module.exports.str2num = str2num

@@ -1,0 +1,18 @@
+<view class="custom-features">
+  <block wx:if="{{ featureGroups.length > 0 }}">
+    <view class="features-wraper">
+      <view class="features-item {{ item.selectedState === 'Selected' || item.selectedState === 'Included' || item.selectedState === 'PackageIncluded' ? 'actived':'' }}" wx:for="{{ featureGroups }}" wx:key="code" data-index="{{ index }}" data-code="{{ item.code }}" catchtap="handleClickFeature">
+        <image class="img" src="{{ baseUrl + item.icon }}" mode="aspectFill"></image>
+        <view class="attention-mark" wx:if="{{ showConflict && item.selectedState === 'Excluded' }}">
+          <image class="icon" src="../../assets/images/attention_icon.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="features-name">
+      <view class="name">{{ selectedFeatures.name }}</view>
+      <view class="label" wx:if="{{ selectedFeatures.price }}">{{ selectedFeatures.price }}</view>
+      <view class="label" wx:else>已包含</view>
+    </view>
+  </block>
+  <view wx:else style="opacity:.6;">暂无数据</view>
+</view>

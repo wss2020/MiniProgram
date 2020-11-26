@@ -1,0 +1,38 @@
+.steps-bar {
+  padding: 10rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 2;
+  position: sticky;
+  bottom: 0px;
+  background-color: #fff;
+}
+
+.steps-bar .icon {
+  padding: 6rpx;
+}
+
+.steps-bar .steps-line-wraper,
+.steps-bar .controls {
+  width: 100%;
+}
+
+.steps-bar .steps-line-wraper {
+  margin-top: 16rpx;
+  height: 2px;
+  background-color: rgba(16, 24, 32, 0.15);
+}
+
+.steps-bar .steps-line-wraper .line {
+  height: 100%;
+  transition: width 0.3s linear;
+  background-color: rgb(255, 117, 0);
+}
+
+.steps-bar .controls {
+  margin-top: 32rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

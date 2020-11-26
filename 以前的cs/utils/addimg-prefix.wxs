@@ -1,0 +1,4 @@
+function addImgPrefix(url) {
+  return 'https://www.polestar.com' + url
+}
+module.exports.addImgPrefix = addImgPrefix

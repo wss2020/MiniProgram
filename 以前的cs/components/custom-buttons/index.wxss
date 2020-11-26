@@ -1,0 +1,20 @@
+.buttons-wraper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons-wraper .button {
+  box-sizing: border-box;
+  font-size: 32rpx;
+  line-height: 48rpx;
+  color: #101820;
+  padding-top: 24rpx;
+  padding-bottom: 24rpx;
+  padding-left: 48rpx;
+  background-color: #ECECE7;
+  transition: background-color 200ms ease 0s, color 200ms ease 0s;
+}
+.buttons-wraper .button.actived {
+  color: #fff;
+  background-color: #101820;
+}

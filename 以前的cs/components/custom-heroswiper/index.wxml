@@ -1,0 +1,22 @@
+<view class="custom-heroswiper">
+  <block wx:if="{{ swiperList.length > 0 }}">
+    <swiper class='swiper' current="{{ current }}" bindchange='swiperChange' duration="{{ duration }}">
+      <swiper-item wx:for="{{ swiperList }}" wx:key="index">
+        <view class="swiper-item">
+          <van-image image-class="img" width="100%" height="100%" src="{{ item.url }}" fit="cover" use-loading-slot>
+            <van-loading slot="loading" type="spinner" size="20" vertical />
+          </van-image>
+          <!-- <image class="img" mode="aspectFill" src='{{item.url}}'></image> -->
+        </view>
+      </swiper-item>
+    </swiper>
+    <image catchtap="onClickPanoramic" wx:if="{{ showPanoramic }}" class="panoramic-btn" src="./imgs/panoramic_view.png"></image>
+    <view class="dots">
+      <view class="dots-item" wx:for="{{swiperList}}" wx:key="*this"></view>
+      <view class="dots-mark"
+        style="left:{{ (currentIndex)/swiperList.length*100 }}%;transition-property:left;transition-duration:{{ duration }}ms;">
+      </view>
+    </view>
+  </block>
+  <view wx:else style="opacity:.6;">暂无数据</view>
+</view>

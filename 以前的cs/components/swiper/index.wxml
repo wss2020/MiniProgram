@@ -1,0 +1,14 @@
+<block wx:if="{{swiperList}}">
+  <swiper class='swiper' next-margin='50rpx' bindanimationfinish='swiperChange' duration="{{ 200 }}">
+    <block wx:for="{{swiperList}}" wx:key="*this">
+      <swiper-item>
+        <view class="swiper-item">
+          <image mode="aspectFit" src='{{item}}'></image>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="dots">
+    <view class="dots-item" wx:for="{{swiperList}}" wx:key="*this" style="background:{{ swiperIndex === index ? activedColor : inActivedColor }}"></view>
+  </view>
+</block>
