@@ -1,0 +1,14 @@
+<!--pages/index/layout/layout.wxml-->
+<view class="main">
+    <block wx:for="{{arrImgs}}">
+        <image class="img img{{index}}" mode="widthFix" src="{{item.src}}"></image>
+    </block>
+
+
+    <view style="position: sticky;top:10rpx;width: 750rpx;">
+        粘性定位
+    </view>
+    <block wx:for="{{90}}">
+        <image class="img img{{index}}" mode="widthFix" src="https://images.shobserver.com/news/690_390/2021/1/14/d9646738e80a454daecac2272145cb68.jpg"></image>
+    </block>
+</view>

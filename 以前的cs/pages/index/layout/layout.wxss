@@ -1,0 +1,27 @@
+/* pages/index/layout/layout.wxss */
+.main {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.img{
+    display: flex;
+    width: 375rpx;
+}
+
+.img0,.img2{
+    margin-top: 20rpx;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
