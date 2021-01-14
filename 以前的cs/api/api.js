@@ -26,6 +26,7 @@ const authDominMap = {
 
 const graphqlDomin = 'https://graphql.datocms.com/'
 const graphqlPriceDomin = 'https://pc-api.polestar.com/'
+const openchargeDomin = 'https://api.openchargemap.io/v3/poi/'
 
 const sendsms = 'https://prod.china.polestar.com/api/sms/testdrive/code'
 
@@ -39,7 +40,8 @@ const api = {
   domin: dominMap[envVersion],
   authDomin: authDominMap[envVersion],
   graphqlDomin,
-  graphqlPriceDomin
+  graphqlPriceDomin,
+  openchargeDomin
 }
 
 export default api

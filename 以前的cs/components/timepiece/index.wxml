@@ -7,6 +7,6 @@
 
 
 <view class="timepiece  polestar-font" wx:if="{{showNumType==0}}">
-    <view class="timepiece1">{{showText}}</view>
-    <view class="timepiece2">{{unit}}</view>
+    <view class="timepiece1"><text>{{showText}}</text> </view>
+    <view class="timepiece2"><text>{{unit}}</text></view>
 </view>

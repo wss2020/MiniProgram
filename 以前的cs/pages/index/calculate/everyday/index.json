@@ -1,0 +1,21 @@
+{
+  "usingComponents": {
+    "custom-buttons":"/components/custom-buttons/index",
+    "van-tab": "/components/tab/index",
+    "van-tabs": "/components/tabs/index",
+    "timepiece": "/components/timepiece/index",
+    "van-slider": "/components/slider/index",
+    "overlay" : "/components/overlay/index",
+    "custom-ul": "/components/custom-list/ul",
+    "custom-li": "/components/custom-list/li",
+    "van-toast": "/components/toast/index",
+    "auth-tabbar": "/components/auth-tabbar/index",
+    "custom-steps": "/components/custom-steps/steps",
+    "custom-step": "/components/custom-steps/step",
+    "custom-switch": "/components/custom-switch/index",
+    "search-box":"./components/search-box/index",
+    "search-input":"./components/search-input/index",
+    "search-loading":"./components/search-loading/index",
+    "search-result":"./components/search-result/index"
+  }
+}

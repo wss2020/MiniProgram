@@ -55,6 +55,7 @@ Component({
       this._getAllSteps().forEach((tab) => {
         tab.setData({ hide: tab.data.name !== currentValue })
       })
+      this.triggerEvent('onchange', currentValue)
     }
   }
 })

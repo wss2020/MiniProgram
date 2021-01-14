@@ -1,11 +1,19 @@
 import { VantComponent } from '../common/component';
 VantComponent({
   relation: {
-    name: 'tabs',
+    name: 'custom-tabs',
     type: 'ancestor',
     current: 'tab',
   },
   props: {
+    showLine: {
+      type: Boolean,
+      value: true
+    },
+    icon:{
+      type: String,
+      value: 'number'
+    },
     dot: {
       type: Boolean,
       observer: 'update',

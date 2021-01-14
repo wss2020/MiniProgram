@@ -1,5 +1,0 @@
-<view>
-    <view bindtap="handleClickItem" data-key="{{key}}" ></view>
-</view>
-
-

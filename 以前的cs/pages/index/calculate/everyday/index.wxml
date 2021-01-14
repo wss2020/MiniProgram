@@ -1,0 +1,147 @@
+<wxs module="fmt" src="../../../../common/fmt.wxs"></wxs>
+<wxs module="names" src="./name.wxs"></wxs>
+
+
+<view class="range-header plr-48">
+  <view class="title polestar-font letter-spacing-minus2point4">Polestar2</view>
+  <view class="subtitle">{{ doCalculate.title }}</view>
+</view>
+
+<view class="plr-48">
+  <view>{{doCalculate.driveDistanceDescription}}</view>
+  <view class="custom-button">
+    <view class="custom-button1">公里</view>
+    <view class="custom-button2 polestar-font">
+      {{range}}公里
+    </view>
+  </view>
+  <view class="slider">
+    <van-slider value="{{ range }}" min="{{50}}" max="{{1000}}" bind:drag="onDrag" bind:change="change"
+      inactive-color="#dbdcde" active-color="#0f1820" bar-height="6"></van-slider>
+  </view>
+</view>
+
+<view class="main">
+  <custom-steps bind:onchange="handleChange">
+    <custom-step label="每周驾驶情况">
+      <view>您的每周驾驶情况为(km)</view>
+      <view class="frequency">
+        <view class="frequency1">
+          <timepiece setTarget="{{range}}" class="stopwatch" showNumType="{{1}}" />
+        </view>
+      </view>
+      <view>根据您输入的信息，您大概需要充电</view>
+      <view class="frequency">
+        <view class="frequency1">{{frequency}}次</view>
+        <view>/{{range <= doCalculate.maximumRange * 0.75 ? '月' : '周'}}</view>
+      </view>
+      <view class="tips">或者，只要停放在有充电站的地点，您即可给蓄电池进行充电。</view>
+      <view class="tips-text" bindtap="showtips">基于450公里NEDC认证续航里程</view>
+    </custom-step>
+    <custom-step label="充电站">
+      <view class="map-container">
+        <map id="chargingmap"
+             scale="{{ 12 }}" class="map" enable-zoom="{{ true }}" latitude="{{latitude}}"
+             longitude="{{longitude}}" markers="{{markers}}" subkey="{{ qqmapKey }}">
+        </map>
+        <search-box show="{{ !showSearchInput }}" search-text="{{ searchText }}" bind:onclear="handleClearSearch" bind:onsearch="handleSearch"
+          bind:onfocus="handleSearchFocus" />
+        <search-loading show="{{ showSearchLoading }}" />
+        <search-input show="{{ showSearchInput }}" search-text="{{ searchText }}" bind:onfocus="onSearchInputFocus"/>
+      </view>
+    </custom-step>
+    <custom-step label="燃油节省">
+      <view class="define-title">燃油节省</view>
+      <view class="frequency1">
+        <timepiece id="timepiece1" class="stopwatch" showNumType="{{2}}" />
+      </view>
+      <view class="define-title">指驾驶Polestar 2可以节省的燃油费用</view>
+
+      <view wx:if="{{tabs.length>0}}" class="titles">
+        <van-tabs id="tabs1" nav-class="tabs-title" color="#FF7500" active="{{active}}" line-width="17" line-height="3"
+          bind:change="onChangePre">
+          <block wx:for="{{tabs}}" wx:key="index">
+            <van-tab title="{{item.tabTitle}}"></van-tab>
+          </block>
+        </van-tabs>
+      </view>
+
+      <view class="vehicles" hidden="{{ !vehicles.energy }}">
+        <view class="vehicles1" wx:for="{{ names.order(vehicles.energy) }}" wx:for-index="key" wx:for-item="value"
+          wx:key="key">
+          <view class="h-200">
+            <view class="color-div {{key== 'polestar' ? 'add-bg' : ''}}"
+              style="height: {{ names.percentage(vehicles.energy,value)}}rpx;"></view>
+          </view>
+          <view>
+            <view> {{ names.getNames(key)}}</view>
+            <view class="bg-gray">{{ fmt.formatCurrency(value)}}</view>
+          </view>
+        </view>
+      </view>
+      <view hidden="{{vehicles.energy }}" style="opacity:0.6;">暂无燃油节省数据</view>
+    </custom-step>
+    <custom-step label="排放减少">
+      <view class="define-title">排放减少</view>
+      <view class="frequency1">
+        <timepiece id="timepiece2" class="stopwatch" showNumType="{{2}}" />
+        <text>*</text>
+      </view>
+      <view class="define-title">Polestar 2与同级别化石燃料车辆的二氧化碳排放对比</view>
+
+      <view wx:if="{{tabs.length>0}}" class="titles">
+        <van-tabs id="tabs2" nav-class="tabs-title" color="#FF7500" active="{{active}}" line-width="17" line-height="3"
+          bind:change="onChangePre">
+          <block wx:for="{{tabs}}" wx:key="index">
+            <van-tab title="{{item.tabTitle}}"></van-tab>
+          </block>
+        </van-tabs>
+      </view>
+
+      <!--            <view class="switch"><switch checked="{{switchValue}}" bindchange="switchChange"/></view>-->
+      <view class="switch">
+        <view class="switch1">我使用绿色（可再生）电力</view>
+        <custom-switch checked="{{switchValue}}" bind:onchange="switchChange" />
+      </view>
+
+      <view class="vehicles" hidden="{{ !vehicles.emission }}">
+        <view class="vehicles1" wx:for="{{ names.order(vehicles.emission) }}" wx:for-index="key" wx:for-item="value"
+          wx:key="key">
+          <view class="h-200">
+            <view class="color-div {{key== 'polestar' ? 'add-bg' : ''}}"
+              style="height: {{ names.percentage(vehicles.emission,value)}}rpx;"></view>
+          </view>
+          <view>
+            <view> {{ names.getNames(key)}}</view>
+            <view class="bg-gray">{{value}}kg</view>
+          </view>
+        </view>
+      </view>
+      <view hidden="{{ vehicles.emission }}" style="opacity:0.6;">暂无排放减少数据</view>
+    </custom-step>
+  </custom-steps>
+
+</view>
+
+<!-- more tools -->
+<view class="more-tools plr-48">
+  <custom-ul name="更多工具">
+    <custom-li link="/pages/calculate/range/index" name="续航里程计算器"></custom-li>
+    <custom-li link="/pages/calculate/charging/index" name="充电计算器"></custom-li>
+    <custom-li link="/pages/performance/index" name="根据路况了解性能"></custom-li>
+  </custom-ul>
+</view>
+<!-- auth-tabbar -->
+<auth-tabbar bind:onbook="toConfigurator" />
+
+<overlay show="{{ showTips }}" zIndex="{{11}}" bind:click="onsure">
+  <view class="wrapper-define">
+    <text class="block-define">{{doCalculate.tabs[0].disclaimerReadMore}}</text>
+  </view>
+</overlay>
+
+<search-result value="{{ searchText }}" show="{{ showSearch }}" bind:onclose="handleCloseSearch" bind:onchange="handleChangeAddress"></search-result>
+
+
+
+

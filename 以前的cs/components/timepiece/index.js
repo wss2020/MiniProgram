@@ -69,8 +69,7 @@ Component({
                 that.setData({unit: value < 60 ? 'min' : 'h'});
                 let showNumType = that.data.showNumType;
                 if (showNumType == 0 && value >= 60) {
-                    let num = Math.floor(value / 60);
-                    let num1 = num > 9 ? num : `0` + num;
+                    let num1 = Math.floor(value / 60);
                     let num2 = value % 60 > 9 ? value % 60 : `0` + value % 60;
                     return `${num1}:${num2}`;
                 }

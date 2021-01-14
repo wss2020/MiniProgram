@@ -1,0 +1,87 @@
+page {
+  padding-bottom: 68px;
+  padding-bottom: calc(env(safe-area-inset-bottom) + 68px);
+}
+/* tabbar */
+.tabbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  height: 68px;
+  font-size: 28rpx;
+  background: #fff;
+  border-top: 1px solid rgba(16, 24, 32, 0.15);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.tabbar .btn {
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+.tabbar .btn::after {
+  border-radius: 0;
+  border: none;
+}
+
+.tabbar .getuserinfo-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+}
+
+.tabbar .tabbar-customer-wraper,
+.tabbar .tabbar-td,
+.tabbar .tabbar-book-wraper {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.tabbar .tabbar-customer-wraper {
+  left: 48rpx;
+}
+.tabbar .tabbar-customer {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.tabbar .tabbar-customer image {
+  width: 100%;
+  height: 100%;
+}
+
+.tabbar .tabbar-td {
+  width: 248rpx;
+  height: 96rpx;
+  left: 180rpx;
+  line-height: 96rpx;
+  text-align: center;
+  border: 1px solid #53565A;
+}
+.tabbar .tabbar-book-wraper {
+  right: 48rpx;
+}
+.tabbar .tabbar-book {
+  width: 248rpx;
+  height: 96rpx;
+  display: flex;
+  font-size: 28rpx;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: #53565A;
+}
+
+.tabbar .tabbar-book image {
+  width: 16px;
+  height: 16px;
+  margin-left: 8px;
+}

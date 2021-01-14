@@ -4,10 +4,14 @@
     "pages/index/audio/audio",
     "pages/index/backgroundaudio/backgroundaudio",
     "pages/index/param/param",
+    "pages/index/layout/layout",
+
+
     "pages/tool/card/make/making/design/design1/design1",
     "pages/optimal/optimal",
 
     "pages/index/calculate/charging/index",
+    "pages/index/calculate/everyday/index",
 
     "pages/about/cs/cs",
     "pages/about/test/test"
@@ -47,6 +51,11 @@
   "networkTimeout": {
     "request": 10000,
     "downloadFile": 10000
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息将用于小程序展示"
+    }
   },
   "debug": true,
   "sitemapLocation": "sitemap.json"

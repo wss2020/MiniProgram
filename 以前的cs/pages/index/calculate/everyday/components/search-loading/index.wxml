@@ -1,0 +1,3 @@
+<view class="search-loading-wraper" hidden="{{ !show }}">
+  <image class="loading" src="../../../../../assets/images/loading.svg"></image>
+</view>

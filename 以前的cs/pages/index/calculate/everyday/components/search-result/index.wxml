@@ -1,0 +1,23 @@
+<van-overlay z-index="999" show="{{ show }}" duration="{{ 0.1 }}">
+  <view class="wraper plr-48" style="{{ wraperStyle }}">
+    <view class="container">
+      <view class="input-wraper">
+        <text class="label {{ inputFocus ? 'actived':'' }} {{ searchText?'':'black' }}">地址</text>
+        <input type="text" value="{{ searchText }}" bindfocus="handleFocus" bindblur="handleBlur"
+          bindinput="handleInput" />
+        <view class="line {{ inputFocus ? 'actived':'' }}"></view>
+      </view>
+      <view class="result-wraper">
+        <view wx:if="{{ isloading }}" class="loading">加载中...</view>
+        <view wx:elif="{{ !result.length || !searchText}}" class="no-result">无法找到地址</view>
+        <view class="result" wx:else>
+          <view wx:for="{{ result }}" wx:key="id" class="result-item" catchtap="handleClickAddress"
+            data-detail="{{ item }}">{{ item.title }}</view>
+        </view>
+      </view>
+    </view>
+    <view class="back-icon" style="{{ backIconStyle }}" catchtap="handleclose">
+      <image class="img" src="../../../../../assets/images/arrow_icon.png"></image>
+    </view>
+  </view>
+</van-overlay>

@@ -1,0 +1,4 @@
+<checkbox-group class="custom-switch" bindchange="onCheckboxChange">
+  <checkbox id="switch" class="checkbox" checked="{{ selfChecked }}" />
+  <label for="switch" class="label {{ selfChecked ? 'actived':'' }}"></label>
+</checkbox-group>

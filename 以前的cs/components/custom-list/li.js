@@ -31,27 +31,6 @@ Component({
           })
         }
       }
-
-      // const pages = getCurrentPages()
-      // if (pages.length === 1) {
-      //   wx.navigateTo({
-      //     url: this.data.link
-      //   })
-      // } else {
-
-      //   const prevPage = pages[pages.length - 2]
-      //   const { route } = prevPage
-      //   // 上一页路由是要跳转的页面则直接返回
-      //   if ('/' + route === this.data.link) {
-      //     wx.navigateBack()
-      //   } else {
-      //     wx.navigateTo({
-      //       url: this.data.link,
-      //     })
-      //   }
-      // }
-
-
     }
 
   }

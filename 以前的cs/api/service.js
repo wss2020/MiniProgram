@@ -67,14 +67,14 @@ export function changeConfig(data) {
  * @param {String} longparam 长参数
  */
 export function longUrl2short(longparam) {
-  return fetch(api.domin + 'api/wxacode/v1/shorturl', { longparam }, { method: 'POST' })
+  return fetch(api.domin + 'api/wxacode/v1/wxacode/shorturl', { longparam }, { method: 'POST' })
 }
 /**
  * 短参数换长参数
  * @param {String} shortparam 短参数
  */
 export function shortUrl2long(shortparam) {
-  return fetch(api.domin + `api/wxacode/v1/getlongurl/${shortparam}`)
+  return fetch(api.domin + `api/wxacode/v1/wxacode/getlongurl/${shortparam}`)
 }
 
 
@@ -84,7 +84,7 @@ export function shortUrl2long(shortparam) {
  * @param code 验证码
  */
 export function AuthApp(data) {
-  return fetch(`${api.domin}api/sms/verify`, data, { method: 'POST',toast:false})
+  return fetch(`${api.domin}api/sms/verify`, data, { method: 'POST', toast: false })
 }
 
 /**
@@ -154,7 +154,7 @@ export function orderDetail(orderId) {
 export function chargingPageDetail() {
   return fetch(`${api.graphqlDomin}?query=${encodeURIComponent(chargingPage)}`, {
     variables: {
-      locale:"zh_CN"
+      locale: "zh_CN"
     }
   }, {
     header: {
@@ -193,6 +193,25 @@ export function pricesDetail() {
       fuelId: "CN",
       electricityId: "CN"
     }
+  })
+}
+
+/**
+ * 获取充电桩
+ * @param {Number} longitude 经度
+ * @param {Number} latitude 纬度
+ */
+export function getOpenChargeMap(longitude, latitude) {
+  return fetch(api.openchargeDomin, {
+    latitude,
+    longitude,
+    output: 'json',
+    distanceunit: 'KM',
+    distance: 100,
+    compact: true,
+    verbose: false
+  },{
+    loading: false
   })
 }
 

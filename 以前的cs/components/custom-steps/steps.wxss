@@ -1,16 +1,16 @@
 .steps-bar {
-  padding: 10rpx 0;
+  padding: 20rpx 0;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   z-index: 2;
   position: sticky;
-  bottom: 0px;
+  bottom: 69px;
   background-color: #fff;
 }
 
 .steps-bar .icon {
-  padding: 6rpx;
+  padding: 10rpx;
 }
 
 .steps-bar .steps-line-wraper,

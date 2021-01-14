@@ -1,0 +1,26 @@
+<!-- tabbar -->
+<view class="tabbar">
+	<view class="tabbar-customer-wraper">
+		<button class="btn tabbar-customer" type='default' open-type="contact" show-message-card="true"
+			send-message-title="即刻下载Polestar极星App" hover-class="none"
+			session-from='{"userInfo": {{sessionFrom}} ,"source": "Polestar showroom小程序"}'>
+			<image class="customer-icon" src="/assets/images/customer.png"></image>
+		</button>
+		<button lang="zh_CN" open-type="getUserInfo" bindgetuserinfo="onCustomerAuth" class="btn getuserinfo-btn"
+			wx:if="{{showAuthBtn}}"></button>
+	</view>
+	<navigator class="tabbar-td" target="miniProgram" hover-class="none" app-id="wxaa397e836f4e9042"
+		path="pages/index/index">
+		<text>预约试驾</text>
+	</navigator>
+	<view class="tabbar-book-wraper">
+		<button class="btn tabbar-book" type='default' catchtap="onbook">
+			<view>立即预订</view>
+			<image src="/assets/images/arrow_icon.png"></image>
+		</button>
+		<button lang="zh_CN" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo" class="btn getuserinfo-btn"
+			wx:if="{{showAuthBtn}}"></button>
+	</view>
+</view>
+<!-- toast -->
+<van-toast class="auth-toast" />

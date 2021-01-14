@@ -1,0 +1,16 @@
+.search-loading-wraper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  top: 0;
+  z-index: 1;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.search-loading-wraper .loading {
+  width: 80rpx;
+  height: 80rpx;
+  opacity: 0.8;
+}

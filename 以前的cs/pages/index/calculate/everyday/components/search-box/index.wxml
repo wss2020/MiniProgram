@@ -1,0 +1,15 @@
+<view class="search-box-wraper" hidden="{{ !show }}">
+  <view class="search-box animate__animated animate__zoomIn">
+    <view class="title">您附近的充电站</view>
+    <view class="input-wraper">
+      <van-icon name="search" color="#101820" />
+      <view class="address" catchtap="onfocus">
+        <text class="label" style="transform: translateY\({{ selfSearchText?'-100%':'0' }}\)">地址</text>
+        <input class="input" type="text" value="{{ selfSearchText }}" disabled />
+      </view>
+      <van-icon name="cross" custom-style="padding: 0 20rpx;" wx:if="{{ selfSearchText }}" bind:click="clearText" />
+    </view>
+    <view class="tips">选择地址</view>
+    <view class="search-btn" catchtap="onsearch">在地图上查找</view>
+  </view>
+</view>

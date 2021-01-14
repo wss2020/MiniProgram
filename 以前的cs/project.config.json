@@ -43,17 +43,10 @@
   "simulatorPluginLibVersion": {},
   "appid": "wx1a792313baaa2315",
   "condition": {
-    "search": {
-      "list": []
-    },
-    "conversation": {
-      "list": []
-    },
     "plugin": {
       "list": []
     },
     "game": {
-      "currentL": -1,
       "list": []
     },
     "gamePlugin": {
@@ -87,6 +80,17 @@
           "name": "录音",
           "pathName": "pages/index/audio/audio",
           "query": "",
+          "scene": null
+        },
+        {
+          "name": "计算器2",
+          "pathName": "pages/index/calculate/everyday/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "流式布局",
+          "pathName": "pages/index/layout/layout",
           "scene": null
         }
       ]

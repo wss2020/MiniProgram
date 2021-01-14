@@ -1,0 +1,9 @@
+<view class="search-input" hidden="{{ !show }}">
+  <view class="input-wraper" catchtap="onfocus">
+    <van-icon name="search" color="#101820" />
+    <view class="address">
+      <input class="input" type="text" value="{{ searchText }}" disabled />
+    </view>
+    <van-icon name="cross" custom-style="padding: 0 20rpx;" />
+  </view>
+</view>

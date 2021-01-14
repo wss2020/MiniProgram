@@ -1,0 +1,38 @@
+var names = {
+    percentage:function(item,value){
+         var arr = [item.petrol,item.diesel,item.polestar];
+         var max = 0;
+         for(var i=0; i<arr.length; i++){
+              if(arr[i] > max){
+                   max = arr[i];
+              }
+         }
+         if(max==value){
+            return 400;
+         }else{
+            return 400*value/max;
+         }
+    },
+
+    order: function(arr){
+         return  {
+             petrol:arr.petrol,
+             diesel:arr.diesel,
+             polestar:arr.polestar
+         }
+    },
+
+    getNames: function (value) {
+        if(value=='polestar'){
+            return 'Polestar 2';
+        }
+        if(value=='petrol'){
+            return '汽油';
+        }
+        if(value=='diesel'){
+            return '柴油';
+        }
+    }
+};
+
+module.exports = names;

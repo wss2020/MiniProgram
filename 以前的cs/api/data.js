@@ -6,6 +6,9 @@ const appid = 'wx1731d1d47587e5ce'
 const encryptedKey = 'wEGlKypNVnthtEwu'
 const amount = api.envVersion === 'release' ? 2000.00 : 0.01
 
+// 腾讯地图key
+const qqmapKey = '3RFBZ-CGSRU-F6WVM-2BCFH-NQ4SZ-XWFXA'
+
 const graphqlToken = '04b6cb33b1f41a1675acc858a5bd00'
 
 const images = {
@@ -56,7 +59,8 @@ const assetsData = {
   images,
   video,
   encryptedKey,
-  graphqlToken
+  graphqlToken,
+  qqmapKey
 }
 
 module.exports = assetsData

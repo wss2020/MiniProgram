@@ -46,9 +46,12 @@ function tabStyle(
     styles.push('color:' + titleColor);
   }
 
-  if (scrollable && ellipsis) {
-    styles.push('flex-basis:' + 88 / swipeThreshold + '%');
+  if (ellipsis) {
+    styles.push('flex-basis:' + 100 / swipeThreshold + '%');
   }
+  // if (scrollable && ellipsis) {
+  //   styles.push('flex-basis:' + 100 / swipeThreshold + '%');
+  // }
 
   return styles.join(';');
 }

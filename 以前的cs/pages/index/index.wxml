@@ -10,10 +10,16 @@
 <view class="params" bindtap="param">页面传参（不刷新页面）</view>
 
 <navigator class="params"  url="/pages/index/calculate/charging/index">
-    计时器
+    计时器1
 </navigator>
 
+<navigator class="params"  url="/pages/index/calculate/everyday/index">
+    计时器2
+</navigator>
 
+<navigator class="params"  url="/pages/index/layout/layout">
+    流式布局/粘性定位
+</navigator>
 
 <!--<mp-dialog title="test" show="{{true}}" bindbuttontap="tapDialogButton" buttons="{{[{text: '取消'}, {text: '确认'}]}}">-->
 <!--    <view>test content</view>-->
