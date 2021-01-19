@@ -1,0 +1,20 @@
+<!--pages/index/backgroundaudio/backgroundaudio.wxml-->
+
+
+
+
+<!-- 第一种播放 -->
+<!--<audio poster="{{poster}}" name="{{name}}" author="{{author}}"-->
+<!--       src="https://files.dianlinet.com/public/uploads/20200904/2020090465a0bf58884dc26a54a208e2eb1d91bf.mp3"-->
+<!--       id="myAudio" controls loop></audio>-->
+<!--<button type="primary" bindtap="audioPlay">播放</button>-->
+<!--<button type="primary" bindtap="audioPause">暂停</button>-->
+<!--<button type="primary" bindtap="audio14">设置当前播放时间为14秒</button>-->
+<!--<button type="primary" bindtap="audioStart">回到开头</button>-->
+
+
+<view wx:if="{{showaudiowww}}">
+    <audiowww></audiowww>
+</view>
+
+<view bindtap="showaudiowww">加载组件</view>
