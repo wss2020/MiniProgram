@@ -43,8 +43,19 @@ export function Index(){
  “+” 和 “-” 按钮采用函数式形式，因为被更新的 state 需要基于之前的 state。但是“重置”按钮则采用普通形式，因为它总是把 count 设置回初始值。
 
  如果你的更新函数返回值与当前 state 完全相同，则随后的重渲染会被完全跳过。
- */
 
+
+
+ 注意
+
+ 与 class 组件中的 setState 方法不同，useState 不会自动合并更新对象。你可以用函数式的 setState 结合展开运算符来达到合并更新对象的效果。
+
+ useReducer 是另一种可选方案，它更适合用于管理包含多个子值的 state 对象。
+ */
+setState(prevState => {
+    // 也可以使用 Object.assign
+    return {...prevState, ...updatedValues};
+});
 
 
 
