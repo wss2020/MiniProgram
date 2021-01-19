@@ -1,0 +1,12 @@
+.btn1{
+    width: 100px;
+}
+
+.btn2,.btn3{
+   width: 30px;
+}
+
+.btn1,.btn2,.btn3{
+    margin-left: 20px;
+    height: 30px;
+}
