@@ -1,6 +1,3 @@
-import ReactDOM from 'react-dom';
-import React from 'react';
-
 class Clock extends React.Component {
     constructor(props) {
         super(props);
@@ -21,15 +18,3 @@ ReactDOM.render(
     <Clock />,
     document.getElementById('root')
 );
-
-
-
-
-
-
-
-
-
-
-
-
