@@ -52,10 +52,10 @@ export function Index(){
 
  useReducer 是另一种可选方案，它更适合用于管理包含多个子值的 state 对象。
  */
-setState(prevState => {
-    // 也可以使用 Object.assign
-    return {...prevState, ...updatedValues};
-});
+// setState(prevState => {
+//     // 也可以使用 Object.assign
+//     return {...prevState, ...updatedValues};
+// });
 
 
 
