@@ -9,7 +9,10 @@ export function App() {
     return (
         <div className="App">
             <div>{JSON.stringify(obj1)}</div>
-            <button onClick={() => { ++obj1.a; setObj1(obj1) }}>点我暴力+1</button>
+            <button onClick={() => {
+                obj1.a = 2;
+                setObj1(obj1)
+            }}>点我暴力+1</button>
 
             <div>----------------------------------------------------------------------</div>
 
