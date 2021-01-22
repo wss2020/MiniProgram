@@ -41,7 +41,13 @@ export class NameForm extends React.Component {
     }
 }
 
+/**
+    由于在表单元素上设置了 value 属性，因此显示的值将始终为 this.state.value，这使得 React 的 state 成为唯一数据源。
+ 由于 handlechange 在每次按键时都会执行并更新 React 的 state，因此显示的值将随着用户输入而更新。
 
+    对于受控组件来说，输入的值始终由 React 的 state 驱动。你也可以将 value 传递给其他 UI 元素，或者通过其他事件处理
+ 函数重置，但这意味着你需要编写更多的代码。
+ */
 
 
 
