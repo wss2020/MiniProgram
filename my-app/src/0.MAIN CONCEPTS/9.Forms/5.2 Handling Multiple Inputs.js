@@ -50,4 +50,17 @@ export class Reservation extends React.Component {
     }
 }
 
+// 这里使用了 ES6 计算属性名称的语法更新给定输入名称对应的 state 值：
+// 例如：
+this.setState({
+    [name]: value
+});
+
+// 等同 ES5:
+var partialState = {};
+partialState[name] = value;
+this.setState(partialState);
+
+// 另外，由于 setState() 自动将部分 state 合并到当前 state, 只需调用它更改部分 state 即可。
+
 
