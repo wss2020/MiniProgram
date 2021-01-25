@@ -7,12 +7,9 @@ export function Reservation() {
 
     function handleInputChange(event) {
         const target = event.target;
-        const value = target.type === 'checkbox' ? target.checked : target.value;
-        const name = target.name;
 
-
-        if (name === 'isGoing') setIsGoing(value)
-        else setNumberOfGuests(value)
+        if (target.type === "checkbox") setIsGoing(target.checked)
+        else setNumberOfGuests(target.value)
     }
 
     return (
