@@ -1,49 +1,45 @@
+import React, {useState, useEffect} from "react";
 
-import React,{useState,useEffect} from "react";
-export function Reservation (){
-    constructor(props) {
-        super(props);
-        this.state = {
-            isGoing: true,
-            numberOfGuests: 2
-        };
+export function Reservation() {
 
-        this.handleInputChange = this.handleInputChange.bind(this);
-    }
+    const [isGoing, setIsGoing] = useState(true);
+    const [numberOfGuests, setNumberOfGuests] = useState(2);
 
-    handleInputChange(event) {
+    function handleInputChange(event) {
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
 
-        this.setState({
-            [name]: value
-        });
+
+        if (name === 'isGoing') setIsGoing(value)
+        else setNumberOfGuests(value)
     }
 
-    render() {
-        return (
-            <form>
-                <label>
-                    参与:
-                    <input
-                        name="isGoing"
-                        type="checkbox"
-                        checked={this.state.isGoing}
-                        onChange={this.handleInputChange} />
-                </label>
-                <br />
-                <label>
-                    来宾人数:
-                    <input
-                        name="numberOfGuests"
-                        type="number"
-                        value={this.state.numberOfGuests}
-                        onChange={this.handleInputChange} />
-                </label>
-            </form>
-        );
-    }
+    return (
+        <form>
+            <div>check 为 {isGoing ? 'true' : 'false'} ~~~ 值为 {numberOfGuests}</div>
+            <br/>
+            <label>
+                参与:
+                <input
+                    name="isGoing"
+                    type="checkbox"
+                    checked={isGoing}
+                    onChange={handleInputChange}/>
+            </label>
+            <br/>
+            <label>
+                来宾人数:
+                <input
+                    name="numberOfGuests"
+                    type="number"
+                    value={numberOfGuests}
+                    onChange={handleInputChange}/>
+            </label>
+        </form>
+    );
 }
+
+
 
 
