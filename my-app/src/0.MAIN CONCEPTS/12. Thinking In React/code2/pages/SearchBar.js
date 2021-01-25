@@ -1,13 +1,5 @@
 export function SearchBar(props) {
 
-    function handleFilterTextChange(e) {
-        props.onFilterTextChange(e.target.value);
-    }
-
-    function handleInStockChange(e) {
-        props.onInStockChange(e.target.checked);
-    }
-
     const filterText = props.filterText;
     const inStockOnly = props.inStockOnly;
 
@@ -17,13 +9,13 @@ export function SearchBar(props) {
                 type="text"
                 placeholder="Search..."
                 value={filterText}
-                onChange={handleFilterTextChange}
+                onChange={ (e)=>{props.onFilterTextChange(e.target.value)} }
             />
             <p>
                 <input
                     type="checkbox"
                     checked={inStockOnly}
-                    onChange={handleInStockChange}
+                    onChange={(e)=>{props.onInStockChange(e.target.checked)} }
                 />
                 {' '}
                 Only show products in stock
