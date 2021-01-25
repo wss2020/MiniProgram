@@ -2,7 +2,7 @@ import React from 'react';
 import {ProductCategoryRow} from './ProductCategoryRow'
 import {ProductRow} from './ProductRow'
 
-export const wssss = [
+const wssss = [
     {category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football'},
     {category: 'Sporting Goods', price: '$9.99', stocked: true, name: 'Baseball'},
     {category: 'Sporting Goods', price: '$29.99', stocked: false, name: 'Basketball'},
@@ -13,10 +13,19 @@ export const wssss = [
 
 export class ProductTable extends React.Component {
     render() {
+        const filterText = this.props.filterText;
+        const inStockOnly = this.props.inStockOnly;
+
         const rows = [];
         let lastCategory = null;
 
         this.props.products.forEach((product) => {
+            if (product.name.indexOf(filterText) === -1) {
+                return;
+            }
+            if (inStockOnly && !product.stocked) {
+                return;
+            }
             if (product.category !== lastCategory) {
                 rows.push(
                     <ProductCategoryRow
