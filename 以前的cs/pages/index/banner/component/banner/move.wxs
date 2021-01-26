@@ -1,0 +1,14 @@
+var move = {
+    scrollLeft: function (current) {
+        var data;
+        if(current==0){
+              data = 0;
+        }else{
+              data = current * (100 + 19.98);
+        }
+        return 'transform: translateX(' + data + '%)';
+    },
+
+};
+
+module.exports = move;

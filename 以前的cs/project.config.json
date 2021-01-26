@@ -91,6 +91,12 @@
         {
           "name": "流式布局",
           "pathName": "pages/index/layout/layout",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "banner",
+          "pathName": "pages/index/banner/banner",
           "scene": null
         }
       ]
