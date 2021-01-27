@@ -10,7 +10,9 @@ import {Reservation} from "./0.MAIN CONCEPTS/9.Forms/5.3"
 import {Calculator } from "./0.MAIN CONCEPTS/10.Lifting State Up/6/index"
 import React from "react";
 import {FilterableProductTable, PRODUCTS} from "./0.MAIN CONCEPTS/12. Thinking In React/code2/pages/index";
-import {Example as Test} from "./4.ADVANCED GUIDES/6.Fragments/6";
+import {Example} from "./4.ADVANCED GUIDES/6.Fragments/6";
+import {CustomTextInput} from "./4.ADVANCED GUIDES/16.Refs and the DOM/5.2 Adding a Ref to a DOM Element";
+import {AutoFocusTextInput as Test} from "./4.ADVANCED GUIDES/16.Refs and the DOM/5.3.1 Adding a Ref to a Class Component";
 
 // ============================================================================================
 
