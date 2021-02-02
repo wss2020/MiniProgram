@@ -12,7 +12,9 @@ import React from "react";
 import {FilterableProductTable, PRODUCTS} from "./0.MAIN CONCEPTS/12. Thinking In React/code2/pages/index";
 import {Example} from "./4.ADVANCED GUIDES/6.Fragments/6";
 import {CustomTextInput} from "./4.ADVANCED GUIDES/16.Refs and the DOM/5.2 Adding a Ref to a DOM Element";
-import {AutoFocusTextInput as Test} from "./4.ADVANCED GUIDES/16.Refs and the DOM/5.3.1 Adding a Ref to a Class Component";
+import {AutoFocusTextInput} from "./4.ADVANCED GUIDES/16.Refs and the DOM/5.3.1 Adding a Ref to a Class Component";
+// import {CustomTextInput  } from "./4.ADVANCED GUIDES/16.Refs and the DOM/5.4.2 ";
+import {Parent as Test} from "./4.ADVANCED GUIDES/16.Refs and the DOM/7.2 Callback Refs";
 
 // ============================================================================================
 
