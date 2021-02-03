@@ -13,6 +13,32 @@ const themes = {
 
 const ThemeContext = React.createContext(themes.light);
 
+
+// 本来下面的代码应该出现在 页面中
+export function App() {
+    return (
+        <div>
+            <ThemeContext.Provider value={themes.light}>
+                <Toolbar />
+            </ThemeContext.Provider>
+
+            <div style={{height: '30px'}}></div>
+
+            <ThemeContext.Provider value={themes.dark}>
+                <Toolbar />
+            </ThemeContext.Provider>
+        </div>
+    );
+}
+
+function Toolbar() {
+    return (
+        <div>
+            <ThemedButton />
+        </div>
+    );
+}
+
 function ThemedButton() {
     const theme = useContext(ThemeContext);
     return (
@@ -22,28 +48,9 @@ function ThemedButton() {
     );
 }
 
-function Toolbar(props) {
-    return (
-        <div>
-            <ThemedButton />
-        </div>
-    );
-}
 
 
-// 本来下面的代码应该出现在 页面中
-export function App() {
-    return (
-        <div>
-            <ThemeContext.Provider value={themes.light}>
-                <Toolbar />
-            </ThemeContext.Provider>
-            <div style={{height: '30px'}}></div>
-            <ThemeContext.Provider value={themes.dark}>
-                <Toolbar />
-            </ThemeContext.Provider>
-        </div>
-    );
-}
+
+
 
 
