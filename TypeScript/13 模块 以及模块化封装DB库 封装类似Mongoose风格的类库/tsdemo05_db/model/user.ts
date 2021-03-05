@@ -8,7 +8,7 @@ class UserClass{
 }
 
 
-var UserModel=new MsSqlDb<UserClass>();
+let UserModel=new MsSqlDb<UserClass>();
 export {
     UserClass,UserModel
 }

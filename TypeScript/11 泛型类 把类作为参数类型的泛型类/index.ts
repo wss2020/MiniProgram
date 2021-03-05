@@ -1,4 +1,4 @@
-/*
+/**
 1、vscode配置自动编译
 
     1.第一步   tsc --inti 生成tsconfig.json   改 "outDir": "./js",
@@ -62,7 +62,7 @@
 
 1、定义个类
 2、把类作为参数来约束数据传入的类型
-
+*/
 
 
 
@@ -123,9 +123,9 @@ alert(m2.min())
 
 
 
-定义一个User的类这个类的作用就是映射数据库字段
-然后定义一个 MysqlDb的类这个类用于操作数据库
-然后把User类作为参数传入到MysqlDb中
+// 定义一个User的类这个类的作用就是映射数据库字段
+// 然后定义一个 MysqlDb的类这个类用于操作数据库
+// 然后把User类作为参数传入到MysqlDb中
 
 let user=new User({
     username:'张三',
@@ -156,11 +156,6 @@ Db.add(user);
      u.password='123456';
      let Db=new MysqlDb();
      Db.add(u);
-
-
-
-
-
 
 
 
@@ -258,4 +253,3 @@ class ArticleCate{
         let Db=new MysqlDb<ArticleCate>();
         Db.updated(a,12);
 
- */

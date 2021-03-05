@@ -2,7 +2,7 @@
 
 功能：定义一个操作数据库的库  支持 Mysql Mssql  MongoDb
 
-要求1：Mysql MsSql  MongoDb功能一样  都有 add  update  delete  get方法    
+要求1：Mysql MsSql  MongoDb功能一样  都有 add  update  delete  get方法
 
 注意：约束统一的规范、以及代码重用
 
@@ -24,19 +24,16 @@ import {ArticleClass,ArticleModel} from './model/article';
 var u=new UserClass();
 u.username='张三';
 u.password='12345655654757';
+
 UserModel.add(u);
-
-
 
 //获取user表数据
 var res=UserModel.get(123);
 console.log(res);
 
 
-
-
-
-
 //获取文章表的数据
 var aRes=ArticleModel.get(1);
 console.log(aRes);
+
+

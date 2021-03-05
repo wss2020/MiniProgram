@@ -1,7 +1,7 @@
 /*
 1、vscode配置自动编译
 
-    1.第一步   tsc --inti 生成tsconfig.json   改 "outDir": "./js",  
+    1.第一步   tsc --inti 生成tsconfig.json   改 "outDir": "./js",
 
 
     2、第二步 任务 - 运行任务  监视tsconfig.json
@@ -18,7 +18,7 @@
         数组类型（array）
         元组类型（tuple）
         枚举类型（enum）
-        
+
         任意类型（any）
         null 和 undefined
         void类型
@@ -47,7 +47,7 @@
     5.4 类类型接口
     5.5 接口扩展
 
-   
+
 */
 
 
@@ -58,10 +58,7 @@
 
 */
 
-
 // 函数类型接口:对方法传入的参数 以及返回值进行约束    批量约束
-
-
 
 // 加密的函数类型接口
 
@@ -69,20 +66,15 @@ interface encrypt{
     (key:string,value:string):string;
 }
 
-
-var md5:encrypt=function(key:string,value:string):string{
+let md5:encrypt=function(key:string,value:string):string{
         //模拟操作
         return key+value;
 }
-
 console.log(md5('name','zhangsan'));
 
 
-
-var sha1:encrypt=function(key:string,value:string):string{
-
+let sha1:encrypt=function(key:string,value:string):string{
     //模拟操作
     return key+'----'+value;
 }
-
 console.log(sha1('name','lisi'));

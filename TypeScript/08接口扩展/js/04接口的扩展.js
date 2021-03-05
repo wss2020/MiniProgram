@@ -63,6 +63,20 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var Web = /** @class */ (function () {
+    function Web(name) {
+        this.name = name;
+    }
+    Web.prototype.eat = function () {
+        console.log(this.name + '喜欢吃馒头');
+    };
+    Web.prototype.work = function () {
+        console.log(this.name + '写代码');
+    };
+    return Web;
+}());
+var w = new Web('小李');
+w.eat();
 var Programmer = /** @class */ (function () {
     function Programmer(name) {
         this.name = name;
@@ -86,5 +100,5 @@ var Web = /** @class */ (function (_super) {
     return Web;
 }(Programmer));
 var w = new Web('小李');
-// w.eat();
+w.eat();
 w.coding('写ts代码');

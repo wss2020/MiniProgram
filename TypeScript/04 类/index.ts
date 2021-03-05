@@ -47,69 +47,69 @@
 
 // 静态属性 静态方法
 
-/*  es5
-    function Person(){
-        this.run1=function(){
+  // es5
+  function Person(){
+      this.run1=function(){
 
-        }
-    }
-    Person.name='哈哈哈';
-    Person.run2=function(){  静态方法
-    }
-    var p=new Person();
-    Person.run2(); 静态方法的调用
-*/
-
-
-
-/*
-        function $(element){
-            return new Base(element)
-        }
-
-        $.get=function(){ }
-
-        function Base(element){
-            this.element=获取dom节点;
-            this.css=function(arr,value){
-                this.element.style.arr=value;
-            }
-        }
-
-        $('#box').css('color','red')
-        $.get('url',function(){})
-*/
+      }
+  }
+  Person.name='哈哈哈';
+  Person.run2=function(){  静态方法
+  }
+  var p=new Person();
+  Person.run2(); 静态方法的调用
 
 
 
 
-/*
-     class Per{
-         public name:string;
-         public age:number=20;
-         //静态属性
-         static sex="男";
-         constructor(name:string) {
-                 this.name=name;
-         }
-         run(){  // 实例方法
-             alert(`${this.name}在运动`)
-         }
-         work(){
-             alert(`${this.name}在工作`)
-         }
-         static print(){  // 静态方法  里面没法直接调用类里面的属性
 
-             alert('print方法'+Per.sex);
-         }
-     }
+  function $(element){
+      return new Base(element)
+  }
 
-     var p=new Per('张三');
-     p.run();
+  $.get=function(){ }
 
-     Per.print();
-     alert(Per.sex);
-*/
+  function Base(element){
+      this.element=获取dom节点;
+      this.css=function(arr,value){
+          this.element.style.arr=value;
+      }
+  }
+
+  $('#box').css('color','red')
+  $.get('url',function(){})
+
+
+
+
+
+
+  class Per{
+      public name:string;
+      public age:number=20;
+      //静态属性
+      static sex="男";
+      constructor(name:string) {
+              this.name=name;
+      }
+      run(){  // 实例方法
+          alert(`${this.name}在运动`)
+      }
+      work(){
+          alert(`${this.name}在工作`)
+      }
+      static print(){  // 静态方法  里面没法直接调用类里面的属性
+
+          alert('print方法'+Per.sex);
+      }
+  }
+
+  var p=new Per('张三');
+  p.run();
+
+  Per.print();
+  alert(Per.sex);
+
 
 
 
@@ -118,37 +118,35 @@
 //多态:父类定义一个方法不去实现，让继承它的子类去实现  每一个子类有不同的表现
 
 //多态属于继承
-        /*
 
-                class Animal {
-                    name:string;
-                    constructor(name:string) {
-                        this.name=name;
-                    }
-                    eat(){   //具体吃什么  不知道   ，  具体吃什么?继承它的子类去实现 ，每一个子类的表现不一样
-                        console.log('吃的方法')
-                    }
-                }
+  class Animal {
+      name:string;
+      constructor(name:string) {
+          this.name=name;
+      }
+      eat(){   //具体吃什么  不知道   ，  具体吃什么?继承它的子类去实现 ，每一个子类的表现不一样
+          console.log('吃的方法')
+      }
+  }
 
-                class Dog extends Animal{
-                    constructor(name:string){
-                        super(name)
-                    }
-                    eat(){
-                        return this.name+'吃粮食'
-                    }
-                }
+  class Dog extends Animal{
+      constructor(name:string){
+          super(name)
+      }
+      eat(){
+          return this.name+'吃粮食'
+      }
+  }
 
 
-                class Cat extends Animal{
-                    constructor(name:string){
-                        super(name)
-                    }
-                    eat(){
-                        return this.name+'吃老鼠'
-                    }
-                }
-        */
+  class Cat extends Animal{
+      constructor(name:string){
+          super(name)
+      }
+      eat(){
+          return this.name+'吃老鼠'
+      }
+  }
 
 
 

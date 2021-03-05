@@ -8,7 +8,7 @@ class ArticleClass{
 }
 
 
-var ArticleModel=new MsSqlDb<ArticleClass>();
+let ArticleModel=new MsSqlDb<ArticleClass>();
 export {
     ArticleClass,ArticleModel
 }

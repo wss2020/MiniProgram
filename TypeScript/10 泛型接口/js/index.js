@@ -56,6 +56,15 @@
     6.4 泛型接口
 
 */
+var setData = function (value1, value2) {
+    return value1 + value2;
+};
+setData('name', '张三');
+var getData = function (value) {
+    return value;
+};
+getData('张三');
+getData(1243); //错误
 function getData(value) {
     return value;
 }

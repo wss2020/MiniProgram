@@ -64,29 +64,30 @@ typescrip中的接口类似于java，同时还增加了更灵活的接口类型�
 // 可索引接口：数组、对象的约束  （不常用）
 
     //ts定义数组的方式
-        /*
-            let arr:number[]=[2342,235325]
-            let arr1:Array<string>=['111','222']
+    let arr:number[]=[2342,235325]
+    let arr1:Array<string>=['111','222']
 
 
-        //可索引接口 对数组的约束
-                 interface UserArr{
-                     [index:number]:string
-                 }
-                 let arr:UserArr=['aaa','bbb'];
-                 console.log(arr[0]);
+    //可索引接口 对数组的约束
+    interface UserArr{
+        [index:number]:string
+    }
+    let arr:UserArr=['aaa','bbb'];
+    console.log(arr[0]);
 
-                 let arr:UserArr=[123,'bbb'];  //错误
-                 console.log(arr[0]);
+    let arr:UserArr=[123,'bbb'];  //错误
+    console.log(arr[0]);
 
 
-      //可索引接口 对对象的约束
-                interface UserObj{
-                    [index:string]:string
-                }
-                let arr:UserObj={name:'张三'};
+    //可索引接口 对对象的约束
+    interface UserObj{
+        [index:string]:string
+    }
+    let arr:UserObj={name:'张三'};
 
-*/
+
+
+
 
 //类类型接口:对类的约束  和   抽象类抽象有点相似
 
@@ -94,7 +95,6 @@ typescrip中的接口类似于java，同时还增加了更灵活的接口类型�
         name:string;
         eat(str:string):void;
     }
-
     class Dog implements Animal{
         name:string;
         constructor(name:string){
@@ -109,15 +109,13 @@ typescrip中的接口类似于java，同时还增加了更灵活的接口类型�
     d.eat();
 
 
+
     class Cat implements Animal{
         name:string;
         constructor(name:string){
-
             this.name=name;
-
         }
         eat(food:string){
-
             console.log(this.name+'吃'+food);
         }
     }

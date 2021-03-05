@@ -1,44 +1,78 @@
+//装饰器执行顺序
+//属性 》方法 》方法参数 》类
+// 如果有多个同样的装饰器，它会先执行后面的
 
-
-class User{
-    username:string | undefined;
-    password:string | undefined;
-}
-
-class ArticleCate{
-    title:string | undefined;
-    desc:string | undefined;
-    status:number | undefined;
-
-    constructor(params:{ title:string, desc:string, status?:number}){
-        this.title=params.title;
-        this.desc=params.desc;
-        this.status=params.status;
+function logClass1(params:string){
+    return function(target:any){
+        console.log('类装饰器1')
     }
 }
-class MysqlDb<T>{
-    add(info:T):boolean{
-        console.log(info);
+function logClass2(params:string){
+    return function(target:any){
+        console.log('类装饰器2')
+    }
+}
+function logAttribute1(params?:string){
+    return function(target:any,attrName:any){
+        console.log('属性装饰器1')
+    }
+}
+function logAttribute2(params?:string){
+    return function(target:any,attrName:any){
+        console.log('属性装饰器2')
+    }
+}
+function logMethod1(params?:string){
+    return function(target:any,attrName:any,desc:any){
+        console.log('方法装饰器1')
+    }
+}
+function logMethod2(params?:string){
+    return function(target:any,attrName:any,desc:any){
+        console.log('方法装饰器2')
+    }
+}
+
+function logParams1(params?:string){
+    return function(target:any,attrName:any,desc:any){
+        console.log('方法参数装饰器1')
+    }
+}
+
+function logParams2(params?:string){
+    return function(target:any,attrName:any,desc:any){
+        console.log('方法参数装饰器2')
+    }
+}
+
+
+
+@logClass1('http://www.itying.com/api')
+@logClass2('xxxx')
+class HttpClient{
+    @logAttribute1()
+    @logAttribute2()
+    public apiUrl:string | undefined;
+    constructor(){
+    }
+
+    @logMethod1()
+    @logMethod2()
+    getData(){
         return true;
     }
-    updated(info:T,id:number):boolean {
-        console.log(info);
-        console.log(id);
-        return true;
+
+    setData(@logParams1() attr1:any,@logParams2() attr2:any,){
+
     }
 }
 
-
-let a = new ArticleCate({title:'分类', desc:'1111', status:1});
-//类当做参数的泛型类
-let Db = new MysqlDb<ArticleCate>();
-Db.add(a);
-
-
-//修改数据
-let a1=new ArticleCate({ title:'分类111', desc:'2222' });
-a1.status=0;
-
-let Db1=new MysqlDb<ArticleCate>();
-Db1.updated(a1,12);
-
+let http:any=new HttpClient();
+属性装饰器2
+属性装饰器1
+方法装饰器2
+方法装饰器1
+方法参数装饰器2
+方法参数装饰器1
+类装饰器2
+类装饰器1

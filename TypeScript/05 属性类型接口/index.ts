@@ -64,39 +64,33 @@ TypeScrip中的接口类似于java，同时还增加了更灵活的接口类型�
 
 
     //ts中定义方法
-    /*
-        function printLabel():void {
-            console.log('printLabel');
-        }
-        printLabel();
-    */
 
-
-    /*
-    ts中定义方法传入参数
-        function printLabel(label:string):void {
-            console.log('printLabel');
-        }
-        printLabel('hahah');
-    */
+     function printLabel():void {
+         console.log('printLabel');
+     }
+     printLabel();
 
 
 
-        /*
-        ts中自定义方法传入参数,对json进行约束
 
-        function printLabel(labelInfo:{label:string}):void {
-            console.log('printLabel');
-        }
-
-        printLabel('hahah'); //错误写法
+    // ts中定义方法传入参数
+      function printLabel(label:string):void {
+          console.log('printLabel');
+      }
+      printLabel('hahah');
 
 
-        printLabel({name:'张三'});  //错误的写法
 
 
-        printLabel({label:'张三'});  //正确的写法
-    */
+
+      // ts中自定义方法传入参数,对json进行约束
+
+      function printLabel(labelInfo:{label:string}):void {
+          console.log('printLabel');
+      }
+      printLabel('hahah'); //错误写法
+      printLabel({name:'张三'});  //错误的写法
+      printLabel({label:'张三'});  //正确的写法
 
 
 
@@ -108,26 +102,24 @@ TypeScrip中的接口类似于java，同时还增加了更灵活的接口类型�
 
 
         //就是传入对象的约束    属性接口
-        //  interface FullName{
+         interface FullName{
+            firstName:string;   //注意;结束
+            secondName:string;
+        }
 
-        //     firstName:string;   //注意;结束
-        //     secondName:string;
+        function printName(name:FullName){
 
-        // }
+            // 必须传入对象  firstName  secondName
+            console.log(name.firstName+'--'+name.secondName);
+        }
+        // printName('1213');  //错误
 
-        // function printName(name:FullName){
-
-        //     // 必须传入对象  firstName  secondName
-        //     console.log(name.firstName+'--'+name.secondName);
-        // }
-        // // printName('1213');  //错误
-
-        // var obj={   /*传入的参数必须包含 firstName  secondName*/
-        //     age:20,
-        //     firstName:'张',
-        //     secondName:'三'
-        // };
-        // printName(obj)
+        var obj={   /*传入的参数必须包含 firstName  secondName*/
+            age:20,
+            firstName:'张',
+            secondName:'三'
+        };
+        printName(obj)
 
 
 
@@ -137,38 +129,33 @@ TypeScrip中的接口类似于java，同时还增加了更灵活的接口类型�
 
 //  接口：行为和动作的规范，对批量方法进行约束
 
+      interface FullName{
+          firstName:string;   //注意;结束
+          secondName:string;
+      }
 
-
-            // interface FullName{
-            //     firstName:string;   //注意;结束
-            //     secondName:string;
-            // }
-
-            // function printName(name:FullName){
-            //     // 必须传入对象  firstName  secondName
-            //     console.log(name.firstName+'--'+name.secondName);
-            // }
+      function printName(name:FullName){
+          // 必须传入对象  firstName  secondName
+          console.log(name.firstName+'--'+name.secondName);
+      }
 
 
 
-            // function printInfo(info:FullName){
+      function printInfo(info:FullName){
+          // 必须传入对象  firstName  secondName
+          console.log(info.firstName+info.secondName);
+      }
 
-            //     // 必须传入对象  firstName  secondName
-            //     console.log(info.firstName+info.secondName);
-            // }
-
-            // var obj={   /*传入的参数必须包含 firstName  secondName*/
-            //     age:20,
-            //     firstName:'张',
-            //     secondName:'三'
-            // };
-            // printName(obj);
-
-
-            // printInfo({
-            //     firstName:'李',
-            //     secondName:'四'
-            // })
+      var obj={   /*传入的参数必须包含 firstName  secondName*/
+          age:20,
+          firstName:'张',
+          secondName:'三'
+      };
+      printName(obj);
+      printInfo({
+          firstName:'李',
+          secondName:'四'
+      })
 
 
 
@@ -176,41 +163,20 @@ TypeScrip中的接口类似于java，同时还增加了更灵活的接口类型�
 
 //接口 ：可选属性
 
+     interface FullName{
+         firstName:string;
+         secondName:string;
+     }
 
+     function getName(name:FullName){
+         console.log(name)
+     }
 
-
-    // interface FullName{
-    //     firstName:string;
-    //     secondName:string;
-    // }
-
-    // function getName(name:FullName){
-    //     console.log(name)
-    // }
-
-    // //参数的顺序可以不一样
-    // getName({
-    //     secondName:'secondName',
-    //     firstName:'firstName'
-    // })
-
-
-
-
-
-
-
-    // interface FullName{
-    //     firstName:string;
-    //     secondName?:string;
-    // }
-
-    // function getName(name:FullName){
-    //     console.log(name)
-    // }
-    // getName({
-    //     firstName:'firstName'
-    // })
+     //参数的顺序可以不一样
+     getName({
+         secondName:'secondName',
+         firstName:'firstName'
+     })
 
 
 
@@ -218,15 +184,31 @@ TypeScrip中的接口类似于java，同时还增加了更灵活的接口类型�
 
 
 
-/*
-       $.ajax({
-             type: "GET",
-             url: "test.json",
-             data: {username:$("#username").val(), content:$("#content").val()},
-             dataType: "json"
-         });
+     interface FullName{
+         firstName:string;
+         secondName?:string;
+     }
 
-*/
+     function getName(name:FullName){
+         console.log(name)
+     }
+     getName({
+         firstName:'firstName'
+     })
+
+
+
+
+
+
+
+  $.ajax({
+        type: "GET",
+        url: "test.json",
+        data: {username:$("#username").val(), content:$("#content").val()},
+        dataType: "json"
+    });
+
 
 
 interface Config{

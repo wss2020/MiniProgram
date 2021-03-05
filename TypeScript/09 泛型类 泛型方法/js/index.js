@@ -66,95 +66,67 @@
 通俗理解：泛型就是解决 类 接口 方法的复用性、以及对不特定数据类型的支持(类型校验)
 
 */
-/*
 //只能返回string类型的数据
-
-     function getData(value:string):string{
-         return value;
-     }
-
+function getData(value) {
+    return value;
+}
 //同时返回 string类型 和number类型 写两个函数 （代码冗余）
-
-     function getData1(value:string):string{
-         return value;
-     }
-
-     function getData2(value:number):number{
-         return value;
-     }
-
-
-
-
+function getData1(value) {
+    return value;
+}
+function getData2(value) {
+    return value;
+}
 //同时返回 string类型 和number类型       any可以解决这个问题
-
-      function getData(value:any):any{
-         return '哈哈哈';
-     }
-     getData(123);
-     getData('str');
-
-
-
-
+function getData(value) {
+    return '哈哈哈';
+}
+getData(123);
+getData('str');
 //any放弃了类型检查.  如果我们想传入什么 返回什么。比如:传入number 类型必须返回number类型  传入 string类型必须返回string类型
-
-    //传入的参数类型和返回的参数类型可以不一致。  这样做不行
-      function getData(value:any):any{
-           return '哈哈哈';
-       }
-
-
+//传入的参数类型和返回的参数类型可以不一致。  这样做不行
+function getData(value) {
+    return '哈哈哈';
+}
 // 泛型：可以支持不特定的数据类型   要求：传入的参数和返回的参数一直
-
 // T表示泛型，具体什么类型是调用这个方法的时候决定的。 一般我们用T，也可以用其他字母
-       function getData<T>(value:T):T{
-           return value;
-       }
-        getData<number>(123);
-        getData<string>('1214231');
-
-       // getData<number>('2112');       //错误的写法
-
-
-
-        function getData<T>(value:T):any{
-            return '2145214214';
-        }
-        getData<number>(123);  //参数必须是number
-        getData<string>('这是一个泛型');
-
-
-
-
+function getData(value) {
+    return value;
+}
+getData(123);
+getData('1214231');
+// getData<number>('2112');       //错误的写法
+function getData(value) {
+    return '2145214214';
+}
+getData(123); //参数必须是number
+getData('这是一个泛型');
 // 泛型类：比如有个最小堆算法，需要同时支持返回数字和字符串 a  -  z两种类型。  通过类的泛型来实现
-
-            class MinClass{
-                public list:number[]=[];
-                add(num:number){
-                    this.list.push(num)
-                }
-                min():number{
-                    let minNum=this.list[0];
-                    for(let i=0;i<this.list.length;i++){
-                        if(minNum>this.list[i]){
-                            minNum=this.list[i];
-                        }
-                    }
-                    return minNum;
-                }
-
+var MinClass = /** @class */ (function () {
+    function MinClass() {
+        this.list = [];
+    }
+    MinClass.prototype.add = function (num) {
+        this.list.push(num);
+    };
+    MinClass.prototype.min = function () {
+        var minNum = this.list[0];
+        for (var i = 0; i < this.list.length; i++) {
+            if (minNum > this.list[i]) {
+                minNum = this.list[i];
             }
-
-            let m=new MinClass();
-            m.add(3);
-            m.add(22);
-            m.add(23);
-            m.add(6);
-            m.add(7);
-            alert(m.min());
-
-  */
+        }
+        return minNum;
+    };
+    return MinClass;
+}());
+var m = new MinClass();
+m.add(3);
+m.add(22);
+m.add(23);
+m.add(6);
+m.add(7);
+alert(m.min());
 //类的泛型
 var MinClass = /** @class */ (function () {
     function MinClass() {

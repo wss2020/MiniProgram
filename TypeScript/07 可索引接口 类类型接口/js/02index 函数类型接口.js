@@ -19,7 +19,7 @@
         数组类型（array）
         元组类型（tuple）
         枚举类型（enum）
-        
+
         任意类型（any）
         null 和 undefined
         void类型
@@ -48,7 +48,7 @@
     5.4 类类型接口
     5.5 接口扩展
 
-   
+
 */
 var md5 = function (key, value) {
     //模拟操作
